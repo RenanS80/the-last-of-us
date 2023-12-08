@@ -1,0 +1,103 @@
+header {
+    background-color: var(--black);
+    filter: drop-shadow(0 0.4rem 0.4rem rgba(0, 0, 0, 0.1));
+}
+
+header .container {
+    padding: 3.5rem 1.8rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    padding: 2rem 2.8rem;
+    transition: all .4s ease;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+}
+
+/* ---- Media queries ---- */
+@media (max-width: 950px) {
+    nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        width: 4rem;
+        /* define o tamanho do container que engloba o menu hambúrguer */
+        height: 3rem;
+        margin-right: 2rem;
+    }
+
+    .one,
+    .two,
+    .three {
+        width: 100%;
+        height: 0.5rem;
+        margin: 0.6rem auto;
+        background-color: var(--white);
+        transition-duration: 0.3s;
+        border-radius: 0.5rem;
+    }
+
+    /* Fullscreen ao ser clicado */
+    .menu-section.on {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--black);
+        z-index: 10;
+        /* para ficar posicionado sobre os demais elementos da página */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-section.on nav {
+        /* exibe os itens da nav que foram escondidos */
+        display: block;
+        
+    }
+
+    /* Faz com que o container do hambúrguer fique à direita da nav */
+    .menu-section.on .menu-toggle {
+        position: absolute;
+        right: 2rem;
+        top: 4rem;
+    }
+
+    /* Manipula a forma da primeira barra para virar um X */
+    .menu-section.on .menu-toggle .one {
+        transform: rotate(45deg) translate(0.7rem, 0.7rem);
+    }
+
+    /* Esconde a segunda barra */
+    .menu-section.on .menu-toggle .two {
+        opacity: 0;
+    }
+
+    /* Manipula a forma da primeira terceira para virar um X */
+    .menu-section.on .menu-toggle .three {
+        transform: rotate(-45deg) translate(0.8rem, -0.9rem);
+    }
+
+    /* Itens ficam ao centro e um abaixo do outro */
+    .menu-section.on nav ul {
+        text-align: center;
+        display: block;
+    }
+
+    .menu-section.on nav ul a {
+        transition-duration: 0.5s;
+        font-size: 3rem;
+        line-height: 4rem;
+        /* aumenta a distância de um item para o outro */
+        display: block;
+    }
+}
