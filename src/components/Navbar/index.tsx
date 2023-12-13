@@ -24,16 +24,16 @@ function Navbar() {
                     <nav>
                         <ul>
                             <li>
-                                <a href="#functionality" style={{fontWeight: 700}}>Home</a>
+                                <a href="#home" style={{fontWeight: 700}}>Home</a>
                             </li>
                             <li>
-                                <a href="#app">História</a>
+                                <a href="#history">História</a>
                             </li>
                             <li>
-                                <a href="#plan">Personagens</a>
+                                <a href="#character">Personagens</a>
                             </li>
                             <li>
-                                <a href="#contact">Sobre</a>
+                                <a href="#about">Sobre</a>
                             </li>
                             <li>
                                 <a href="#extra">Extra</a>

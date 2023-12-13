@@ -1,0 +1,42 @@
+.tab-journey {
+    max-width: 51.5rem;
+    margin-top: 3rem;
+}
+
+.tab-journey__title {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    cursor: pointer;
+}
+
+.tab-journey__title h3 {
+    position: relative;
+}
+
+.tab-journey__title .active:after {
+    content: "";
+    width: 100%;
+    height: 0.4rem;
+    display: block;
+    position: absolute;
+    bottom: -0.6rem;
+    background-color: var(--blue);
+}
+
+.tab-journey__description {
+    padding-left: 3.6rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tab-journey__description p {
+    font-family: var(--font-source-sans);
+    font-weight: 300;
+    color: #FFF;
+    line-height: 130%;
+    font-size: 2rem;
+}
+
+
+
