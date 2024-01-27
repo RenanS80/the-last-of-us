@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Logo from "../../assets/images/logo.png";
+
 import './styles.css';
 
 function Navbar() {
@@ -24,19 +26,19 @@ function Navbar() {
                     <nav>
                         <ul>
                             <li>
-                                <a href="#home" style={{fontWeight: 700}}>Home</a>
+                                <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
                             </li>
                             <li>
-                                <a href="#history">História</a>
+                                <NavLink to="/chapters" className={({ isActive }) => isActive ? 'active' : ''}>História</NavLink>
                             </li>
                             <li>
-                                <a href="#character">Personagens</a>
+                                <NavLink to="/characters" className={({ isActive }) => isActive ? 'active' : ''}>Personagens</NavLink>
                             </li>
                             <li>
-                                <a href="#about">Sobre</a>
+                                <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>Sobre</NavLink>
                             </li>
                             <li>
-                                <a href="#extra">Extra</a>
+                                <NavLink to="/extra" className={({ isActive }) => isActive ? 'active' : ''}>Extra</NavLink>
                             </li>
                         </ul>
                     </nav>

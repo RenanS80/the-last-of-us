@@ -1,0 +1,11 @@
+.title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.marker {
+    width: 1.5rem;
+    background-color: var(--blue);
+    height: 4.4rem;
+}

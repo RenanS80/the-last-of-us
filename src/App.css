@@ -71,13 +71,11 @@ ul {
 }
 
 .container {
-    max-width: 124rem;
+    max-width: 134rem;
     height: 100%;
-    display: flex;
-    padding: 0 1.8rem;
     margin: 0 auto;
+    padding: 0 1.8rem;
 }
-
 
 /* ---- Media queries ---- */
 @media (max-width: 760px) {

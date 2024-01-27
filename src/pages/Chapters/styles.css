@@ -1,0 +1,31 @@
+.chapters__hero {
+    height: calc(90vh - 11.933rem);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('../../assets/images/chapters/download.jpg');
+    background-size: cover;
+    background-position: top 20px;
+    background-repeat: no-repeat;
+}
+
+
+.chapters__main .container {
+    padding-top: 79px;
+}
+
+.chapters__main-resume {
+    line-height: 135%; 
+    text-align: justify;
+    margin-top: 40px;
+}
+
+.chapters__main-resume p {
+    padding-bottom: 15px;
+    font-size: 17px;
+}
+
+.chapters__main-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 50px 0;
+    gap: 32px;
+}

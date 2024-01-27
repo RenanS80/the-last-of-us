@@ -8,6 +8,7 @@
 }
 
 .hero .container {
+    display: flex;
     justify-content: flex-end;
 }
 
@@ -74,6 +75,7 @@
 }
 
 .info .container {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -110,6 +112,7 @@
 }
 
 .journey .container {
+    display: flex;
     justify-content: flex-end;
 }
 
@@ -146,6 +149,7 @@
 }
 
 .awards .container {
+    display: flex;
     align-items: center;
     flex-direction: column;
     gap: 8rem;
