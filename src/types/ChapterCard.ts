@@ -1,7 +1,6 @@
 export type Card = {
     id: number;
     name: string;
-    location: string;
-    imageName: string;
+    imageUrl: string;
     resume: string;
 }

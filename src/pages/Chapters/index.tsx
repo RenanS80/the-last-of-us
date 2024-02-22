@@ -6,6 +6,7 @@ import ChapterCard from 'components/ChapterCard';
 
 import './styles.css';
 import Footer from 'components/Footer';
+import ChapterCardImage from 'components/ChapterCard';
 
 function Chapters() {
     return(
@@ -34,7 +35,7 @@ function Chapters() {
 
                         {chapterCard.map(item => (
                             <div key={item.id}>
-                                <ChapterCard card={item} />
+                                <ChapterCardImage card={item} />
                             </div>
                         ))}
 

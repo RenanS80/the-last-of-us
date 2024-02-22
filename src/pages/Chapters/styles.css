@@ -19,13 +19,13 @@
 
 .chapters__main-resume p {
     padding-bottom: 15px;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .chapters__main-cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 50px 0;
-    gap: 32px;
+    row-gap: 50px;
 }

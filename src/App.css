@@ -8,8 +8,9 @@
     --white-light: #FBFAFC;
     --white-dark: #EDEBF0;
     --gray: #9D9D9D;
+    --gray--light: #E7E7E7;
     --blue: #2173B1;
-    --blue-light: #56A7E6;
+    --blue-light: #7EC7FF;
     --blue-dark: #165E95;
     
     --font-roboto: 'Roboto', sans-serif;
@@ -24,15 +25,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 html {
     scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar {
+    width: 1rem;
+  }
+  
+  html::-webkit-scrollbar-track {
+    background: var(--black-dark);
+  }
+  
+  html::-webkit-scrollbar-thumb {
+    background: var(--black-light);
+  }
+
 body {
-    background-color: var(--white);
+    background-color: var(--gray--light);
     color: var(--black);
     font-size: 1.6rem;
     font-family: var(--font-roboto);
