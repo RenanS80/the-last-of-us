@@ -1,9 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import Navbar from 'components/Navbar';
 import TabJourney from 'components/TabJourney';
 import Footer from 'components/Footer';
 
+import ScrollDownIcon from '../../assets/images/home/scroll-down-icon.svg';
 import PlayIcon from '../../assets/images/home/play-icon.svg';
 import OfflineIcon from '../../assets/images/home/offline-icon.png';
 import PlayerIcon from '../../assets/images/home/player-icon.png';
@@ -17,6 +18,11 @@ import Star from '../../assets/images/home/star.svg';
 import './styles.css';
 
 function Home() {
+
+    const anchorNavigate = (id : string) => {
+        window.location.href = `#${id}`;
+    };
+
     return(
         <>
             <Navbar />
@@ -33,10 +39,13 @@ function Home() {
                             </NavLink>
                         </div>
                     </div>
+                    <Link to="#" onClick={() => anchorNavigate('info')} className="scroll-down">
+                        <img src={ScrollDownIcon} alt="" />
+                    </Link>
                 </div>
             </section>
 
-            <section className="info">
+            <section id="info">
                 <div className="container">
                     <div className="info__content">
                         <div>

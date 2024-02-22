@@ -21,7 +21,7 @@ function ChapterCard({ card } : Props) {
     };
 
     const bgCardStyle = {
-        background: isHover ? `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${card.imageUrl}) center center/cover no-repeat` : `url(${card.imageUrl}) center center/cover no-repeat`,
+        background: isHover ? `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${card.imageUrl}) center center/cover no-repeat` : `url(${card.imageUrl}) center center/cover no-repeat`,
     }
 
     return(
