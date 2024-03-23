@@ -1,0 +1,36 @@
+/* -- Section Hero -- */
+.chapter1__hero {
+    height: calc(70vh - 86px);
+    background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)), url('../../../assets/images/chapters/chapter1/background.png') center center/cover no-repeat;
+}
+
+.chapter1__hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+/* -- Main -- */
+.chapter1__main .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 850px;
+    text-align: justify;
+    line-height: 24px;
+    border: 1px solid red;
+}
+
+.chapter1__main ul {
+    margin-left: 20px;
+}
+
+.chapter1__main audio {
+    margin-top: 20px;
+    border: 1px solid var(--black);
+    border-radius: 30px;
+}
+
+

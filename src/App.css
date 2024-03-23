@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Roboto:wght@400;500;700&family=Source+Sans+3:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Roboto:wght@400;500;700&family=Source+Sans+3:wght@300;700&display=swap');
 
 :root {
     --black: #17151A;
@@ -9,6 +9,7 @@
     --white-dark: #EDEBF0;
     --gray: #9D9D9D;
     --gray--light: #E7E7E7;
+    --gray-dark: #767676;
     --blue: #2173B1;
     --blue-light: #7EC7FF;
     --blue-dark: #165E95;
@@ -32,16 +33,16 @@ html {
 }
 
 html::-webkit-scrollbar {
-    width: 1rem;
-  }
+    width: 1.4rem;
+}
   
   html::-webkit-scrollbar-track {
-    background: var(--black-dark);
-  }
+    background: var(--gray-dark);
+}
   
   html::-webkit-scrollbar-thumb {
     background: var(--black-light);
-  }
+}
 
 body {
     background-color: var(--gray--light);
@@ -50,7 +51,7 @@ body {
     font-family: var(--font-roboto);
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-weight: 400;
     text-transform: uppercase;
     font-family: var(--font-league-gothic);
@@ -78,8 +79,15 @@ a {
     text-decoration: none;
 }
 
-ul {
+nav ul {
     list-style-type: none;
+}
+
+figcaption {
+    text-align: center;
+    color: var(--gray-dark);
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .container {
@@ -88,6 +96,31 @@ ul {
     margin: 0 auto;
     padding: 0 1.8rem;
 }
+
+.chapter__main-image {
+    width: 814px;
+    height: 100%;
+    margin: 20px 0 20px 0;
+}
+
+.chapter__main-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.chapter__main-intro {
+    margin-top: 60px;
+}
+
+.chapter__main-intro p {
+    margin-top: 20px;
+}
+
+.chapter__main-content {
+    max-width: inherit;
+    padding: 0 18px;
+}
+
 
 /* ---- Media queries ---- */
 @media (max-width: 760px) {

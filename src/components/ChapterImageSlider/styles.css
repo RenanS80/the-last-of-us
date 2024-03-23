@@ -1,0 +1,39 @@
+.image-slider {
+    max-width: inherit;
+    position: relative;
+}
+
+.image-slider__background {
+    max-width: inherit; 
+    height: 478px;
+    border-radius: 8px;
+}
+
+.left-arrow, 
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    color: #FFF;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 15px;
+}
+
+.right-arrow {
+    right: 15px;
+}
+
+.slide-control {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.slide-control img {
+    cursor: pointer;
+}
+

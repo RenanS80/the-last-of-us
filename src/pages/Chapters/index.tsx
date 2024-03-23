@@ -2,11 +2,10 @@ import { chapterCard } from 'data/chapterCard';
 
 import Navbar from 'components/Navbar';
 import Title from 'components/Title';
-import ChapterCard from 'components/ChapterCard';
 
 import './styles.css';
 import Footer from 'components/Footer';
-import ChapterCardImage from 'components/ChapterCard';
+import ChapterCard from 'components/ChapterCard';
 
 function Chapters() {
     return(
@@ -35,7 +34,7 @@ function Chapters() {
 
                         {chapterCard.map(item => (
                             <div key={item.id}>
-                                <ChapterCardImage card={item} />
+                                <ChapterCard card={item} />
                             </div>
                         ))}
 

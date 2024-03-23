@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Card } from 'types/ChapterCard';
 
-import Arrow from "../../assets/images/chapters/arrow.svg";
+import Arrow from "../../assets/images/chapters/card-arrow.svg";
 import './styles.css';
 
 type Props = {
@@ -25,16 +26,16 @@ function ChapterCard({ card } : Props) {
     }
 
     return(
-        <div className="chapter-card" style={bgCardStyle} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <NavLink to={`/chapters/${card.id}`} className="chapter-card" style={bgCardStyle} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div className="chapter-card__info">
                 <p className="chapter-card__title">Capítulo {card.id}: {card.name}</p>
                 <p className="chapter-card__resume">{card.resume}...</p>
-                <a href="#">
+                <div className="chapter_card__read">
                     Leia mais
                     <img src={Arrow} alt="" />
-                </a>
+                </div>
             </div>
-        </div>
+        </NavLink>
 
     )
 }

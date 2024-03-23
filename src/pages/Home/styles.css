@@ -83,10 +83,6 @@
     transition: all .4s ease;
 }
 
-.btn--buy:hover {
-    color: var(--blue);
-}
-
 .btn--trailer {
     display: flex;
     align-items: center;

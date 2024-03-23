@@ -1,9 +1,13 @@
 .chapter-card {
     width: 600px;
     height: 338px;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
+    transition: all 1s;
+}
+
+.chapter-card:hover {
     transition: all 1s;
 }
 
@@ -33,7 +37,7 @@
     max-width: 242px;
 }
 
-.chapter-card__info a {
+.chapter_card__read {
     position: absolute;
     bottom: 30px;
     display: flex;
@@ -42,20 +46,16 @@
     gap: 10px;
 }
 
-.chapter-card:hover {
-    transition: all 1s;
-}
-
 .chapter-card:hover .chapter-card__info {
     opacity: 1;
     transform: translateY(-8px);
     transition: all 1s;
 }
 
-.chapter-card a img {
+.chapter-card__info img {
     transition: transform 1s;
 }
 
-.chapter-card:hover a:hover img {
+.chapter-card:hover .chapter_card__read:hover img {
     transform: translateX(7px);
 }

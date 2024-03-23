@@ -1,0 +1,14 @@
+.content-table.table-collectibles tr th {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 17px;
+}
+
+.content-table.table-collectibles tr th div img {
+    border-radius: 3px;
+}
+
+.content-table.table-collectibles tr td {
+    padding: 17px 240px 17px 17px;
+}

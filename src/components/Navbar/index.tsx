@@ -13,7 +13,7 @@ function Navbar() {
         <header>
             <div className="container">
                 <div className="header__brand">
-                <img src={Logo} alt="The Last of Us" />
+                    <img src={Logo} alt="The Last of Us" />
                 </div>
 
                 <div className={mobileToggle ? "menu-section on" : "menu-section"} onClick={() => setMobileToggle(!mobileToggle)}>
