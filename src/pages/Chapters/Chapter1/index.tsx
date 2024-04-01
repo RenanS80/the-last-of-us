@@ -3,12 +3,14 @@ import ChapterResumeTable from 'components/ChapterResumeTable';
 import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
 import ChapterImageSlider from 'components/ChapterImageSlider';
+import Footer from 'components/Footer';
 
 import Intro from '../../../assets/images/chapters/chapter1/intro.jpg';
 import Image1 from '../../../assets/images/chapters/chapter1/image1.jpg';
 import WilhelmAudio from '../../../assets/audios/Wilhelm_Scream.mp3';
 
 import './styles.css';
+import Pagination from 'components/Pagination';
 
 function Chapter1() {
 
@@ -16,12 +18,22 @@ function Chapter1() {
         {
             id: 1,
             url: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/Chapter%201/screenshot1_hgpZpXana.png?updatedAt=1709926051963',
-            title: 'Sarah no quarto'
         },
         {
             id: 2,
             url: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/Chapter%201/screenshot2_5XPgnbfZY.png?updatedAt=1709926071558',
-            title: 'Jornal relatando cordyceps'
+        },
+        {
+            id: 3,
+            url: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/Chapter%201/009_iuBKzmyLrL.png?updatedAt=1711287981305',
+        },
+        {
+            id: 4,
+            url: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/Chapter%201/019_vXnbuMSTz.png?updatedAt=1711287981843',
+        },
+        {
+            id: 5,
+            url: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/Chapter%201/022_nhWhGZOsg.png?updatedAt=1711287981907',
         }
     ]
 
@@ -140,8 +152,17 @@ function Chapter1() {
                             <ChapterImageSlider slides={slides} />
                         </div>
                     </div>
+                    
+                    <Pagination />
+                     
                 </div>
+
+
             </main>
+            
+
+
+            <Footer />
         </>
 
     );

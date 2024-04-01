@@ -4,7 +4,7 @@ import { ImageSlider } from 'types/ImageSlider';
 import LeftArrow from '../../assets/images/chapters/left-arrow.svg';
 import RightArrow from '../../assets/images/chapters/right-arrow.svg';
 import SlideControl from '../../assets/images/chapters/slide-control.svg';
-import ActiveSlideControl from '../../assets/images/chapters/active-slide-control.svg';
+import SlideControlActive from '../../assets/images/chapters/slide-control-active.svg';
 
 import './styles.css';
 
@@ -15,9 +15,6 @@ type Props = {
 function ChapterImageSlider({ slides } : Props) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    console.log(`url(${slides[currentIndex].url})`)
-
-    console.log(slides.length)
 
     const previousImage = () => {
         const isFirstSlide = currentIndex === 0 ? true : false;
@@ -47,7 +44,7 @@ function ChapterImageSlider({ slides } : Props) {
             <div className="slide-control">
                 {slides.map((slide, index) => (
                     <div key={index} onClick={() => goToSlide(index)}>
-                        <img src={SlideControl} alt="Selecionar imagem" />
+                        <img src={currentIndex === index ? SlideControlActive : SlideControl} alt="Selecionar imagem" />
                     </div>
                 ))}
             </div>

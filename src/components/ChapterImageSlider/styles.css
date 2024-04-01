@@ -13,6 +13,7 @@
 .right-arrow {
     position: absolute;
     top: 50%;
+    transform: translate(0, -50%);
     color: #FFF;
     z-index: 1;
     cursor: pointer;
