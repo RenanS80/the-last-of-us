@@ -41,17 +41,17 @@ function Chapter1() {
         <>
             <Navbar />
 
-            <section className="chapter1__hero">
+            <section className="individual-chapter__hero chapter1">
                 <div className="container">
                     <h1>Capítulo 1 - Cidade Natal</h1>
                 </div>
             </section>
 
-            <main className="chapter1__main">
+            <main className="individual-chapter__main">
                 <div className="container">
                     <div className="chapter__main-intro">
                         <div className="chapter__main-image">
-                            <img src={Intro} alt="" />
+                            <img src={Intro} alt="Cidade Natal" />
                         </div>
                         <p>Cidade Natal é o primeiro capítulo de The Last of Us e contém o prólogo em que o jogador assume o controle de <strong>Sarah</strong> e <strong>Joel</strong>.</p>
                     </div>
@@ -81,7 +81,7 @@ function Chapter1() {
                             </p> <br />
                             <div className="chapter__main-image">
                                 <figure>
-                                    <img src={Image1} alt="" />
+                                    <img src={Image1} alt="O inesperado acontece" />
                                     <figcaption>O inesperado acontece.</figcaption>
                                 </figure>
                             </div>  
@@ -156,12 +156,8 @@ function Chapter1() {
                     <Pagination />
                      
                 </div>
-
-
             </main>
             
-
-
             <Footer />
         </>
 

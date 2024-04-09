@@ -97,10 +97,11 @@ figcaption {
     padding: 0 1.8rem;
 }
 
+/* ---- Chapters ---- */
 .chapter__main-image {
     width: 814px;
     height: 100%;
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
 }
 
 .chapter__main-image img {
@@ -119,6 +120,33 @@ figcaption {
 .chapter__main-content {
     max-width: inherit;
     padding: 0 18px;
+}
+
+.individual-chapter__hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.individual-chapter__main .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 850px;
+    text-align: justify;
+    line-height: 24px;
+}
+
+.individual-chapter__main ul {
+    margin-left: 20px;
+}
+
+.individual-chapter__main audio {
+    margin-top: 20px;
+    border: 1px solid var(--black);
+    border-radius: 30px;
 }
 
 
