@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Logo from "../../assets/images/logo.png";
+import Logo from "../../assets/images/logo.svg";
 
 import './styles.css';
 
@@ -12,7 +12,7 @@ function Navbar() {
     return (
         <header>
             <div className="container">
-                <div className="header__brand">
+                <div>
                     <img src={Logo} alt="The Last of Us" />
                 </div>
 

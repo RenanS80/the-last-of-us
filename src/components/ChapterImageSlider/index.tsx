@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { ImageSlider } from 'types/ImageSlider';
 
-import LeftArrow from '../../assets/images/chapters/left-arrow.svg';
-import RightArrow from '../../assets/images/chapters/right-arrow.svg';
+import LeftArrow from '../../assets/images/chapters/screenshots-left-arrow.svg';
+import RightArrow from '../../assets/images/chapters/screenshots-right-arrow.svg';
 import SlideControl from '../../assets/images/chapters/slide-control.svg';
 import SlideControlActive from '../../assets/images/chapters/slide-control-active.svg';
 

@@ -1,8 +1,10 @@
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import SmallArrow from '../../assets/images/chapters/small-arrow.svg';
+
+import PaginationArrow from '../../assets/images/chapters/pagination-arrow.svg';
+import PaginationDisabledArrow from '../../assets/images/chapters/pagination-disabled-arrow.svg';
 
 import './styles.css';
-import { useEffect } from 'react';
 
 function Pagination() {
 
@@ -53,7 +55,7 @@ function Pagination() {
         lstChaptersToShow.reverse();
     }   
 
-    // Fazer scroll top quando mudar a página do chapter
+    // Fazer scroll top quando mudar de página na paginação
     useEffect(() => {
         const body: any = document.querySelector('#root');
     
@@ -65,8 +67,8 @@ function Pagination() {
         
     return(
         <div className="pagination">
-            <NavLink to={`/chapters/${urlNumChapter - 1}`} className={urlNumChapter === 1 ? "pagination-buttons pagination-buttons__disabled" : "pagination-buttons"}>
-                <img src={SmallArrow} alt="Capítulo anterior" />
+            <NavLink to={urlNumChapter === 1 ? `` : `/chapters/${urlNumChapter - 1}`} className={urlNumChapter === 1 ? "pagination-buttons previous-chapter-button pagination-buttons__disabled" : "pagination-buttons previous-chapter-button"}>
+                <img src={urlNumChapter === 1 ? PaginationDisabledArrow : PaginationArrow} className={urlNumChapter === 1 ? '' : 'transform-180deg'} title="Capítulo anterior" alt="Capítulo anterior" />
             </NavLink>
 
             {lstChaptersToShow.map((numChapter, index) => (
@@ -75,8 +77,8 @@ function Pagination() {
                 </NavLink>
             ))}
 
-            <NavLink to={`/chapters/${urlNumChapter + 1}`} className={urlNumChapter === 12 ? "pagination-buttons pagination-buttons__disabled next-chapter-button" : "pagination-buttons next-chapter-button"}>
-                <img className="teste" src={SmallArrow} alt="Capítulo seguinte" />
+            <NavLink to={urlNumChapter === 12 ? `` : `/chapters/${urlNumChapter + 1}`} className={urlNumChapter === 12 ? "pagination-buttons pagination-buttons__disabled next-chapter-button" : "pagination-buttons next-chapter-button"}>
+                <img src={PaginationArrow} title="Próximo capítulo" alt="Próximo capítulo" />
             </NavLink>
         </div>
     )

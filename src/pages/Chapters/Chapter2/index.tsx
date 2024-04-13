@@ -53,7 +53,7 @@ function Chapter2() {
                 <div className="container">
                     <div className="chapter__main-intro">
                         <div className="chapter__main-image">
-                            <img src={Intro} alt="" />
+                            <img src={Intro} alt="Capítulo 2 - A Zona de Quarentena" />
                         </div>
                         <p>A Zona de Quarentena é o segundo capítulo de The Last of Us e aborda os acontecimentos 20 anos após o surto do fungo Cordyceps que se alastrou pelos Estados Unidos.</p>
                     </div>

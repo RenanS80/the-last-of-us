@@ -51,7 +51,7 @@ function Chapter1() {
                 <div className="container">
                     <div className="chapter__main-intro">
                         <div className="chapter__main-image">
-                            <img src={Intro} alt="Cidade Natal" />
+                            <img src={Intro} alt="Capítulo 1 - Cidade Natal" />
                         </div>
                         <p>Cidade Natal é o primeiro capítulo de The Last of Us e contém o prólogo em que o jogador assume o controle de <strong>Sarah</strong> e <strong>Joel</strong>.</p>
                     </div>
