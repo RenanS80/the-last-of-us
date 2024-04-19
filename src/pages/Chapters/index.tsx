@@ -16,7 +16,7 @@ function Chapters() {
 
             <main className="chapters__main">
                 <div className="container">
-                    <Title title={"História"}/>
+                    <Title title="História" textColor="black" />
 
                     <div className="chapters__main-resume">
                         <p>

@@ -1,7 +1,7 @@
 .pagination {
     display: flex;
     gap: 12px;
-    margin-top: 100px;
+    margin: 9rem 0;
 }
 
 .pagination-buttons {

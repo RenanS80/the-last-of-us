@@ -32,8 +32,8 @@ nav ul li a:after {
     content: "";
     position: absolute;
     background-color: var(--blue-light);
-    height: 2px;
-    bottom: -34px;
+    height: 3px;
+    bottom: -35px;
     transition: .4s;
 }
 

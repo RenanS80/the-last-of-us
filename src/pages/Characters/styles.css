@@ -1,0 +1,11 @@
+.characters__main {
+    background: url('../../assets/images/characters/background.jpg') center center/cover no-repeat;
+}
+
+.characters__main .container {
+    border: 1px solid transparent;
+}
+
+.characters__title {
+    margin-top: 100px;
+}

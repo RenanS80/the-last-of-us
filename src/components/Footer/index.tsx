@@ -12,7 +12,7 @@ function Footer() {
 
                 <div className="footer__copyright">
                     <div className="footer__copyright-text">
-                        <p>&copy; 2023 Sony Interactive Entertainment LLC &#45; Playstation Studios</p> 
+                        <p>&copy; 2024 Sony Interactive Entertainment LLC &#45; Playstation Studios</p> 
                     </div>
                     <div className="footer__copyright-images">
                         <img src={NaughtyDogLogo} alt="Naughty Dog" />

@@ -9,3 +9,11 @@
     background-color: var(--blue);
     height: 4.4rem;
 }
+
+.text--black {
+    color: var(--black) !important;
+}
+
+.text--white {
+    color: var(--white) !important;
+}

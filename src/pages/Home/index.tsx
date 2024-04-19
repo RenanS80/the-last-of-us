@@ -15,7 +15,7 @@ import Controller3Icon from '../../assets/images/home/controller3-icon.png';
 import HelpIcon from '../../assets/images/home/help-icon.png';
 import FireflySmall from '../../assets/images/home/firefly-small.png';
 import Star from '../../assets/images/home/star.svg';
-import CloseModal from '../../assets/images/home/close-modal.svg';
+import CloseModal from '../../assets/images/close-icon.svg';
 
 import './styles.css';
 
@@ -57,7 +57,7 @@ function Home() {
             {modal && (
                 <div className="modal">
                     <div className="overlay" onClick={toggleModal}>
-                        <div className="modal-content">
+                        <div className="modal__content">
                             <iframe 
                                 width="1000" 
                                 height="562.5" 

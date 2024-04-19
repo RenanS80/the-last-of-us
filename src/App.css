@@ -90,6 +90,18 @@ figcaption {
     font-size: 14px;
 }
 
+.t-center {
+    text-align: center;
+}
+
+.mar-top70 {
+    margin-top: 70px;
+}
+
+.pad-bottom110 {
+    padding-bottom: 110px;
+}
+
 .container {
     max-width: 134rem;
     height: 100%;
