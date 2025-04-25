@@ -1,0 +1,150 @@
+.container--character {
+    display: flex;
+}
+
+.character__biography {
+    background-color: #F4F5EF;
+    width: 75%;
+    height: inherit;
+    padding: 0 20px;
+}
+
+.character__biography h1 {
+    margin-top: 75px;
+}
+
+.divider {
+    border-top: 1.5px solid rgba(220, 220, 220, 0.7);
+    margin-top: 20px;
+}
+
+.character__citation {
+    margin: 55px 0 0 90px;
+    display: inline-flex;
+    font-size: 19px;
+    position: relative;
+}
+
+.character__citation img:first-child {
+    padding-right: 10px;
+    position: absolute;
+    left: -32px;
+    top: 12px;
+}
+
+.character__citation img:last-child {
+    transform: rotate(180deg);
+    position: absolute;
+    right: -32px;
+    bottom: -20px;
+}
+
+.character__citation p {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.character__intro {
+    display: flex;
+    justify-content: space-between;
+}
+
+.character__resume {
+    margin-top: 80px;
+    max-width: 60%;
+    line-height: 125%;
+    letter-spacing: 1.5%;
+}
+
+
+.bio-information__title {
+    background-color: var(--blue-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 17px 0;
+    font-weight: 700;
+    font-size: 17px;
+    border-top: 1px solid var(--white);
+}
+
+.bio-information__content {
+    display: flex;
+    font-size: 14px;
+    
+}
+
+.character__bio-information .category,
+.character__bio-information .value {
+    padding: 15px 5px;
+} 
+
+.character__bio-information .category {
+    background-color: var(--gray-dark-character-info);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    border-top: 1px solid var(--white);
+}
+
+.character__bio-information .value {
+    background-color: var(--gray-light-character-info);
+    width: 55%;
+    padding-left: 12px;
+}
+
+.related__characters {
+    background-color: #DFDFDF;
+    width: 25%;
+}
+
+
+.collage-photos-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+        "photo1 photo1 photo4"
+        "photo2 photo3 photo4"
+        "photo5 photo5 photo5"
+        "photo5 photo5 photo5";
+    padding-bottom: 80px;
+}
+
+.photo {
+    position: relative;
+}
+
+.photo img {
+    width: 100%;
+}
+
+.photo1 {
+	grid-area: photo1;
+}
+
+.photo2 {
+	grid-area: photo2;
+}
+
+.photo3 {
+	grid-area: photo3;
+}
+
+.photo4 {
+	grid-area: photo4;
+}
+
+.photo5 {
+	grid-area: photo5;
+}
+
+.photo2 img,
+.photo3 img {
+    height: 100.1%;
+}
+
+.photo4 img {
+    height: 100%;
+    object-fit: cover;
+}

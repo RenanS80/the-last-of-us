@@ -8,6 +8,7 @@ import CharactersImage from 'components/CharactersImage';
 import CloseModal from '../../assets/images/close-icon.svg';
 
 import './styles.css';
+import { NavLink } from 'react-router-dom';
 
 function CharactersTab() {
 
@@ -63,7 +64,9 @@ function CharactersTab() {
                                     <h1>{modalName}</h1>
                                     <p>{modalResumeFirst}</p>
                                     <p>{modalResumeSecond}</p>
-                                    <button className="btn-modal">Biografia completa</button>
+                                    <div className="mar-top45">
+                                        <NavLink to={modalBioUrl} className="btn-modal">Biografia completa</NavLink>
+                                    </div>
                                 </div>
                                 <img src={CloseModal} className="close-modal" alt="Fechar vídeo" />
                             </div>

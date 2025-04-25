@@ -7,9 +7,11 @@ import Chapter1 from 'pages/Chapters/Chapter1';
 import Chapter2 from 'pages/Chapters/Chapter2';
 import Chapter3 from 'pages/Chapters/Chapter3';
 import Chapter4 from 'pages/Chapters/Chapter4';
+import Characters from 'pages/Characters';
+import Joel from 'pages/Characters/Joel';
+import NotFound from 'pages/NotFound';
 
 import './App.css';
-import Characters from 'pages/Characters';
 
 
 function App() {
@@ -24,6 +26,9 @@ function App() {
       <Route path="/chapters/4" element={<Chapter4 />} />
 
       <Route path="/characters" element={<Characters />} />
+      <Route path="/characters/joel" element={<Joel />} />
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

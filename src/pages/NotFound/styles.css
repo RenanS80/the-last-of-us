@@ -1,0 +1,78 @@
+.not-found {
+    height: 100vh;
+
+}
+
+.not-found .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.not-found .container > div:first-child {
+    max-width: 495px;
+    position: absolute;
+    left: 10px;
+}
+
+.not-found h1 {
+    font-family: var(--font-roboto);
+    font-weight: 600;
+    font-size: 40px;
+    text-transform: none;
+}
+
+.not-found p {
+    color: var(--black-light);
+    margin-top: 17px;
+    font-size: 19px;
+    line-height: 28px;
+}
+
+.not-found__group-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+}
+
+.not-found__group-buttons a, 
+.not-found__group-buttons button {
+    padding: 20px 25px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: .4s ease;
+}
+
+.not-found__group-buttons button {
+    background-color: transparent;
+    border: 1px solid var(--black-light);
+    color: var(--black-light);
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    gap: 7px;
+    transition: opacity .6s;
+}
+
+.not-found__group-buttons a {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.not-found__group-buttons button img {
+    transition: transform .6s;
+}
+
+.not-found__group-buttons button:hover img {
+    transform: translateX(-5px);
+}
+
+.not-found__group-buttons button:hover {
+    opacity: 0.92;
+}
+
+.not-found .container > div:last-child {
+    position: absolute;
+    right: 10px;
+}

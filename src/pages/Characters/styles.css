@@ -9,3 +9,54 @@
 .characters__title {
     margin-top: 100px;
 }
+
+.character__biography h2 {
+    text-transform: uppercase !important;
+}
+
+.related__characters {
+    padding: 70px 0 0 20px;
+}
+
+.related__characters > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.related__characters > div:last-child div a {
+    display: flex;
+    align-items: center;
+}
+
+.related__characters > div:last-child div p {
+    color: var(--black);
+    margin-left: 30px;
+}
+
+.related__characters > div:last-child div img {
+    width: 80px;
+    height: 80px;
+}
+
+.related__characters-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.related__characters-title img,
+.related__characters-title h4 {
+    z-index: 10;
+}
+
+.related__characters-title span {
+    height: 6px;
+    width: 82%;
+    background: var(--blue-light);
+    position: absolute;
+    bottom: 2px;
+    z-index: 0;
+}

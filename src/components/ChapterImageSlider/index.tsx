@@ -34,15 +34,22 @@ function ChapterImageSlider({ slides } : Props) {
 
     return(
         <div className="image-slider">
-            <div className="left-arrow" onClick={previousImage}>
-                <img src={LeftArrow} alt="Imagem anterior" />
-            </div>
-            <div className="right-arrow" onClick={nextImage}>
-                <img src={RightArrow} alt="Imagem seguinte" />
-            </div>
+            {currentIndex !== 0 &&  
+                <div className="left-arrow" onClick={previousImage}>
+                    <img src={LeftArrow} alt="Imagem anterior" />
+                </div>
+            }
+
+            {currentIndex !== 4 &&  
+                <div className="right-arrow" onClick={nextImage}>
+                    <img src={RightArrow} alt="Imagem seguinte" />
+                </div>
+            }
+
             <div className="image-slider__background" style={{background: `url(${slides[currentIndex].url}) center center/cover no-repeat`}}></div>
+            
             <div className="slide-control">
-                {slides.map((slide, index) => (
+                {slides.map((_slide, index) => (
                     <div key={index} onClick={() => goToSlide(index)}>
                         <img src={currentIndex === index ? SlideControlActive : SlideControl} alt="Selecionar imagem" />
                     </div>

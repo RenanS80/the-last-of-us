@@ -20,14 +20,11 @@ function Characters() {
                     <div className="t-center mar-top70">
                         <CharactersTab />
                     </div>
-
                 </div>
-
             </main>
 
             <Footer />
             
-
         </>
     )
 }

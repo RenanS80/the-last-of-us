@@ -10,7 +10,7 @@ export const mainCharacters = [
             secondPart: 'Ao longo de sua jornada, ele encontra forças para se tornar uma figura paterna e lutar por um futuro melhor para ele e Ellie.'
         },
         srcModalImage: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Characters/Modais/joel-modal_NC-BxnX_o.png?updatedAt=1713475010854',
-        bioUrl: ''
+        bioUrl: '/characters/joel'
     },
     {
         id: 2,

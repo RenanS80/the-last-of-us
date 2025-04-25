@@ -10,6 +10,8 @@
     --gray: #9D9D9D;
     --gray--light: #E7E7E7;
     --gray-dark: #767676;
+    --gray-dark-character-info: #B4AFAF;
+    --gray-light-character-info: #DFDFDF;
     --blue: #2173B1;
     --blue-light: #7EC7FF;
     --blue-dark: #165E95;
@@ -94,8 +96,16 @@ figcaption {
     text-align: center;
 }
 
+.mar-top25 {
+    margin-top: 25px;
+}
+
 .mar-top70 {
     margin-top: 70px;
+}
+
+.mar-top45 {
+    margin-top: 45px;
 }
 
 .pad-bottom110 {
@@ -107,6 +117,30 @@ figcaption {
     height: 100%;
     margin: 0 auto;
     padding: 0 1.8rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container--character h2 {
+    font-size: 23px;
+    font-family: var(--font-roboto);
+    color: var(--blue-dark);
+    font-weight: 700;
+    letter-spacing: 1.5%;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    text-transform: none;
+}
+
+.container--character h3 {
+    font-size: 18px;
+    font-family: var(--font-roboto);
+    font-weight: 700;
+    letter-spacing: 1.5%;
+    text-transform: none;
+    margin-bottom: 10px;
 }
 
 /* ---- Chapters ---- */

@@ -9,6 +9,9 @@ function Navbar() {
 
     const [mobileToggle, setMobileToggle] = useState(false);
 
+    /*FAZER O DROPDOWN (VER NO FIGMA NA ABA DE STYLE GUIDE E ASSETS)
+    https://www.youtube.com/watch?v=bOx2WmyZrno*/   
+
     return (
         <header>
             <div className="container">
