@@ -1,11 +1,10 @@
-import { NavLink } from 'react-router-dom';
-import { joel } from 'data/relatedCharacters/joel';
-
 import CharacterSummary from 'components/CharacterSummary';
 import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
+import RelatedCharacters from 'components/RelatedCharacters';
 
-import relatedCharactersIcon from '../../../assets/images/characters/person-icon.svg';
+import { joel } from 'data/relatedCharacters/joel';
+
 import QuotationMark from '../../../assets/images/characters/quotation-mark.svg';
 import JoelInfoBio from '../../../assets/images/characters/joel/joel-info-bio.jpg';
 import Img1 from '../../../assets/images/characters/joel/img1.png';
@@ -15,6 +14,7 @@ import Img4 from '../../../assets/images/characters/joel/img4.png';
 import Img5 from '../../../assets/images/characters/joel/img5.png';
 
 import './styles.css';
+import CharactersGallery from 'components/CharactersGallery';
 
 function Joel() {
 
@@ -41,6 +41,9 @@ function Joel() {
             main: 'Galeria'
         }
     ]
+
+    let lstImagesGallery = [];
+    lstImagesGallery.push(Img1, Img2, Img3, Img4, Img5);
 
     return(
         <>
@@ -426,52 +429,14 @@ function Joel() {
 
                     <div>
                         <h2>Galeria</h2>
-                        {/* COLOCAR ESSE GRID EM UM COMPONENTE SEPARADO PQ VAI SER USADO EM VÁRIAS TELAS */}
-                        <div className="collage-photos-grid">
-                            <div className="photo photo1">
-                                <img src={Img1} alt="Joel e Sarah" />
-                            </div>
-                            <div className="photo photo2">
-                                <img src={Img2} alt="Joel, Ellie e Marlene" />
-                            </div>
-                            <div className="photo photo3">
-                                <img src={Img3} alt="Joel e Tess" />
-                            </div>
-                            <div className="photo photo4">
-                                <img src={Img4} alt="Joel e Tommy" />
-                            </div>
-                            <div className="photo photo5">
-                                <img src={Img5} alt="Joel, Ellie e Henry" />
-                            </div>
-                        </div>
+                        <CharactersGallery lstImages={lstImagesGallery} />                        
                     </div>
                 </main>
 
-                {/* COLOCAR ESSE RELATED CHARACTERS EM UM COMPONENTE SEPARADO PQ VAI SER USADO EM VÁRIAS TELAS */}
-                <aside className="related__characters">
-                    <div className="related__characters-title">
-                        <img src={relatedCharactersIcon} alt="Outros Personagens" />
-                        <h4>Outros personagens</h4>
-                        <span></span>
-                    </div>
-                    <div className="teste">
-                        {joel.map(character => (
-                            <div className="teste2">
-                                <NavLink to={character.url}>
-                                    <img src={character.image} alt={character.name} />
-                                    <p>{character.name}</p>
-                                </NavLink>
-                            </div>
-                        ))}
-
-                    </div>
-
-                </aside>
+                <RelatedCharacters character={joel} />        
             </div>
 
             <Footer />
-            
-
         </>
     )
 }

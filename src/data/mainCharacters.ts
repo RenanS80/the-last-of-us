@@ -23,6 +23,6 @@ export const mainCharacters = [
             secondPart: 'Ellie é precoce, engenhosa e muito capaz. Seja compartilhando um bom trocadilho ou superando uma crise, a inteligência e a perspicácia dela tornam-se muito úteis.'
         },
         srcModalImage: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Characters/Modais/ellie-modal_8WffdOKPR.png?updatedAt=1713475010850',
-        bioUrl: ''
+        bioUrl: '/characters/ellie'
     }
 ]

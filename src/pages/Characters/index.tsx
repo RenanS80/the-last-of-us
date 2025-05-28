@@ -3,7 +3,6 @@ import Title from 'components/Title';
 import CharactersTab from 'components/CharactersTab';
 import Footer from 'components/Footer';
 
-
 import './styles.css';
 
 function Characters() {
@@ -24,7 +23,6 @@ function Characters() {
             </main>
 
             <Footer />
-            
         </>
     )
 }

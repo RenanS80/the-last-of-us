@@ -19,19 +19,21 @@ function CharacterSummary({ lstItems } : Props) {
                 </div>
                 <div className="summary__content">
                     <ol>
+
                         {lstItems.map((item, key) => (
                             <li key={key}>
                                 <strong>{item.main}</strong>
                                     
                                 {item.nested !== undefined &&
                                     <ol className="summary__sublist">
-                                        {item.nested.map(subItem => (
-                                            <li>{subItem}</li>
+                                        {item.nested.map((subItem, subKey) => (
+                                            <li key={subKey}>{subItem}</li>
                                         ))}
                                     </ol>
                                 }                                
                             </li>
                         ))}
+
                     </ol>
                 </div>
             </div>

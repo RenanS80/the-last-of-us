@@ -1,4 +1,4 @@
-export type RelatedCharacters = {
+export type RelatedCharactersType = {
     id: number;
     name: string;
     image: string;

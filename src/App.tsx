@@ -9,6 +9,7 @@ import Chapter3 from 'pages/Chapters/Chapter3';
 import Chapter4 from 'pages/Chapters/Chapter4';
 import Characters from 'pages/Characters';
 import Joel from 'pages/Characters/Joel';
+import Ellie from 'pages/Characters/Ellie';
 import NotFound from 'pages/NotFound';
 
 import './App.css';
@@ -27,6 +28,7 @@ function App() {
 
       <Route path="/characters" element={<Characters />} />
       <Route path="/characters/joel" element={<Joel />} />
+      <Route path="/characters/ellie" element={<Ellie />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -3,7 +3,7 @@ export const joel = [
         id: 1,
         name: 'Ellie',
         image: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Individual%20Characters/Ellie_0KqVOp3OSM.jpg?updatedAt=1736464769758',
-        url: ''
+        url: '/characters/ellie'
     },
     {
         id: 2,
