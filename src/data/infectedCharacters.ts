@@ -14,7 +14,7 @@ export const infectedCharacters = [
     },
     {
         id: 2,
-        name: 'Stalker',
+        name: 'Espreitador',
         srcImageXl: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Characters/Infectados/stalker-xl_i_RtXa_mK.png?updatedAt=1713467389001',
         srcImageMd: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Characters/Infectados/stalker-md_c5bVr-mEz.png?updatedAt=1713467388491',
         srcImageSm: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Characters/Infectados/stalker-sm_tzMYCFdr0c.png?updatedAt=1713467388857',
@@ -27,7 +27,7 @@ export const infectedCharacters = [
     },
     {
         id: 3,
-        name: 'Clicker',
+        name: 'Estalador',
         srcImageXl: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Characters/Infectados/clicker-xl_zv-jTZDfd.png?updatedAt=1713467388560',
         srcImageMd: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Characters/Infectados/clicker-md_AwnOIgV_Mv.png?updatedAt=1713467389315',
         srcImageSm: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Characters/Infectados/clicker-sm_FtxEck1rs.png?updatedAt=1713467388204',

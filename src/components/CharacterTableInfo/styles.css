@@ -1,0 +1,40 @@
+.character__bio-information img {
+    width: -webkit-fill-available;
+}
+
+.character__bio-information .category,
+.character__bio-information .value {
+    padding: 15px 5px;
+} 
+
+.character__bio-information .category {
+    background-color: var(--gray-dark-character-info);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 45%;
+    border-top: 1px solid var(--white);
+}
+
+.character__bio-information .value {
+    background-color: var(--gray-light-character-info);
+    width: 55%;
+    padding-left: 12px;
+}
+
+.bio-information__title {
+    background-color: var(--blue-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 17px 0;
+    font-weight: 700;
+    font-size: 17px;
+    border-top: 1px solid var(--white);
+}
+
+.bio-information__content {
+    display: flex;
+    font-size: 14px;
+}

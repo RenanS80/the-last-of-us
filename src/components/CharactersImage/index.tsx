@@ -5,8 +5,7 @@ type Props = {
     character: Characters;
 }
 
-function CharactersImage({ character } : Props) {
-             
+function CharactersImage({ character } : Props) {   
     return (
         <div>   
             <picture className="character__image">

@@ -2,11 +2,12 @@ import Navbar from 'components/Navbar';
 import ChapterResumeTable from 'components/ChapterResumeTable';
 import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
+import ChapterLists from 'components/ChapterLists';
 import ChapterImageSlider from 'components/ChapterImageSlider';
 import Footer from 'components/Footer';
 import Pagination from 'components/Pagination';
 
-import Intro from '../../../assets/images/chapters/chapter2/intro.png';
+import Intro from '../../../assets/images/chapters/chapter2/intro.jpg';
 import Image1 from '../../../assets/images/chapters/chapter2/image1.png';
 import Image2 from '../../../assets/images/chapters/chapter2/image2.png';
 import Image3 from '../../../assets/images/chapters/chapter2/image3.jpg';
@@ -37,8 +38,16 @@ function Chapter2() {
             id: 5,
             url: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/Chapter%202/052_p6piVGTnq.png?updatedAt=1712698405912',
         }
-    ]
+    ];
 
+    const chapterFunFacts = [
+        'Este capítulo marca o início da história principal.', 'No início do capítulo, enquanto os militares estão verificando o status de sobreviventes na rua, se você caminhar em direção a um dos guardas ele vai empurrá-lo e avisá-lo para não se aproximar novamente. Se você não respeitar esta advertência, será empurrado e o guarda vai atirar na sua cabeça. Todos os oficiais vão fazer isso na área por razões semelhantes.',
+        'É impossível impedir que o civil seja executado no pátio da zona.', 'Mesmo que você deixe o homem que está preso aos escombros vivo, isso não muda nada no jogo. É uma escolha moral.', 'Ao sair da casa de Joel junto com a Tess, é possível observar civis  conversando sobre como o mundo está após 20 anos do surto do cordyceps, sobre todas as dificuldades que os cercam.',
+        'Nas favelas, há uma criança segurando um brinquedo de girafa. A girafa é um animal recorrente ao longo do jogo.'
+    ];
+
+    const chapterMistakes = ['Ao saírem do prédio com esporos, onde há o primeiro contato com os infectados, é possível passar por eles em stealth e mesmo assim Tess diz "acho que matamos todos eles".'];
+  
     return (
         <>
             <Navbar />
@@ -141,21 +150,12 @@ function Chapter2() {
 
                         <div>
                             <Subtitle subtitle="Curiosidades" />
-                            <ul>
-                                <li>Este capítulo marca o início da história principal.</li>
-                                <li>No início do capítulo, enquanto os militares estão verificando o status de sobreviventes na rua, se você caminhar em direção a um dos guardas ele vai empurrá-lo e avisá-lo para não se aproximar novamente. Se você não respeitar esta advertência, será empurrado e o guarda vai atirar na sua cabeça. Todos os oficiais vão fazer isso na área por razões semelhantes.</li>
-                                <li>É impossível impedir que o civil seja executado no pátio da zona.</li>
-                                <li>Mesmo que você deixe o homem que está preso aos escombros vivo, isso não muda nada no jogo. É uma escolha moral.</li>
-                                <li>o sair da casa de Joel junto com a Tess, você vai se deparar com um casal conversando, que inclusive fala com Joel se você parar perto deles. Outros civis mais à frente conversam sobre como o mundo está após 20 anos do surto da epidemia, sobre todas as dificuldades que os cercam.</li>
-                                <li>Nas favelas, há uma criança segurando um brinquedo de girafa. A girafa é um animal recorrente ao longo do jogo.</li>
-                            </ul>
+                            <ChapterLists lstFunFacts={chapterFunFacts} />
                         </div>
                         
                         <div>
                             <Subtitle subtitle="Possíveis erros" />
-                            <ul>
-                                <li>Ao saírem do prédio com esporos, onde há o primeiro contato com os infectados, é possível passar por eles em stealth e mesmo assim Tess diz “acho que matamos todos eles”.</li>
-                            </ul>
+                            <ChapterLists lstMistakes={chapterMistakes} />
                         </div>
 
                         <div>

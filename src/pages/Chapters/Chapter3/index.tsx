@@ -2,6 +2,7 @@ import Navbar from 'components/Navbar';
 import ChapterResumeTable from 'components/ChapterResumeTable';
 import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
+import ChapterLists from 'components/ChapterLists';
 import ChapterImageSlider from 'components/ChapterImageSlider';
 import Footer from 'components/Footer';
 import Pagination from 'components/Pagination';
@@ -36,7 +37,13 @@ function Chapter3() {
             id: 5,
             url: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/Chapter%203/092_nwecuNUKL.png?updatedAt=1712963687566',
         }
-    ]
+    ];
+
+    const chapterFunFacts = [
+        'Este capítulo é marcado pela primeira aparição de um estalador.', 'Ellie encontra a lanterna e a usa durante o resto do jogo.', 
+        'No metrô há o primeiro dos 4 cofres secretos espalhados no game. Esses cofres precisam de uma senha que estão em lugares próximos aos respectivos cofres.',
+        'É possível desbloquear os cofres sem saber a senha, apenas com o barulho "click" diferenciado quando a senha correta é inserida.'
+    ];
 
     return (
         <>
@@ -138,11 +145,7 @@ function Chapter3() {
 
                         <div>
                             <Subtitle subtitle="Curiosidades" />
-                            <ul>
-                                <li>Este capítulo é marcado pela primeira aparição de um estalador.</li>
-                                <li>Ellie encontra a lanterna e a usa durante o resto do jogo.</li>
-                                <li>No metrô há o primeiro dos 4 cofres secretos espalhados no game. Esses cofres precisam de uma senha que estão em lugares próximos aos respectivos cofres.</li>
-                            </ul>
+                            <ChapterLists lstFunFacts={chapterFunFacts} />
                         </div>
                         
                         <div>

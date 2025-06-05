@@ -2,6 +2,7 @@ import Navbar from 'components/Navbar';
 import ChapterResumeTable from 'components/ChapterResumeTable';
 import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
+import ChapterLists from 'components/ChapterLists';
 import ChapterImageSlider from 'components/ChapterImageSlider';
 import Footer from 'components/Footer';
 import Pagination from 'components/Pagination';
@@ -36,7 +37,18 @@ function Chapter4() {
             id: 5,
             url: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/Chapter%204/553_t443ABuPhB.jpg?updatedAt=1713036587925',
         }
-    ]
+    ];
+
+    const chapterFunFacts = [
+        'O capítulo é marcado pela primeira vez que Ellie vai a um bosque.', 'Em um dos estabelecimentos da cidade do Bill há um fliperama da Angel Knives, "jogado" por Ellie na DLC Left Behind com sua amiga Riley.',
+        'Esta é a primeira vez que Joel enfrenta um baiacu.', 'Este capítulo é marcado pela primeira caixa de ferramentas, encontrada no segundo esconderijo de Bill e é usada para desbloquear as qualidades das armas.',
+        'O momento em que Joel fica pendurado de cabeça para baixo preso acidentalmente a uma armadilha de Bill, é uma provável referência ao filme "Eu Sou a Lenda" de 2007. Onde o personagem principal Robert Neville (interpretado por Will Smith) passa pela mesma situação e quase é morto por um grupo de Darkseekers.',
+        'Não há inimigos humanos nesse capítulo, embora sejam mencionados nas notações de Bill.'
+    ];
+
+    const chapterMistakes = [
+        'Há um bug quando Joel e Ellie precisam se agachar sob um fio que se conecta a duas bombas de pregos. Joel irá avisar a Ellie para se abaixar. Às vezes ela anda em linha reta e passa pelo fio, desencadeando as bombas. Ela sobrevive à explosão, mas se Joel estiver muito próximo, ele pode morrer.'
+    ];
 
     return (
         <>
@@ -124,27 +136,12 @@ function Chapter4() {
 
                         <div>
                             <Subtitle subtitle="Curiosidades" />
-                            <ul>
-                                <li>O capítulo é marcado pela primeira vez que Ellie vai a um bosque.</li>
-                                <li>Na seção “Bosque” há um videogame da Angel Knives, “jogado” por Ellie na DLC Left Behind com sua amiga Riley.</li>
-                                <li>Esta é a primeira vez que Joel enfrenta um Baiacu.</li>
-                                <li>Este capítulo é marcado pela primeira caixa de ferramentas, encontrada no segundo esconderijo de Bill e é usada para desbloquear as qualidades das armas.</li>
-                                <li>O momento em que Joel fica pendurado de cabeça para baixo preso acidentalmente a uma armadilha de Bill, é uma provável referência ao filme “Eu Sou a Lenda” de 2007. Onde o personagem principal Robert Neville (interpretado por Will Smith) passa 
-                                    pela mesma situação e quase é morto por um grupo de Darkseekers.
-                                </li>
-                                <li>Após Joel e Ellie seguirem rumo à Pittsburgh, há uma cutscene no carro, onde Ellie rouba algumas coisas da casa de Bill, como um cassete com a música “I'll Never Get Out of This World Alive” de Hank Williams.</li>
-                                <li>Nessa mesma cutscene, Ellie também rouba uma revista masculina das coisas de Bill, o que sugere que ele seja homossexual.</li>
-                                <li>Não há inimigos humanos nesse capítulo, embora sejam mencionados nas notações de Bill.</li>
-                            </ul>
+                            <ChapterLists lstFunFacts={chapterFunFacts} />
                         </div>
 
                         <div>
                             <Subtitle subtitle="Possíveis erros" />
-                            <ul>
-                                <li>Há um bug quando Joel e Ellie precisam se agachar sob um fio que se conecta a duas bombas de pregos. Joel irá avisar a Ellie para se abaixar. Às vezes ela anda em linha reta e passa pelo fio, desencadeando as bombas. Ela sobrevive à explosão, 
-                                    mas se Joel estiver muito próximo, ele pode morrer.
-                                </li>
-                            </ul>
+                            <ChapterLists lstMistakes={chapterMistakes} />
                         </div>
                         
                         <div>

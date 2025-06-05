@@ -1,12 +1,15 @@
-import CharacterSummary from 'components/CharacterSummary';
 import Navbar from 'components/Navbar';
-import Footer from 'components/Footer';
+import CharacterTableInfo from 'components/CharacterTableInfo';
+import CharacterSummary from 'components/CharacterSummary';
 import RelatedCharacters from 'components/RelatedCharacters';
+import ChapterHeading from 'components/ChapterHeading';
+import CharactersGallery from 'components/CharactersGallery';
+import Footer from 'components/Footer';
 
 import { joel } from 'data/relatedCharacters/joel';
 
 import QuotationMark from '../../../assets/images/characters/quotation-mark.svg';
-import JoelInfoBio from '../../../assets/images/characters/joel/joel-info-bio.jpg';
+import ImgInfoBio from '../../../assets/images/characters/joel/joel-info-bio.jpg';
 import Img1 from '../../../assets/images/characters/joel/img1.png';
 import Img2 from '../../../assets/images/characters/joel/img2.png';
 import Img3 from '../../../assets/images/characters/joel/img3.png';
@@ -14,7 +17,6 @@ import Img4 from '../../../assets/images/characters/joel/img4.png';
 import Img5 from '../../../assets/images/characters/joel/img5.png';
 
 import './styles.css';
-import CharactersGallery from 'components/CharactersGallery';
 
 function Joel() {
 
@@ -42,8 +44,49 @@ function Joel() {
         }
     ]
 
-    let lstImagesGallery = [];
-    lstImagesGallery.push(Img1, Img2, Img3, Img4, Img5);
+    const lstTableInfoBio = [
+        {
+            "Data de Nascimento": "26 de Setembro de 1981"
+        },
+        {
+            "Idade": "52 anos"
+        },
+        {
+            "Status": "Vivo"
+        },
+        {
+            "Gênero": "Masculino"
+        },
+        {
+            "Profissão": "Carpinteiro (antes do surto), Contrabandista"
+        },
+        {
+            "Familiares": "Sarah (filha), Tess (parceira)"
+        },
+        {
+            "Residência": "Texas (antes do surto), Jackson"
+        },
+        {
+            "Cor do cabelo": "Preto"
+        },
+        {
+            "Cor dos olhos": "Castanho"
+        }
+    ];
+
+    const lstTableInfoBehindScenes = [
+        {
+            "Dublador (US)": "Troy Baker"
+        },
+        {
+            "Dublador (BR)": "Luiz Carlos Persy"
+        },
+        {
+            "Captura de movimentos": "Troy Baker"
+        }
+    ]
+
+    const lstImagesGallery = [Img1, Img2, Img3, Img4, Img5];
 
     return(
         <>
@@ -57,13 +100,13 @@ function Joel() {
                     </div>
                     <div className="character__citation">
                         <img src={QuotationMark} alt="Aspas" />
-                        <p><cite>Faça os tiros valerem a pena</cite> <br /> &ndash;	Joel</p>
+                        <blockquote>Faça os tiros valerem a pena</blockquote>
                         <img src={QuotationMark} alt="Aspas" />
                     </div>
                     
                     <div className="character__intro">
                         <div className="character__resume">
-                            <p>Joel Miller é o protagonista de <strong>The Last of Us</strong> e um personagem coadjuvante em <strong>The Last of Us: Left Behind</strong>.</p> <br/>
+                            <p>Joel Miller é um dos protagonistas de <strong>The Last of Us</strong> e personagem coadjuvante em <strong>The Last of Us: Left Behind</strong>.</p> <br/>
                             <p>Ele é um sobrevivente na América pós-apocalíptica que havia sido devastada pela infecção cerebral por Cordyceps em 2013. Depois de perder sua única filha Sarah 
                                 nos estágios iniciais do surto, Joel tornou-se um contrabandista implacável, encarregado de contrabandear e proteger Ellie, uma jovem que era a chave para a sobrevivência 
                                 da humanidade. Joel eventualmente formou um forte vínculo com ela.
@@ -72,126 +115,11 @@ function Joel() {
                             <CharacterSummary lstItems={summaryItems} />
 
                         </div>
-                        <section className="character__bio-information">
-                            <img src={JoelInfoBio} alt="Joel" />
-                            <div className="bio-information__title">
-                                <p>Informações Biográficas</p>
-                            </div>
-                            <div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Data de Nascimento</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>26 de Setembro de 1981</p>
-                                    </div>
-                                </div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Idade</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>52 anos</p>
-                                    </div>
-                                </div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Status</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>Vivo</p>
-                                    </div>
-                                </div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Gênero</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>Masculino</p>
-                                    </div>
-                                </div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Profissão</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>Carpinteiro &#40;antes do surto&#41;</p>
-                                        <p>Contrabandista</p>
-                                    </div>
-                                </div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Familiares</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>Sarah &#40;filha&#41;</p>
-                                        <p>Tess &#40;parceira&#41;</p>
-                                    </div>
-                                </div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Residência</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>Texas &#40;antes do surto&#41;</p>
-                                        <p>Jackson</p>
-                                    </div>
-                                </div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Cabelo</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>Preto</p>
-                                    </div>
-                                </div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Olhos</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>Castanhos</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bio-information__title">
-                                <p>Behind The Scenes</p>
-                            </div>
-
-                            <div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Dublador &#40;US&#41;</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>Troy Baker</p>
-                                    </div>
-                                </div>
-                                <div className="bio-information__content">
-                                    <div className="category">
-                                        <p>Dublador &#40;BR&#41;</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>Luiz Carlos Persy</p>
-                                    </div>
-                                </div>
-                                <div className="bio-information__content">
-                                    <div className="category text-center">
-                                        <p>Captura de Movimentos</p>
-                                    </div>
-                                    <div className="value">
-                                        <p>Troy Baker</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
+                        <CharacterTableInfo infoBio={lstTableInfoBio} infoBehindScenes={lstTableInfoBehindScenes} photo={ImgInfoBio} name="Joel" />
                     </div>
 
                     <div>
-                        <h2>Biografia</h2>
-                        <h3>Antecedentes e início da vida</h3>
+                        <ChapterHeading mainHeading="Biografia" secondaryHeading="Antecedentes e início da vida" />
 
                         <p>Joel nasceu em 26 de Setembro de 1981, em Arlington, Texas, e cresceu ao lado de seu irmão mais novo, Tommy.</p> <br />
                         <p>Quando criança, Joel desenvolveu uma paixão pela música, aprendendo a tocar violão e uma vez até aspirou a ser cantor. Joel teve uma filha chamada Sarah, e foi casado por um curto 
@@ -210,8 +138,7 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h2>Eventos de The Last of Us</h2>
-                        <h3>Perdendo Sarah</h3>
+                        <ChapterHeading mainHeading="Eventos de The Last of Us" secondaryHeading="Perdendo Sarah" />
 
                         <p>Em 26 de setembro de 2013, Joel chegou tarde do trabalho e colocou Sarah na cama depois de assistirem televisão juntos. Na madrugada de 27 de setembro, Joel foi atacado por seu vizinho, 
                             Jimmy Cooper e forçado a matá-lo a tiros com seu revólver em legítima defesa. Depois de acalmar Sarah, Tommy chegou para fugirem em sua caminhonete.
@@ -228,7 +155,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">Sobrevivendo</h3>
+                        <ChapterHeading secondaryHeading="Sobrevivendo" />
+
                         <p>Pouco depois da morte de Sarah, Joel se viu em uma clínica de triagem após chegar à rodovia. Ele testemunhou como as famílias foram dilaceradas e quanto caos irrompeu no mundo.</p> <br />
                         <p>Com o passar dos anos, Joel e Tommy precisaram adotar um em um estilo de vida sombrio, para sobreviverem à loucura que o mundo se tornou. Joel torturou, enganou e matou inúmeras pessoas inocentes, 
                             tornando-se um caçador. 
@@ -242,7 +170,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">Confrontando Robert</h3>
+                        <ChapterHeading secondaryHeading="Confrontando Robert" />
+
                         <p>Vários anos se passam, e agora a infecção do Cordyceps já se alastrou por todo o mundo, dizimando grande parte da população mundial e desestabilizando completamente a sociedade. O governo criou zonas de quarentena 
                             onde impõem seus regimes rígidos e autoritários, causando grande descontentamento da população. Joel, agora com quase 50 anos, mora na zona de quarentena de Boston com Tess, realizando missões de contrabando
                             para fora da zona.</p> <br />
@@ -264,7 +193,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">Contrabandeando Ellie</h3>
+                        <ChapterHeading secondaryHeading="Contrabandeando Ellie" />
+
                         <p>Joel e Tess levam Ellie para um esconderijo, para seguirem seu destino durante a noite para minimizar a chance de serem capturados pelos soldados da FEDRA. Ao anoitecer, eles partem para os túneis e saem da área da zona, 
                             porém pouco depois são enquadrados por militares que patrulhavam a área.
                         </p> <br />
@@ -287,7 +217,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">Encontrando Bill</h3>
+                        <ChapterHeading secondaryHeading="Encontrando Bill" />
+
                         <p>Ao chegarem à cidade, eles encontram Bill e seguem para um arsenal que o mesmo matinha no porão de uma igreja. No caminho, Bill pergunta a Joel o que estava fazendo ali, e ele responde que era apenas uma entrega. Quando Joel diz que 
                             iria entregar a garota, Bill não consegue conter as risadas. Ele também pergunta onde está Tess, mas Joel evita falar o que houve e diz que ela está apenas ocupada.
                         </p> <br />
@@ -304,7 +235,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">Enfrentando caçadores em Pittsburgh</h3>
+                        <ChapterHeading secondaryHeading="Enfrentando caçadores em Pittsburgh" />
+
                         <p>Enquanto na estrada, eles se aproximam de Pittsburgh, que estava dominada por caçadores que emboscavam e matavam quem passava pela cidade. Enquanto atravessavam, um homem que aparentava estar machucado aparece no meio da estrada pedindo ajuda. 
                             Ellie pergunta se deveriam ajudá-lo, mas Joel sabia que se tratava de uma armadilha e acelera o carro, atropelando o homem. Eles conseguem se livrar da armadilha, porém Joel perde o controle do carro e o mesmo é destruído, fazendo Joel e Ellie 
                             ficarem a pé novamente e tendo que lidar com uma nova ameaça em uma cidade grande e perigosa.
@@ -316,7 +248,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">Conhecendo Henry e Sam</h3>
+                        <ChapterHeading secondaryHeading="Conhecendo Henry e Sam" />
+
                         <p>Mais tarde, ao passar pelas perigosas ruas de Pittsburgh, a dupla dá de cara com o temido veículo e fogem para um prédio nos arredores, mas logo quando Joel entra, é surpreendido por um homem que o segura pelas costas. Ellie usa sua faca para golpeá-lo, 
                             dando uma abertura para Joel se desvencilhar e golpear o homem. Enquanto o fazia, um garoto mira sua arma para Joel, que levanta as mãos e se afasta. O homem se revela Henry e o garoto Sam. Henry diz que inicialmente achou que Joel era um caçador, 
                             porém viu que estava errado ao ver Ellie, pois os caçadores não abrigam crianças.
@@ -342,7 +275,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">Encontrando Tommy</h3>
+                        <ChapterHeading secondaryHeading="Encontrando Tommy" />
+
                         <p>Meses se passam e agora Joel e Ellie estão no Wyoming, perto de encontrar Tommy. Eles caminham pela floresta até encontrarem uma placa escrito "Jackson County", onde Joel sabia que Tommy estaria. Eles alcançam uma usina hidrelétrica e Joel decide passar por dentro 
                             dela e tenta abrir o portão, até que uma mulher e outros guardas apontam suas armas para ele e mandam largar suas armas. Porém, um dos guardas reconhece Joel e manda os outros abaixarem suas armas. Esse guarda era Tommy, que abre o portão e dá um abraço em Joel.
                         </p> <br />
@@ -358,7 +292,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">A universidade</h3>
+                        <ChapterHeading secondaryHeading="A universidade" />
+
                         <p>Ao chegarem no prédio de ciências da universidade, se deparam com ele vazio e cheio de equipamentos médicos abandonados. Eles entram em uma sala, encontram vários macacos e descobrem que os Vagalumes estavam realizando testes médicos neles. Joel encontra um outro gravador de um médico, 
                             que dizia que os vagalumes foram embora da universidade e que toda aquela pesquisa feita ali foi uma perda de tempo. Ele também conta que os vagalumes se mudaram pro hospital St.Mary em Salt Lake City, Utah. Agora que já sabem o novo destino, Joel chama Ellie para saírem da universidade, 
                             porém no mesmo momento são atacados por um grupo desconhecido. 
@@ -369,7 +304,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">O inverno</h3>
+                        <ChapterHeading secondaryHeading="O inverno" />
+
                         <p>Ellie conseguiu arrastar o frágil Joel para um shopping abandonado. Ellie cobriu o ferimento com sua camisa de verão, usando fita adesiva para mantê-lo no lugar. Ellie voltou com um kit de primeiros socorros, depois de lutar contra canibais e ser infectada para voltar. Ela costurou o ferimento de Joel 
                             e amarrou-o a um trenó para puxá-lo pela neve. Eles partiram, chegando finalmente a Silver Lake. Ellie prendeu Joel em uma casa abandonada perto de um lago. Com o passar das semanas, Ellie procurou comida enquanto Joel estava cada vez mais doente. 
                         </p> <br />
@@ -383,7 +319,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">Chegando em St. Mary</h3>
+                        <ChapterHeading secondaryHeading="Chegando em St. Mary" />
+
                         <p>Na primavera, Joel e Ellie chegaram a Salt Lake City, o destino final pretendido. Joel tentou preencher o silêncio para animar Ellie, distante e traumatizada, que se aqueceu ao ver uma manada de girafas. Sabendo o que Ellie havia experimentado, ele sugeriu que eles saíssem e voltassem para o assentamento de Tommy, 
                             mas ela recusou a oferta, comentando que queria continuar com isso depois de tudo que eles passaram.
                         </p> <br />
@@ -396,7 +333,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h3 className="mar-top25">Salvando Ellie</h3>
+                        <ChapterHeading secondaryHeading="Salvando Ellie" />
+
                         <p>Quando Joel acordou, ele estava com Marlene e o que restava dos Vaga-lumes de Boston no Hospital St. Mary. Ellie foi reanimada com sucesso, mas foi imediatamente levada para uma cirurgia por ordem de Marlene para criar uma vacina para a infecção. Marlene também disse a Joel que, para fazer a engenharia reversa completa do fungo para uma 
                             vacina, os médicos estavam prestes a remover o fungo do cérebro de Ellie, o que resultaria em morte certa. 
                         </p> <br />
@@ -414,7 +352,8 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h2>Habilidades</h2>
+                        <ChapterHeading mainHeading="Habilidades" />
+
                         <p>Em seu tempo como caçador, Joel aperfeiçoou suas técnicas de tortura, emboscada e de combate. O homem pode superar quase qualquer adversário com os próprios punhos e consegue ser ainda mais letal com qualquer arma na mão. Tanto tempo sobrevivendo com o que conseguisse encontrar também afiaram a sua engenhosidade, permitindo que construa rapidamente 
                             bombas e curativos a partir de sucata.
                         </p> <br />
@@ -422,13 +361,14 @@ function Joel() {
                     </div>
 
                     <div>
-                        <h2>Hobbies</h2>
+                        <ChapterHeading mainHeading="Hobbies" />
+
                         <p>Por incrível que pareça, Joel tem uma série de hobbies, mas acabou abandonando a maioria quando o mundo virou ao avesso. Para começar, Joel adorava música e seu sonho de infância era ser cantor.</p> <br />
                         <p>Em Jackson, Joel voltou a tomar bastante café. Ele era viciado antes do apocalipse e gostava de visitar diferentes cafeterias. Ele também voltou a praticar carpintaria, construindo violões e ajudando a erguer casas de madeira. Ele era carpinteiro no tempo livre, antes de todo o caos, e sonhava em transformar isso em um negócio próprio.</p>
                     </div>
 
                     <div>
-                        <h2>Galeria</h2>
+                        <ChapterHeading mainHeading="Galeria" />
                         <CharactersGallery lstImages={lstImagesGallery} />                        
                     </div>
                 </main>

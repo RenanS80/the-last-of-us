@@ -19,16 +19,17 @@
 }
 
 .character__citation {
-    margin: 55px 0 0 90px;
+    margin: 50px 0 0 50px;
     display: inline-flex;
     font-size: 19px;
     position: relative;
+    max-width: 400px;
 }
 
 .character__citation img:first-child {
     padding-right: 10px;
     position: absolute;
-    left: -32px;
+    left: -37px;
     top: 12px;
 }
 
@@ -39,9 +40,8 @@
     bottom: -20px;
 }
 
-.character__citation p {
-    margin-top: 30px;
-    text-align: right;
+.character__citation blockquote {
+    text-align: justify;
 }
 
 .character__intro {
@@ -54,42 +54,4 @@
     max-width: 60%;
     line-height: 125%;
     letter-spacing: 1.5%;
-}
-
-
-.bio-information__title {
-    background-color: var(--blue-dark);
-    color: var(--white);
-    text-align: center;
-    padding: 17px 0;
-    font-weight: 700;
-    font-size: 17px;
-    border-top: 1px solid var(--white);
-}
-
-.bio-information__content {
-    display: flex;
-    font-size: 14px;
-    
-}
-
-.character__bio-information .category,
-.character__bio-information .value {
-    padding: 15px 5px;
-} 
-
-.character__bio-information .category {
-    background-color: var(--gray-dark-character-info);
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45%;
-    border-top: 1px solid var(--white);
-}
-
-.character__bio-information .value {
-    background-color: var(--gray-light-character-info);
-    width: 55%;
-    padding-left: 12px;
 }

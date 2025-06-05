@@ -46,7 +46,7 @@
 
 .not-found__group-buttons button {
     background-color: transparent;
-    border: 1px solid var(--black-light);
+    border: none;
     color: var(--black-light);
     display: flex;
     cursor: pointer;
