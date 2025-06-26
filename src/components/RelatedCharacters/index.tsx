@@ -29,7 +29,7 @@ function RelatedCharacters({ character } : Props) {
                 
             </div>
         </aside>
-    )
+    );
 }
 
 export default RelatedCharacters;

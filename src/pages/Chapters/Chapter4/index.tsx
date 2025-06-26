@@ -4,8 +4,8 @@ import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
 import ChapterLists from 'components/ChapterLists';
 import ChapterImageSlider from 'components/ChapterImageSlider';
-import Footer from 'components/Footer';
 import Pagination from 'components/Pagination';
+import Footer from 'components/Footer';
 
 import Intro from '../../../assets/images/chapters/chapter4/intro.jpg';
 import Image1 from '../../../assets/images/chapters/chapter4/image1.jpg';
@@ -40,9 +40,9 @@ function Chapter4() {
     ];
 
     const chapterFunFacts = [
-        'O capítulo é marcado pela primeira vez que Ellie vai a um bosque.', 'Em um dos estabelecimentos da cidade do Bill há um fliperama da Angel Knives, "jogado" por Ellie na DLC Left Behind com sua amiga Riley.',
-        'Esta é a primeira vez que Joel enfrenta um baiacu.', 'Este capítulo é marcado pela primeira caixa de ferramentas, encontrada no segundo esconderijo de Bill e é usada para desbloquear as qualidades das armas.',
-        'O momento em que Joel fica pendurado de cabeça para baixo preso acidentalmente a uma armadilha de Bill, é uma provável referência ao filme "Eu Sou a Lenda" de 2007. Onde o personagem principal Robert Neville (interpretado por Will Smith) passa pela mesma situação e quase é morto por um grupo de Darkseekers.',
+        'O capítulo é marcado pela primeira vez que Ellie vai a um bosque.', 'Em um dos estabelecimentos da cidade do Bill há um fliperama da Angel Knives, "jogado" por Ellie na DLC Left Behind com sua amiga Riley;',
+        'Esta é a primeira vez que Joel enfrenta um baiacu.', 'Este capítulo é marcado pela primeira caixa de ferramentas, encontrada no segundo esconderijo de Bill e é usada para desbloquear as qualidades das armas;',
+        'O momento em que Joel fica pendurado de cabeça para baixo preso acidentalmente a uma armadilha de Bill, é uma provável referência ao filme "Eu Sou a Lenda" de 2007. Onde o personagem principal Robert Neville (interpretado por Will Smith) passa pela mesma situação e quase é morto por um grupo de Darkseekers;',
         'Não há inimigos humanos nesse capítulo, embora sejam mencionados nas notações de Bill.'
     ];
 
@@ -117,7 +117,7 @@ function Chapter4() {
 
                         <div>
                             <Subtitle subtitle="Fuga da escola" />
-                            <p>Após eliminarem os corredores e estaladores na parte inicial da escola, eles avançam pelos corredores e entram no ginásio. Imediatamente se deparam com um Verme (também chamado de Baiacu). Se trata de um infectado de muitos anos e a sua aparência 
+                            <p>Após eliminarem os corredores e estaladores na parte inicial da escola, eles avançam pelos corredores e entram no ginásio. Imediatamente se deparam com um Baiacu &#40;também chamado de Verme&#41;. Se trata de um infectado de muitos anos e a sua aparência 
                                 é semelhante à de um estalador, porém maior e mais lento, além de ser capaz de arremessar bolas de esporos que causam danos. 
                             </p> <br />
                             <div className="chapter__main-image">
@@ -180,7 +180,6 @@ function Chapter4() {
             
             <Footer />
         </>
-
     );
 }
 

@@ -56,7 +56,7 @@ function ChapterImageSlider({ slides } : Props) {
                 ))}
             </div>
         </div>
-    )
+    );
 }
 
 export default ChapterImageSlider;

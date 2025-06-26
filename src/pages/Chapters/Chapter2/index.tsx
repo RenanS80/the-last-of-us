@@ -4,8 +4,8 @@ import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
 import ChapterLists from 'components/ChapterLists';
 import ChapterImageSlider from 'components/ChapterImageSlider';
-import Footer from 'components/Footer';
 import Pagination from 'components/Pagination';
+import Footer from 'components/Footer';
 
 import Intro from '../../../assets/images/chapters/chapter2/intro.jpg';
 import Image1 from '../../../assets/images/chapters/chapter2/image1.png';
@@ -41,8 +41,8 @@ function Chapter2() {
     ];
 
     const chapterFunFacts = [
-        'Este capítulo marca o início da história principal.', 'No início do capítulo, enquanto os militares estão verificando o status de sobreviventes na rua, se você caminhar em direção a um dos guardas ele vai empurrá-lo e avisá-lo para não se aproximar novamente. Se você não respeitar esta advertência, será empurrado e o guarda vai atirar na sua cabeça. Todos os oficiais vão fazer isso na área por razões semelhantes.',
-        'É impossível impedir que o civil seja executado no pátio da zona.', 'Mesmo que você deixe o homem que está preso aos escombros vivo, isso não muda nada no jogo. É uma escolha moral.', 'Ao sair da casa de Joel junto com a Tess, é possível observar civis  conversando sobre como o mundo está após 20 anos do surto do cordyceps, sobre todas as dificuldades que os cercam.',
+        'Este capítulo marca o início da história principal.', 'No início do capítulo, enquanto os militares estão verificando o status de sobreviventes na rua, se você caminhar em direção a um dos guardas ele vai empurrá-lo e avisá-lo para não se aproximar novamente. Se você não respeitar esta advertência, será empurrado e o guarda vai atirar na sua cabeça. Todos os oficiais vão fazer isso na área por razões semelhantes;',
+        'É impossível impedir que o civil seja executado no pátio da zona.', 'Mesmo que você deixe o homem que está preso aos escombros vivo, isso não muda nada no jogo. É uma escolha moral.', 'Ao sair da casa de Joel junto com a Tess, é possível observar civis  conversando sobre como o mundo está após 20 anos do surto do cordyceps, sobre todas as dificuldades que os cercam;',
         'Nas favelas, há uma criança segurando um brinquedo de girafa. A girafa é um animal recorrente ao longo do jogo.'
     ];
 
@@ -75,7 +75,7 @@ function Chapter2() {
                             <p>Joel agora vive na zona de quarentena de Boston e ganha a vida como um contrabandista, recebendo pessoas, itens e armas através dos muros da zona, e parece ter construído uma reputação cruel e terrível para si mesmo. 
                                 Ele é acordado por Tess, sua amiga e parceira de negócios, que lhe informa que foi atacada pelos homens de Robert, um traficante de armas local, que está em dívida com eles. Eles decidem enfrentá-lo no seu armazém. 
                                 Enquanto caminhava para o ponto de verificação que eles precisam passar, a fim de chegar ao seu destino, Tess comenta que a distribuição da comida ainda não começou, mas as pessoas já estão na fila devido à escassez. 
-                                A dupla também está presente quando quatro civis são arrastados para fora de um prédio por soldados em trajes HAZMAT (um traje completo projetado para proteger o usuário de materiais perigosos), 
+                                A dupla também está presente quando quatro civis são arrastados para fora de um prédio por soldados em trajes HAZMAT &#40;um traje completo projetado para proteger o usuário de materiais perigosos&#41;, 
                                 que fazem uma varredura para ver se eles estão infectados. Os dois primeiros estão limpos, mas o teste do terceiro dá positivo. Apesar de dizer que não está infectada, a mulher recebe uma injeção letal de um soldado, 
                                 matando-a imediatamente. Na quarta varredura alguns tentam escapar, mas são mortos a tiros.
                             </p> <br />
@@ -194,7 +194,6 @@ function Chapter2() {
             
             <Footer />
         </>
-
     );
 }
 

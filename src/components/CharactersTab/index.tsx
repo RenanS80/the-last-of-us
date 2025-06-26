@@ -109,7 +109,7 @@ function CharactersTab() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default CharactersTab;

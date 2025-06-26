@@ -9,7 +9,7 @@ function Subtitle({ subtitle } : Props) {
         <div className="subtitle">
             <h4>{subtitle}</h4>
         </div>
-    )
+    );
 }
 
 export default Subtitle;

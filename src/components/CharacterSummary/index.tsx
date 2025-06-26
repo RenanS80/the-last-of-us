@@ -36,7 +36,7 @@ function CharacterSummary({ lstItems } : Props) {
                 </ol>
             </div>
         </div>
-    )
+    );
 }
 
 export default CharacterSummary;

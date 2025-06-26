@@ -14,7 +14,7 @@ function ChapterHeading({ mainHeading, secondaryHeading } : Props) {
                 <h3 className={mainHeading === undefined ? 'mar-top25' : ''}>{secondaryHeading}</h3>
             }
         </>
-    )
+    );
 }
 
 export default ChapterHeading;

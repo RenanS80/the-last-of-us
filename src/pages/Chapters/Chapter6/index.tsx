@@ -4,8 +4,8 @@ import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
 import ChapterLists from 'components/ChapterLists';
 import ChapterImageSlider from 'components/ChapterImageSlider';
-import Footer from 'components/Footer';
 import Pagination from 'components/Pagination';
+import Footer from 'components/Footer';
 
 import Intro from '../../../assets/images/chapters/chapter6/intro.jpg';
 import Image1 from '../../../assets/images/chapters/chapter6/image1.png';
@@ -39,11 +39,11 @@ function Chapter6() {
     ];
 
     const chapterFunFacts = [
-        'O personagem Ish presente nos bilhetes do esgoto pode ter sido inspirado no protagonista Isherwood Williams do romance Earth Abides, que também ensinava sobrevivência aos jovens de sua comunidade.',
-        'Em um dos cômodos do esgoto, Ellie e Sam encontrarão um conjunto de traves de futebol em ruínas. Se Joel esperar, Ellie chutará a bola para Sam, que a defende. Henry intervirá, pedindo silêncio, e Sam chutará a bola para longe.',
-        'Após saírem do esgoto, Joel pode entrar na casa de Kyle (a primeira casa acessível) e há uma foto de uma mulher segurando um cachorro em uma das prateleiras na parede. A mesma foto pode ser vista nos capítulos "A Represa do Tommy" e "A Universidade".',
-        'É impossível matar os corredores antes de atacarem Henry e Sam após saírem da casa colidida pelo veículo militar.',
-        'Se Joel ficar por um tempo em uma casa específica do subúrbio (a que tem um sótão), Ellie e Sam começarão um jogo de dardos, no qual Joel poderá participar. Curiosamente, Sam e Ellie são melhores que Joel, que erra o alvo, acertando o dardo na parede, enquanto Ellie e Sam acertam o alvo duas vezes.',
+        'O personagem Ish presente nos bilhetes do esgoto pode ter sido inspirado no protagonista Isherwood Williams do romance Earth Abides, que também ensinava sobrevivência aos jovens de sua comunidade;',
+        'Em um dos cômodos do esgoto, Ellie e Sam encontrarão um conjunto de traves de futebol em ruínas. Se Joel esperar, Ellie chutará a bola para Sam, que a defende. Henry intervirá, pedindo silêncio, e Sam chutará a bola para longe;',
+        'Após saírem do esgoto, Joel pode entrar na casa de Kyle (a primeira casa acessível) e há uma foto de uma mulher segurando um cachorro em uma das prateleiras na parede. A mesma foto pode ser vista nos capítulos "A Represa do Tommy" e "A Universidade";',
+        'É impossível matar os corredores antes de atacarem Henry e Sam após saírem da casa colidida pelo veículo militar;',
+        'Se Joel ficar por um tempo em uma casa específica do subúrbio (a que tem um sótão), Ellie e Sam começarão um jogo de dardos, no qual Joel poderá participar. Curiosamente, Sam e Ellie são melhores que Joel, que erra o alvo, acertando o dardo na parede, enquanto Ellie e Sam acertam o alvo duas vezes;',
         'Se o jogador olhar ao redor das casas nos subúrbios, ele poderá ver a mesma pintura de uma mulher de vestido com os braços no ar em várias casas.'
     ];
 
@@ -61,7 +61,7 @@ function Chapter6() {
                 <div className="container">
                     <div className="chapter__main-intro">
                         <div className="chapter__main-image">
-                            <img src={Intro} alt="Capítulo 5 - Pittsburgh" />
+                            <img src={Intro} alt="Capítulo 6 - O Subúrbio" />
                         </div>
                         <p>O Subúrbio é o sexto capítulo de The Last of Us e continua a jornada de Joel e Ellie com os irmãos Henry e Sam.</p>
                     </div>
@@ -171,7 +171,6 @@ function Chapter6() {
             
             <Footer />
         </>
-
     );
 }
 

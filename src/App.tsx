@@ -9,6 +9,8 @@ import Chapter3 from 'pages/Chapters/Chapter3';
 import Chapter4 from 'pages/Chapters/Chapter4';
 import Chapter5 from 'pages/Chapters/Chapter5';
 import Chapter6 from 'pages/Chapters/Chapter6';
+import Chapter7 from 'pages/Chapters/Chapter7';
+import Chapter8 from 'pages/Chapters/Chapter8';
 import Characters from 'pages/Characters';
 import Joel from 'pages/Characters/Joel';
 import Ellie from 'pages/Characters/Ellie';
@@ -29,6 +31,8 @@ function App() {
       <Route path="/chapters/4" element={<Chapter4 />} />
       <Route path="/chapters/5" element={<Chapter5 />} />
       <Route path="/chapters/6" element={<Chapter6 />} />
+      <Route path="/chapters/7" element={<Chapter7 />} />
+      <Route path="/chapters/8" element={<Chapter8 />} />
 
       <Route path="/characters" element={<Characters />} />
       <Route path="/characters/joel" element={<Joel />} />

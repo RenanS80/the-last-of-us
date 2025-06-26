@@ -81,7 +81,7 @@ function Pagination() {
                 <img src={PaginationArrow} title="Próximo capítulo" alt="Próximo capítulo" />
             </NavLink>
         </div>
-    )
+    );
 }
 
 export default Pagination;

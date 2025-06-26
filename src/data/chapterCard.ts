@@ -33,7 +33,7 @@ export const chapterCard = [
         id: 6,
         name: 'O Subúrbio',
         imageUrl: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/chapter6_l6mPSJQ9f.jpg?updatedAt=1708615845365',
-        resume: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel amet ac porta eget malesuada. Orci magna nunc, diam adipiscing'
+        resume: 'Joel acorda na margem do praia e encontra Ellie, junto com Henry e Sam. Henry fica feliz que Joel esteja bem, mas Joel fica furioso'
     },
     {
         id: 7,

@@ -4,8 +4,8 @@ import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
 import ChapterLists from 'components/ChapterLists';
 import ChapterImageSlider from 'components/ChapterImageSlider';
-import Footer from 'components/Footer';
 import Pagination from 'components/Pagination';
+import Footer from 'components/Footer';
 
 import Intro from '../../../assets/images/chapters/chapter3/intro.jpg';
 import Image1 from '../../../assets/images/chapters/chapter3/image1.jpg';
@@ -40,8 +40,8 @@ function Chapter3() {
     ];
 
     const chapterFunFacts = [
-        'Este capítulo é marcado pela primeira aparição de um estalador.', 'Ellie encontra a lanterna e a usa durante o resto do jogo.', 
-        'No metrô há o primeiro dos 4 cofres secretos espalhados no game. Esses cofres precisam de uma senha que estão em lugares próximos aos respectivos cofres.',
+        'Este capítulo é marcado pela primeira aparição de um estalador.', 'Ellie encontra a lanterna e a usa durante o resto do jogo;', 
+        'No metrô há o primeiro dos 4 cofres secretos espalhados no game. Esses cofres precisam de uma senha que estão em lugares próximos aos respectivos cofres;',
         'É possível desbloquear os cofres sem saber a senha, apenas com o barulho "click" diferenciado quando a senha correta é inserida.'
     ];
 
@@ -70,7 +70,7 @@ function Chapter3() {
                                 através dos túneis subterrâneos localizados sob edifícios de apartamentos, atingindo uma escada que os leva para o lado de fora. Joel avança primeiro para verificar se está tudo limpo. Eles percebem uma patrulha ao longe, 
                                 mas continuam mesmo assim. Ellie comenta brevemente que esta é a sua primeira vez fora da cidade. Os três passam por um caminhão abandonado e são surpreendidos por soldados que estavam no local.
                             </p> <br />
-                            <p>Um dos soldados exibe que o seu subordinado examine os três, a fim de buscar vestígios de infecção. Tess tenta suborná-los, mas é ordenada a calar a boca. O soldado examina Tess e Joel – ambos com resultado negativo. Entretanto, na hora de 
+                            <p>Um dos soldados exibe que o seu subordinado examine os três, a fim de buscar vestígios de infecção. Tess tenta suborná-los, mas é ordenada a calar a boca. O soldado examina Tess e Joel - ambos com resultado negativo. Entretanto, na hora de 
                                 examinar Ellie, ela o ataca, esfaqueando-o na perna. Ellie parte para cima do soldado, que a joga no chão e quando ele estava se preparando para matá-la, felizmente Joel reage a tempo e luta com o soldado, derrubando-o. 
                                 Os dois lutam no chão e simultaneamente Tess atira no outro soldado, distraído com o conflito entre seu parceiro e Joel. Após uma breve luta, Joel consegue pegar a arma do soltado e atira em sua cabeça.
                             </p> <br />
@@ -184,7 +184,6 @@ function Chapter3() {
             
             <Footer />
         </>
-
     );
 }
 

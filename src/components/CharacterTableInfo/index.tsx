@@ -49,7 +49,7 @@ function CharacterTableInfo({ infoBio, infoBehindScenes, photo, name } : Props) 
                 
             </div>
         </section>
-    )
+    );
 }
 
 export default CharacterTableInfo;

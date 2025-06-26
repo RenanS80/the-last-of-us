@@ -18,7 +18,7 @@ function ChapterLists({ lstFunFacts, lstMistakes } : Props) {
                 </ul>
             ))}
         </>
-    )
+    );
 }
 
 export default ChapterLists;

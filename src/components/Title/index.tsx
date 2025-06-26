@@ -11,7 +11,7 @@ function Title({ title, textColor } : Props) {
             <span className="marker"></span>
             <h2 className={textColor === 'white' ? "text--white" : "text--black"}>{title}</h2>
         </div>
-    )
+    );
 }
 
 export default Title;

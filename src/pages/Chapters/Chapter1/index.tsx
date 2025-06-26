@@ -4,6 +4,7 @@ import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
 import ChapterLists from 'components/ChapterLists';
 import ChapterImageSlider from 'components/ChapterImageSlider';
+import Pagination from 'components/Pagination';
 import Footer from 'components/Footer';
 
 import Intro from '../../../assets/images/chapters/chapter1/intro.jpg';
@@ -11,7 +12,6 @@ import Image1 from '../../../assets/images/chapters/chapter1/image1.jpg';
 import WilhelmAudio from '../../../assets/audios/Wilhelm_Scream.mp3';
 
 import './styles.css';
-import Pagination from 'components/Pagination';
 
 function Chapter1() {
 
@@ -39,15 +39,15 @@ function Chapter1() {
     ];
 
     const chapterFunFacts = [
-        'Após Tommy matar o soldado, o tambor do revólver parece ser mais longo.', 'Há um PS3 sob a televisão na casa de Joel.', 'Há fotos de família na parede junto à cama de Sarah. Uma delas é a foto de Joel e Sarah, que é destaque em capítulos posteriores.',
-        'A cena na pintura sobre a cama de Joel será familiar para os jogadores que vão revisitar este capítulo em Novo Jogo+. De fato, muitos artigos e imagens na casa tem dicas de cenas posteriores ou conversas e estão claramente presentes para o benefício dos jogadores em sua segunda jogatina.',
-        'Esta é a única vez no jogo que você pode controlar Sarah.', 'Duas cópias de "The Turning" podem ser vistas na estante de Sarah. "The Turning" é um jogo de arcade também visto na Cidade do Bill e em Left Behind.',
+        'Após Tommy matar o soldado, o tambor do revólver parece ser mais longo.', 'Há um PS3 sob a televisão na casa de Joel.', 'Há fotos de família na parede junto à cama de Sarah. Uma delas é a foto de Joel e Sarah, que é destaque em capítulos posteriores;',
+        'A cena na pintura sobre a cama de Joel será familiar para os jogadores que vão revisitar este capítulo em Novo Jogo+. De fato, muitos artigos e imagens na casa tem dicas de cenas posteriores ou conversas e estão claramente presentes para o benefício dos jogadores em sua segunda jogatina;',
+        'Esta é a única vez no jogo que você pode controlar Sarah.', 'Duas cópias de "The Turning" podem ser vistas na estante de Sarah. "The Turning" é um jogo de arcade também visto na Cidade do Bill e em Left Behind;',
         'Durante a sequência onde o jogador controla Joel, um grito "Wilhelm" (efeito sonoro utilizado repetidamente em produções cinematográficas e televisivas) pode ser ouvido quando um carro em chamas bate em outro, pouco antes de Joel e Tommy entrarem no beco.'
     ];
 
     const chapterMistakes = [
-        'No prólogo, Sarah está usando pijama e com os pés descalços, ela completa o prólogo com os pés descalços. No entanto, apesar do fato de que ela até pisa em vidros quebrados uma vez que você controla Joel, seus pés estão completamente limpos e sem cortes.',
-        'No prólogo, os carros de polícia que bloqueiam as estradas estão vazios.', 'Dependendo de onde Joel está passando, às vezes não é possível para Sarah ver alguém pegando fogo, mas mesmo assim ela diz: "essas pessoas estão pegando fogo".',
+        'No prólogo, Sarah está usando pijama e com os pés descalços, ela completa o prólogo com os pés descalços. No entanto, apesar do fato de que ela até pisa em vidros quebrados uma vez que você controla Joel, seus pés estão completamente limpos e sem cortes;',
+        'No prólogo, os carros de polícia que bloqueiam as estradas estão vazios.', 'Dependendo de onde Joel está passando, às vezes não é possível para Sarah ver alguém pegando fogo, mas mesmo assim ela diz: "essas pessoas estão pegando fogo";',
         'O calendário na cozinha está errado. Ele diz que 1 de setembro de 2013 foi uma segunda-feira, mas foi um domingo.'
     ];
 
@@ -158,7 +158,6 @@ function Chapter1() {
             
             <Footer />
         </>
-
     );
 }
 

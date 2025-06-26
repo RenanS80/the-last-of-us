@@ -4,8 +4,8 @@ import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
 import ChapterLists from 'components/ChapterLists';
 import ChapterImageSlider from 'components/ChapterImageSlider';
-import Footer from 'components/Footer';
 import Pagination from 'components/Pagination';
+import Footer from 'components/Footer';
 
 import Intro from '../../../assets/images/chapters/chapter5/intro.jpg';
 import Image1 from '../../../assets/images/chapters/chapter5/image1.png';
@@ -40,15 +40,15 @@ function Chapter5() {
     ];
 
     const chapterFunFacts = [
-        `No início do capítulo há uma cutscene no carro, na qual Ellie mostra algumas coisas que roubou da casa de Bill, como um cassete com a música "I'll Never Get Out of This World Alive" de Hank Williams.`,
-        'Após o acidente com a caminhonete de Joel, ele é atacado por um caçador e é forçado contra um pedaço de vidro na janela. Essa cena é semelhante à morte de Dayna Jurgens na minissérie norte-americana The Stand de 1994.',
-        'Quando Joel entra em um dos quartos do hotel, há um jornal no chão com o seguinte título: "Uncharted 13: Um filme exuberante - Justin Bieber como Drake". Uma referência ao Uncharted, outro título de sucesso da Naughty Dog.',
-        'No apartamento onde Joel conhece Sam e Henry, há um boneco do Nathan Drake, protagonista da série Uncharted, sobre a cama no quarto de criança. Há também um boneco do Jak e Daxter na sala, outro jogo da desenvolvedora.',
-        'Ao entrar na loja de brinquedos pouco depois de conhecer Henry e Sam há um tabuleiro do game Uncharted sobre uma prateleira.  Há também um tabuleiro do game Jax e Daxter ao lado.',
-        'Ellie é vista observando o robô que Sam deixou na loja de brinquedos, mas só vai levá-lo quando Joel não estiver olhando. Se Joel ficar de costas para Ellie e se virar rapidamente, poderá vê-la pegando o brinquedo.',
-        'Depois da luta no Distrito Financeiro, onde Joel elimina dois caçadores, as mesas de escritório têm placas de identificação legíveis. Vários são da equipe de design ambiental do jogo.',
-        'Após sair do hotel, Joel dá a Ellie um rifle para matar os caçadores. Nessa parte é possível matar todos furtivamente e Ellie não matar nenhum deles, mas a cutscene, continuará a mesma.',
-        'A seção "Lobby do Hotel” foi apresentada ao público na E3 de 2012, um ano antes do lançamento de The Last of Us para PS3.',
+        `No início do capítulo há uma cutscene no carro, na qual Ellie mostra algumas coisas que roubou da casa de Bill, como um cassete com a música "I'll Never Get Out of This World Alive" de Hank Williams;`,
+        'Após o acidente com a caminhonete de Joel, ele é atacado por um caçador e é forçado contra um pedaço de vidro na janela. Essa cena é semelhante à morte de Dayna Jurgens na minissérie norte-americana The Stand de 1994;',
+        'Quando Joel entra em um dos quartos do hotel, há um jornal no chão com o seguinte título: "Uncharted 13: Um filme exuberante - Justin Bieber como Drake". Uma referência ao Uncharted, outro título de sucesso da Naughty Dog;',
+        'No apartamento onde Joel conhece Sam e Henry, há um boneco do Nathan Drake, protagonista da série Uncharted, sobre a cama no quarto de criança. Há também um boneco do Jak e Daxter na sala, outro jogo da desenvolvedora;',
+        'Ao entrar na loja de brinquedos pouco depois de conhecer Henry e Sam há um tabuleiro do game Uncharted sobre uma prateleira.  Há também um tabuleiro do game Jax e Daxter ao lado;',
+        'Ellie é vista observando o robô que Sam deixou na loja de brinquedos, mas só vai levá-lo quando Joel não estiver olhando. Se Joel ficar de costas para Ellie e se virar rapidamente, poderá vê-la pegando o brinquedo;',
+        'Depois da luta no Distrito Financeiro, onde Joel elimina dois caçadores, as mesas de escritório têm placas de identificação legíveis. Vários são da equipe de design ambiental do jogo;',
+        'Após sair do hotel, Joel dá a Ellie um rifle para matar os caçadores. Nessa parte é possível matar todos furtivamente e Ellie não matar nenhum deles, mas a cutscene, continuará a mesma;',
+        'A seção "Lobby do Hotel” foi apresentada ao público na E3 de 2012, um ano antes do lançamento de The Last of Us para PS3;',
         'Durante a seção “Distrito Financeiro”, Joel confia em Ellie para usar uma arma pela primeira vez.'
     ];
 
@@ -194,7 +194,6 @@ function Chapter5() {
             
             <Footer />
         </>
-
     );
 }
 

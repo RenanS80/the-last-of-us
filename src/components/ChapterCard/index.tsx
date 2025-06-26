@@ -37,7 +37,7 @@ function ChapterCard({ card } : Props) {
             </div>
         </NavLink>
 
-    )
+    );
 }
 
 export default ChapterCard;

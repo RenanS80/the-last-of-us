@@ -29,7 +29,7 @@ function CharactersGallery({ lstImages } : Props) {
                 <img src={img5} alt="Joel, Ellie e Henry" />
             </div>
         </section>
-    )
+    );
 }
 
 export default CharactersGallery;

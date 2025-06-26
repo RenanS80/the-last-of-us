@@ -15,7 +15,7 @@ function CharactersImage({ character } : Props) {
             </picture>
             <p>{character.name}</p>
         </div>
-    )
+    );
 }
 
 export default CharactersImage;

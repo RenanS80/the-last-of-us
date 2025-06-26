@@ -31,7 +31,7 @@ function TabJourney() {
             )}
 
         </div>
-    )
+    );
 }
 
 export default TabJourney;
