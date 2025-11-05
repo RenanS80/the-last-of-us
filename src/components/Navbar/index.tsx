@@ -2,15 +2,14 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Logo from "../../assets/images/logo.svg";
+import DropdownIcon from "../../assets/images/dropdown-icon.svg";
 
 import './styles.css';
 
 function Navbar() {
 
     const [mobileToggle, setMobileToggle] = useState(false);
-
-    /*FAZER O DROPDOWN (VER NO FIGMA NA ABA DE STYLE GUIDE E ASSETS)
-    https://www.youtube.com/watch?v=bOx2WmyZrno*/   
+    const [showDropdown, setShowDropdown] = useState(false);
 
     return (
         <header>
@@ -27,7 +26,7 @@ function Navbar() {
                     </div>
 
                     <nav>
-                        <ul>
+                        <ul className="menu">
                             <li>
                                 <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
                             </li>
@@ -41,7 +40,31 @@ function Navbar() {
                                 <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>Sobre</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/extra" className={({ isActive }) => isActive ? 'active' : ''}>Extra</NavLink>
+                                <div className="d-flex-8" onClick={() => setShowDropdown(!showDropdown)}>
+                                    <span>Extra</span>
+                                    <img src={DropdownIcon} alt="Ícone dropdown" />
+                                </div>
+
+                                {showDropdown && 
+                                    <ul className="dropdown-menu">
+                                        <li>
+                                            <NavLink to="/americandreams">American Dreams</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/cordyceps">Cordyceps</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/factions">Factions</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/leftbehind">Left Behind</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/trophies">Troféus</NavLink>
+                                        </li>
+                                    </ul>
+                                }
+                                
                             </li>
                         </ul>
                     </nav>

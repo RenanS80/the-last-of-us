@@ -5,7 +5,7 @@ type Props = {
     location: string;
     date: string;
     lstCharacters: Array<string>;
-    lstEnemies: Array<string>;
+    lstEnemies?: Array<string>;
     lstMentions: Array<string>;
 }
 
@@ -28,10 +28,14 @@ function ChapterResumeTable({ lstSections, location, date, lstCharacters, lstEne
                 <th>Personagens</th>
                 <td>{lstCharacters.join(', ')}</td>
             </tr>
-            <tr>
-                <th>Inimigos</th>
-                <td>{lstEnemies.join(', ')}</td>
-            </tr>
+
+            {lstEnemies &&
+                <tr>
+                    <th>Inimigos</th>
+                    <td>{lstEnemies.join(', ')}</td>
+                </tr>
+            }
+
             <tr>
                 <th>Menções</th>
                 <td>{lstMentions.join(', ')}</td>

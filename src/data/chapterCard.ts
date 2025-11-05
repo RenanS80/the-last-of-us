@@ -51,7 +51,7 @@ export const chapterCard = [
         id: 9,
         name: 'Resort à Beira do Lago',
         imageUrl: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/chapter9_hd4EMuLrx.jpg?updatedAt=1708625363537',
-        resume: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel amet ac porta eget malesuada. Orci magna nunc, diam adipiscing'
+        resume: 'É inverno e Ellie mata um coelho com uma flecha. Ela então avista um veado e o persegue, acertando-o com o arco algumas vezes'
     },
     {
         id: 10,
@@ -63,12 +63,12 @@ export const chapterCard = [
         id: 11,
         name: 'Laboratório dos Vaga-lumes',
         imageUrl: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/chapter11_oU-6RCYgl7.jpg?updatedAt=1708626518258',
-        resume: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel amet ac porta eget malesuada. Orci magna nunc, diam adipiscing'
+        resume: 'Na noite de 28 de abril de 2034, Joel acorda em uma cama de hospital e encontra Marlene lhe dando as boas-vindas aos'
     },
     {
         id: 12,
         name: 'Jackson',
         imageUrl: 'https://ik.imagekit.io/zqxyh6u3ylz/The%20Last%20of%20Us/Chapters/chapter12_eMXV2iuGn.jpg?updatedAt=1708626824959',
-        resume: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel amet ac porta eget malesuada. Orci magna nunc, diam adipiscing'
+        resume: 'Joel e Ellie estão voltando para o assentamento de Tommy em Wyoming. A estrada fica bloqueada, forçando-os a sair'
     }
 ]

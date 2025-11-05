@@ -143,6 +143,11 @@ figcaption {
     margin-bottom: 10px;
 }
 
+.d-flex-8 {
+    display: flex;
+    gap: 8px;
+}
+
 /* ---- Chapters ---- */
 .chapter__main-image {
     width: 814px;

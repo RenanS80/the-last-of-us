@@ -9,7 +9,7 @@ import './styles.css';
 function Pagination() {
 
     const url = window.location.href;
-    let urlNumChapter = Number(url[url.length-1]);
+    let urlNumChapter = Number(url.split('/').pop());   // pega o último elemento da URL
     let urlNumChapterAux = urlNumChapter;
     let lstChaptersToShow = [urlNumChapterAux];
 
