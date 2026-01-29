@@ -6,7 +6,7 @@ import DropdownIcon from "../../assets/images/dropdown-icon.svg";
 
 import './styles.css';
 
-function Navbar() {
+function Header() {
 
     const [mobileToggle, setMobileToggle] = useState(false);
     const [showDropdown, setShowDropdown] = useState(false);
@@ -14,9 +14,11 @@ function Navbar() {
     return (
         <header>
             <div className="container">
-                <div>
-                    <img src={Logo} alt="The Last of Us" />
-                </div>
+                <NavLink to="/">
+                    <div>
+                        <img src={Logo} alt="The Last of Us" />
+                    </div>
+                </NavLink>
 
                 <div className={mobileToggle ? "menu-section on" : "menu-section"} onClick={() => setMobileToggle(!mobileToggle)}>
                     <div className="menu-toggle">
@@ -74,4 +76,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default Header;

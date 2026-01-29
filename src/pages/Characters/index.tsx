@@ -1,4 +1,4 @@
-import Navbar from 'components/Navbar';
+import Header from 'components/Header';
 import Title from 'components/Title';
 import CharactersTab from 'components/CharactersTab';
 import Footer from 'components/Footer';
@@ -8,7 +8,7 @@ import './styles.css';
 function Characters() {
     return(
         <>
-            <Navbar />
+            <Header />
 
             <main className="characters__main pad-bottom110">
                 <div className="container">

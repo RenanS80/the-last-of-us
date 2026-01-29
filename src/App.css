@@ -38,11 +38,11 @@ html::-webkit-scrollbar {
     width: 1.4rem;
 }
   
-  html::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
     background: var(--gray-dark);
 }
   
-  html::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
     background: var(--black-light);
 }
 
@@ -112,15 +112,23 @@ figcaption {
     padding-bottom: 110px;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.font-strong {
+    font-weight: 700;
+}
+
+[data-link="anchor"] {
+    scroll-margin-top: 40px; 
+}
+
 .container {
     max-width: 134rem;
     height: 100%;
     margin: 0 auto;
     padding: 0 1.8rem;
-}
-
-.text-center {
-    text-align: center;
 }
 
 .container--character h2 {

@@ -25,6 +25,10 @@ footer .container > div:nth-child(1) p::after {
     opacity: 30%;
 }
 
+footer .container > div:nth-child(1) a {
+    text-decoration: underline;
+}
+
 .footer__copyright {
     display: flex;
     align-items: center;

@@ -21,12 +21,14 @@ function CharacterSummary({ lstItems } : Props) {
 
                     {lstItems.map((item, key) => (
                         <li key={key}>
-                            <strong>{item.main}</strong>
+                            <a href={`#${item.id}`} className="main__item font-strong underline--hover">{item.main}</a>
                                     
                             {item.nested !== undefined &&
                                 <ol className="summary__sublist">
                                     {item.nested.map((subItem, subKey) => (
-                                        <li key={subKey}>{subItem}</li>
+                                        <li key={subKey}>
+                                            <a href={`#${subItem.id}`} className="underline--hover">{subItem.name}</a>
+                                        </li>
                                     ))}
                                 </ol>
                             }                                

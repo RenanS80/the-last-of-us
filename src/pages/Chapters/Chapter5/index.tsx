@@ -1,4 +1,4 @@
-import Navbar from 'components/Navbar';
+import Header from 'components/Header';
 import ChapterResumeTable from 'components/ChapterResumeTable';
 import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
@@ -54,7 +54,7 @@ function Chapter5() {
 
     return (
         <>
-            <Navbar />
+            <Header />
 
             <section className="individual-chapter__hero chapter5">
                 <div className="container">
@@ -75,7 +75,7 @@ function Chapter5() {
                             <Subtitle subtitle="Um novo caminho" />
                             <p>Durante a condução até Tommy, Ellie desabafa com Joel sobre uma história em quadrinhos chamada Savage Starlight. Segundo Ellie, embora seja uma boa leitura, a edição termina com um &#8220;continua..&#8221; deixando um suspense no ar, que a 
                                 desagrada. Joel pergunta onde ela conseguiu o gibi e Ellie diz que roubou das coisas do Bill. Em seguida, ele pergunta o que mais Ellie roubou e ela lhe dá uma fita cassete para ouvir no rádio da caminhonete. Ela ainda revela que roubou uma revista 
-                                com &#34;algumas fotos interessantes&#34;. Joel percebe que é uma revista gay para maiores de idade e diz que ela não deve ver. Ellie então a descarta e brinca com Joel, perguntando &#8220;Por que as páginas grudam?&#8221;. 
+                                com &#8220;algumas fotos interessantes&#8221;. Joel percebe que é uma revista gay para maiores de idade e diz que ela não deve ver. Ellie então a descarta e brinca com Joel, perguntando &#8220;Por que as páginas grudam?&#8221;. 
                             </p> <br />
                             <p>A dupla segue seu caminho para Pittsburgh, mas a estrada principal para a ponte Fort Duquesne está bloqueada por entulhos e carros abandonados. Joel decide ir pela cidade em vez de voltar. Ao dirigir pela cidade, eles avistam um homem, supostamente 
                                 ferido e pedindo ajuda. Ellie quer parar e ajudar, mas Joel percebe que é uma emboscada e acelera em direção ao impostor, oo perceber que seria atropelado, ele puxa uma arma da cintura e atira na caminhonete. Na medida em que mais homens saem 

@@ -1,4 +1,4 @@
-import Navbar from 'components/Navbar';
+import Header from 'components/Header';
 import CharacterTableInfo from 'components/CharacterTableInfo';
 import CharacterSummary from 'components/CharacterSummary';
 import RelatedCharacters from 'components/RelatedCharacters';
@@ -19,30 +19,45 @@ import Img5 from '../../../assets/images/characters/joel/img5.png';
 import './styles.css';
 
 function Joel() {
-
-    const summaryItems = [
+    const lstSummaryItems = [
         {
             main: 'Biografia',
-            nested: ['Antecedentes e início da vida']
+            nested: [
+                {name: 'Antecedentes e início da vida', id: 'biography'}
+            ],
+            id: 'biography'
         },
         {
             main: 'Eventos de The Last of Us',
             nested: [
-                'Perdendo Sarah', 'Sobrevivendo', 'Confrontando Robert', 'Contrabandeando Ellie', 
-                'Encontrando Bill', 'Enfrentando caçadores em Pittsburgh', 'Conhecendo Henry e Sam',
-                'Encontrando Tommy', 'A universidade', 'O inverno', 'Chegando em St. Mary', 'Salvando Ellie'
-            ]
+                {name: 'Perdendo Sarah', id: 'losing-sarah'},
+                {name: 'Sobrevivendo', id: 'surviving'},
+                {name: 'Confrontando Robert', id: 'confronting-robert'},
+                {name: 'Contrabandeando Ellie', id: 'smuggling-ellie'},
+                {name: 'Encontrando Bill', id: 'meeting-bill'},
+                {name: 'Enfrentando caçadores em Pittsburgh', id: 'fighting-hunters'},
+                {name: 'Conhecendo Henry e Sam', id: 'meeting-henry-sam'},
+                {name: 'Encontrando Tommy', id: 'meeting-tommy'},
+                {name: 'A universidade', id: 'university'},
+                {name: 'O inverno', id: 'winter'},
+                {name: 'Chegando em St. Mary', id: 'st-mary'},
+                {name: 'Salvando Ellie', id: 'saving-ellie'},
+            ],
+            id: 'losing-sarah'
         }, 
         {
-            main: 'Habilidades'
+            main: 'Habilidades',
+            id: 'skills'
         },
         {
-            main: 'Hobbies'
+            main: 'Hobbies',
+            id: 'hobbies'
         },
         {
-            main: 'Galeria'
+            main: 'Galeria',
+            id: 'gallery'
         }
-    ]
+    ];
 
     const lstTableInfoBio = [
         {
@@ -84,13 +99,13 @@ function Joel() {
         {
             "Captura de movimentos": "Troy Baker"
         }
-    ]
+    ];
 
     const lstImagesGallery = [Img1, Img2, Img3, Img4, Img5];
 
     return(
         <>
-            <Navbar />
+            <Header />
 
             <div className="container container--character">
                 <main className="character__biography">
@@ -100,7 +115,7 @@ function Joel() {
                     </div>
                     <div className="character__citation">
                         <img src={QuotationMark} alt="Aspas" />
-                        <blockquote>Faça os tiros valerem a pena</blockquote>
+                        <blockquote>Faça os tiros valerem a pena.</blockquote>
                         <img src={QuotationMark} alt="Aspas" />
                     </div>
                     
@@ -112,13 +127,13 @@ function Joel() {
                                 da humanidade. Joel eventualmente formou um forte vínculo com ela.
                             </p>
 
-                            <CharacterSummary lstItems={summaryItems} />
+                            <CharacterSummary lstItems={lstSummaryItems} />
 
                         </div>
                         <CharacterTableInfo infoBio={lstTableInfoBio} infoBehindScenes={lstTableInfoBehindScenes} photo={ImgInfoBio} name="Joel" />
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[0].id} data-link="anchor">
                         <ChapterHeading mainHeading="Biografia" secondaryHeading="Antecedentes e início da vida" />
 
                         <p>Joel nasceu em 26 de Setembro de 1981, em Arlington, Texas, e cresceu ao lado de seu irmão mais novo, Tommy.</p> <br />
@@ -137,7 +152,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[0].id} data-link="anchor">
                         <ChapterHeading mainHeading="Eventos de The Last of Us" secondaryHeading="Perdendo Sarah" />
 
                         <p>Em 26 de setembro de 2013, Joel chegou tarde do trabalho e colocou Sarah na cama depois de assistirem televisão juntos. Na madrugada de 27 de setembro, Joel foi atacado por seu vizinho, 
@@ -154,7 +169,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[1].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="Sobrevivendo" />
 
                         <p>Pouco depois da morte de Sarah, Joel se viu em uma clínica de triagem após chegar à rodovia. Ele testemunhou como as famílias foram dilaceradas e quanto caos irrompeu no mundo.</p> <br />
@@ -162,14 +177,14 @@ function Joel() {
                             tornando-se um caçador. 
                         </p> <br />
                         <p>Após chegar em Boston, Tommy finalmente se cansou da filosofia de Joel sobre como sobreviver, abandonando-o para se juntar a um crescente grupo de milícia conhecido como Vagalumes, após ser persuadido 
-                            pela líder, Marlene. Os dois discutiram furiosamente sobre isso, Tommy terminando com "Eu nunca mais quero ver sua maldita cara!".
+                            pela líder, Marlene. Os dois discutiram furiosamente sobre isso, Tommy terminando com &#8220;Eu nunca mais quero ver sua maldita cara!&#8221;.
                         </p> <br />
                         <p>Joel passou um período sozinho até conhecer uma mulher chamada Tess. A dupla se aproximou, unindo-se para atuar como contrabandistas na zona de quarentena. Neste ramo, eles conheceram várias pessoas, 
                             como Robert, Bill e Donovan.
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[2].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="Confrontando Robert" />
 
                         <p>Vários anos se passam, e agora a infecção do Cordyceps já se alastrou por todo o mundo, dizimando grande parte da população mundial e desestabilizando completamente a sociedade. O governo criou zonas de quarentena 
@@ -192,7 +207,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[3].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="Contrabandeando Ellie" />
 
                         <p>Joel e Tess levam Ellie para um esconderijo, para seguirem seu destino durante a noite para minimizar a chance de serem capturados pelos soldados da FEDRA. Ao anoitecer, eles partem para os túneis e saem da área da zona, 
@@ -216,7 +231,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[4].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="Encontrando Bill" />
 
                         <p>Ao chegarem à cidade, eles encontram Bill e seguem para um arsenal que o mesmo matinha no porão de uma igreja. No caminho, Bill pergunta a Joel o que estava fazendo ali, e ele responde que era apenas uma entrega. Quando Joel diz que 
@@ -234,7 +249,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[5].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="Enfrentando caçadores em Pittsburgh" />
 
                         <p>Enquanto na estrada, eles se aproximam de Pittsburgh, que estava dominada por caçadores que emboscavam e matavam quem passava pela cidade. Enquanto atravessavam, um homem que aparentava estar machucado aparece no meio da estrada pedindo ajuda. 
@@ -247,7 +262,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[6].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="Conhecendo Henry e Sam" />
 
                         <p>Mais tarde, ao passar pelas perigosas ruas de Pittsburgh, a dupla dá de cara com o temido veículo e fogem para um prédio nos arredores, mas logo quando Joel entra, é surpreendido por um homem que o segura pelas costas. Ellie usa sua faca para golpeá-lo, 
@@ -274,7 +289,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[7].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="Encontrando Tommy" />
 
                         <p>Meses se passam e agora Joel e Ellie estão no Wyoming, perto de encontrar Tommy. Eles caminham pela floresta até encontrarem uma placa escrito "Jackson County", onde Joel sabia que Tommy estaria. Eles alcançam uma usina hidrelétrica e Joel decide passar por dentro 
@@ -291,7 +306,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[8].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="A universidade" />
 
                         <p>Ao chegarem no prédio de ciências da universidade, se deparam com ele vazio e cheio de equipamentos médicos abandonados. Eles entram em uma sala, encontram vários macacos e descobrem que os Vagalumes estavam realizando testes médicos neles. Joel encontra um outro gravador de um médico, 
@@ -303,7 +318,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[9].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="O inverno" />
 
                         <p>Ellie conseguiu arrastar o frágil Joel para um shopping abandonado. Ellie cobriu o ferimento com sua camisa de verão, usando fita adesiva para mantê-lo no lugar. Ellie voltou com um kit de primeiros socorros, depois de lutar contra canibais e ser infectada para voltar. Ela costurou o ferimento de Joel 
@@ -318,7 +333,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[10].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="Chegando em St. Mary" />
 
                         <p>Na primavera, Joel e Ellie chegaram a Salt Lake City, o destino final pretendido. Joel tentou preencher o silêncio para animar Ellie, distante e traumatizada, que se aqueceu ao ver uma manada de girafas. Sabendo o que Ellie havia experimentado, ele sugeriu que eles saíssem e voltassem para o assentamento de Tommy, 
@@ -332,7 +347,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[1]?.nested?.[11].id} data-link="anchor">
                         <ChapterHeading secondaryHeading="Salvando Ellie" />
 
                         <p>Quando Joel acordou, ele estava com Marlene e o que restava dos Vaga-lumes de Boston no Hospital St. Mary. Ellie foi reanimada com sucesso, mas foi imediatamente levada para uma cirurgia por ordem de Marlene para criar uma vacina para a infecção. Marlene também disse a Joel que, para fazer a engenharia reversa completa do fungo para uma 
@@ -351,7 +366,7 @@ function Joel() {
                         </p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[2].id} data-link="anchor">
                         <ChapterHeading mainHeading="Habilidades" />
 
                         <p>Em seu tempo como caçador, Joel aperfeiçoou suas técnicas de tortura, emboscada e de combate. O homem pode superar quase qualquer adversário com os próprios punhos e consegue ser ainda mais letal com qualquer arma na mão. Tanto tempo sobrevivendo com o que conseguisse encontrar também afiaram a sua engenhosidade, permitindo que construa rapidamente 
@@ -360,14 +375,14 @@ function Joel() {
                         <p>Joel é um mestre da furtividade, habilidade que praticou ao extremo em seus longos anos de experiência como contrabandista. Sua audição é particularmente poderosa, conseguindo estimar a localização de seus inimigos ao ouvir atentamente cada mínimo barulho.</p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[3].id} data-link="anchor">
                         <ChapterHeading mainHeading="Hobbies" />
 
                         <p>Por incrível que pareça, Joel tem uma série de hobbies, mas acabou abandonando a maioria quando o mundo virou ao avesso. Para começar, Joel adorava música e seu sonho de infância era ser cantor.</p> <br />
                         <p>Em Jackson, Joel voltou a tomar bastante café. Ele era viciado antes do apocalipse e gostava de visitar diferentes cafeterias. Ele também voltou a praticar carpintaria, construindo violões e ajudando a erguer casas de madeira. Ele era carpinteiro no tempo livre, antes de todo o caos, e sonhava em transformar isso em um negócio próprio.</p>
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[4].id} data-link="anchor">
                         <ChapterHeading mainHeading="Galeria" />
                         <CharactersGallery lstImages={lstImagesGallery} />                        
                     </div>

@@ -1,4 +1,4 @@
-import Navbar from 'components/Navbar';
+import Header from 'components/Header';
 import ChapterResumeTable from 'components/ChapterResumeTable';
 import ChapterCollectiblesTable from 'components/ChapterCollectiblesTable';
 import Subtitle from 'components/Subtitle';
@@ -52,7 +52,7 @@ function Chapter4() {
 
     return (
         <>
-            <Navbar />
+            <Header />
 
             <section className="individual-chapter__hero chapter4">
                 <div className="container">

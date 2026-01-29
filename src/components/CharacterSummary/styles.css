@@ -7,7 +7,6 @@
 
 .summary a {
     color: var(--black);
-    font-weight: 700;
 }
 
 .summary__header {
@@ -27,13 +26,17 @@
     margin: 20px 28px 20px 22px;
 }
 
+.summary__content li {
+    margin-bottom: 18px;
+}
+
 .summary__sublist {
     margin-left: 25px;
-} 
-
+}
 
 .summary__content ol { 
-    counter-reset: item; 
+    counter-reset: item;
+    margin-top: 18px;
 }
 
 .summary__content li {
@@ -42,6 +45,26 @@
 }
 
 .summary__content li:before {
-    content: counters(item, ".") " "; 
+    content: counters(item, ".") ". "; 
     counter-increment: item;
+}
+
+.underline--hover {
+    position: relative;
+    text-decoration: none;
+}
+
+.underline--hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: var(--black-light);
+    transition: width 0.3s ease;
+}
+
+.underline--hover:hover::after {
+    width: 100%;
 }

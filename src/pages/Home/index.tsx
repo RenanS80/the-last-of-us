@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
-import Navbar from 'components/Navbar';
+import Header from 'components/Header';
 import TabJourney from 'components/TabJourney';
 import Footer from 'components/Footer';
 
@@ -33,7 +33,7 @@ function Home() {
 
     return(
         <>
-            <Navbar />
+            <Header />
 
             <section className="hero">
                 <div className="container">

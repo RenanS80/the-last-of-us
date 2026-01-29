@@ -1,4 +1,4 @@
-import Navbar from 'components/Navbar';
+import Header from 'components/Header';
 import CharacterTableInfo from 'components/CharacterTableInfo';
 import CharacterSummary from 'components/CharacterSummary';
 import RelatedCharacters from 'components/RelatedCharacters';
@@ -10,44 +10,64 @@ import { ellie } from 'data/relatedCharacters/ellie';
 
 import QuotationMark from '../../../assets/images/characters/quotation-mark.svg';
 import ImgInfoBio from '../../../assets/images/characters/ellie/ellie-info-bio.jpg';
-import Img1 from '../../../assets/images/characters/joel/img1.png';
-import Img2 from '../../../assets/images/characters/joel/img2.png';
-import Img3 from '../../../assets/images/characters/joel/img3.png';
-import Img4 from '../../../assets/images/characters/joel/img4.png';
-import Img5 from '../../../assets/images/characters/joel/img5.png';
+import Img1 from '../../../assets/images/characters/ellie/img1.jpg';
+import Img2 from '../../../assets/images/characters/ellie/img2.jpg';
+import Img3 from '../../../assets/images/characters/ellie/img3.png';
+import Img4 from '../../../assets/images/characters/ellie/img4.png';
+import Img5 from '../../../assets/images/characters/ellie/img5.jpg';
 
 
 function Ellie() {
 
-    const summaryItems = [
+    const lstSummaryItems = [
         {
             main: 'Biografia',
-            nested: ['Antecedentes e início da vida']
+            nested: [
+                {name: 'Antecedentes e início da vida', id: 'biography'}
+            ],
+            id: 'biography'
         },
         {
-            main: 'Eventos de The Last of Us: American Dreams',
-            nested: ['Conhecendo Riley', 'Encontrando Marlene']
+            main: 'Eventos de American Dreams',
+            nested: [
+                {name: 'Conhecendo Riley', id: 'meeting-riley'},
+                {name: 'Encontrando Marlene', id: 'finding-marlene'}
+            ],
+            id: 'meeting-riley'
         },
         {
-            main: 'Eventos de The Last of Us: Left Behind',
-            nested: ['Explorando o shopping', 'Sendo infectada']
+            main: 'Eventos de Left Behind',
+            nested: [
+                {name: 'Explorando o shopping', id: 'exploring-mall'},
+                {name: 'Sendo infectada', id: 'being-infected'}
+            ],
+            id: 'exploring-mall'
         },
         {
             main: 'Eventos de The Last of Us',
             nested: [
-                'Escapando de Boston', 'Chegando ao congresso', 'À procura de um carro',
-                'Pittsburgh', 'Chegando em Jackson', 'Protegendo Joel', 'Embate com David',
-                'Encontrando os Vaga-lumes', 'Voltando para Jackson'
-            ]
+                {name: 'Escapando de Boston', id: 'escaping-boston'},
+                {name: 'À procura de um carro', id: 'looking-car'},
+                {name: 'Pittsburgh', id: 'pittsburgh'},
+                {name: 'Chegando em Jackson', id: 'arriving-jackson'},
+                {name: 'Protegendo Joel', id: 'protecting-joel'},
+                {name: 'Embate com David', id: 'clash-david'},
+                {name: 'Encontrando os Vaga-lumes', id: 'finding-fireflies'},
+                {name: 'Voltando para Jackson', id: 'back-jackson'}
+            ],
+            id: 'escaping-boston'
         }, 
         {
-            main: 'Habilidades'
+            main: 'Habilidades',
+            id: 'skills'
         },
         {
-            main: 'Hobbies'
+            main: 'Behind the scenes',
+            id: 'behind-the-scenes'
         },
         {
-            main: 'Galeria'
+            main: 'Galeria',
+            id: 'gallery'
         }
     ];
 
@@ -94,7 +114,7 @@ function Ellie() {
 
     return(
         <>
-            <Navbar />
+            <Header />
 
             <div className="container container--character">
                 <main className="character__biography">
@@ -104,7 +124,7 @@ function Ellie() {
                     </div>
                     <div className="character__citation">
                         <img src={QuotationMark} alt="Aspas" />
-                        <blockquote>Depois de tudo que passamos... De tudo que eu fiz, não pode ser em vão</blockquote>
+                        <blockquote>Depois de tudo que passamos... De tudo que eu fiz, não pode ser em vão.</blockquote>
                         <img src={QuotationMark} alt="Aspas" />
                     </div>
                     
@@ -119,13 +139,13 @@ function Ellie() {
                                 deles de forma definitiva.
                             </p>
 
-                            <CharacterSummary lstItems={summaryItems} />
+                            <CharacterSummary lstItems={lstSummaryItems} />
                         </div>
 
                         <CharacterTableInfo infoBio={lstTableInfoBio} infoBehindScenes={lstTableInfoBehindScenes} photo={ImgInfoBio} name="Ellie" />
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[0].id} data-link="anchor">
                         <ChapterHeading mainHeading="Biografia" secondaryHeading="Antecedentes e início da vida" />
 
                         <p>Ellie nasceu na primavera de 2019, quando infecção do Cordyceps havia se espalhado pelos Estados Unidos. Sua mãe era uma enfermeira chamada Anna e a identidade de seu pai é desconhecida.</p> <br />
@@ -137,237 +157,399 @@ function Ellie() {
                         </p>
                     </div>
 
-                    <div>
-                        <ChapterHeading mainHeading="Eventos de The Last of Us" secondaryHeading="Perdendo Sarah" />
+                    <div id={lstSummaryItems[1]?.nested?.[0].id} data-link="anchor">
+                        <ChapterHeading mainHeading="Eventos de American Dreams" secondaryHeading="Conhecendo Riley" />
 
-                        <p>Em 26 de setembro de 2013, Joel chegou tarde do trabalho e colocou Sarah na cama depois de assistirem televisão juntos. Na madrugada de 27 de setembro, Joel foi atacado por seu vizinho, 
-                            Jimmy Cooper e forçado a matá-lo a tiros com seu revólver em legítima defesa. Depois de acalmar Sarah, Tommy chegou para fugirem em sua caminhonete.
+                        <p>Pouco depois de completar 13 anos, Ellie chega à zona de quarentena de Boston em um ônibus e avista os militares examinando um homem em busca de infecção. Ele está infectado e é colocado 
+                            de joelhos pelos militares, que apontam armas para sua cabeça. Essa visão a assusta.
                         </p> <br />
-                        <p>À medida que dirigem em direção a rodovia, eles percebem o caos que a cidade se tornou, com pessoas fugindo desesperadas e atacando umas as outras. Ao chegar na ponte que dá acesso a outra
-                            cidade, o trio encontrou a estrada bloqueada e precisou seguir por outro caminho. Ao encontrar um carro bloqueando na rua, Tommy o contorna para continuarem a fuga, mas um outro carro os 
-                            acerta em cheio, fazendo com que a caminhonete em que estavam capotasse. Assim que acordou, Joel percebe que Sarah está com a perna machucada e impossibilitada de andar. Ele precisa 
-                            carregar a sua filha no colo em meio ao caos instalado pelas ruas do Texas. Depois de serem perseguidos por infectados, Tommy ficou para trás para contê-los e para ajudar Joel e Sarah fugirem.
+                        <p>Após chegar em segurança na parte de interna da zona, ela e os outros sobreviventes saem do ônibus. Ela é abordada por um soldado que a conhece e a avosa para que ela não faça nenhuma besteira 
+                            e que não pode mais cuidar dela. Enfurecida, Ellie afirma que pode cuidar de si mesma sem a ajuda dele. No entanto, pouco depois, ela se envolve em uma briga com um grupo de meninos que tenta 
+                            roubar seus pertences. Ellie os provoca, mas é salva por uma adolescente que os intimida o suficiente para fazê-los recuar.
                         </p> <br />
-                        <p>A dupla chegou à rodovia, mas encontrou um soldado que os abordou de forma agressiva e desconfiada. Ao falar pelo rádio com o comandante, para saber o que fazer naquela situação, o soldado 
-                            recebeu ordens para matar os dois, que estavam “fora do perímetro”, então ele abriu fogo. Caindo no chão, o soldado moveu-se para executar Joel, mas Tommy chegou, dando-lhe um tiro na cabeça. 
-                            No entanto, Sarah foi mortalmente atingida. Apesar dos esforços de Joel em salvar a filha, ela morreu em seus braços.
+                        <p>Ela pergunta a Ellie o que eles queriam dela, e Ellie dá a entender que pretendiam roubar seus pertences. Ela dispensa a menina quando esta tenta dar conselhos sobre como se virar na zona de 
+                            quarentena, perguntando se parecia ou não precisar de ajuda. A garota observa que Ellie tem problemas de confiança e a chama de &#8220;garota nova&#8221;. Segundos depois, aconselha Ellie a fugir antes 
+                            de sair rapidamente. Ellie fica confusa com o que ela quis dizer e acaba sendo pega por uma das figuras de autoridade encarregadas da escola.
+                        </p> <br />
+                        <p>No escritório, Ellie é irreverente diante da demonstração de autoridade, apesar da leitura em voz alta de sua ficha disciplinar por incidentes anteriores. Ele a designa para o serviço de limpeza. 
+                            Enquanto esfrega um jipe ensanguentado, ela procura seu Walkman e percebe que ele sumiu do bolso da jaqueta. Ellie logo deduz que a garota de antes o roubou e tem um ataque de raiva, perplexa por como ela 
+                            conseguiu pegá-lo sem que Ellie percebesse.
+                        </p> <br />
+                        <p>Um momento depois, ela nota um dedo amputado próximo ao volante do jipe e imagina a briga que deve ter ocorrido ali. Joga a água no pneu e vai tirar satisfação com a garota sobre o Walkman. No refeitório, 
+                            Ellie exige que o aparelho seja devolvido, mas a garota finge ignorância. Ellie, no entanto, continua pressionando o assunto até que a garota desiste com um comentário indireto sobre seu mau gosto musical.
+                        </p> <br />
+                        <p>Mais tarde, naquela noite, enquanto está acordada na cama, Ellie ouve passos do lado de fora de seu quarto. Ela se veste e espia pela porta, a tempo de ver a garota desaparecendo por uma saída. Ellie a 
+                            segue discretamente e se aproxima furtivamente dela. Surpresa ao encontrar Ellie atrás de si, a garota exige que ela volte para o quarto.
+                        </p> <br />
+                        <p>Ellie se recusa — quer que a garota lhe mostre uma saída da escola e diz para parar de chamá-la de “garota nova”. A garota hesita por um momento antes de atender ao pedido. Ela pergunta se Ellie consegue 
+                            acompanhar, e Ellie comenta que acompanhar “não é um problema”. Finalmente, a garota chama Ellie pelo nome e pede que ela não se arrependa de tê-la seguido. As duas conseguem escapar do prédio e atravessar 
+                            o pátio sem serem notadas. Ao escalar a cerca, Ellie pergunta como a garota sabia seu nome. Ela responde que tem “seus modos” e se apresenta como Riley. Riley então pergunta se Ellie está pronta para o 
+                            que vem a seguir, e ela confirma.
+                        </p> <br />
+                        <p>Ellie se esforça para acompanhar Riley enquanto ela a conduz pelos telhados. Quando Riley para, Ellie, sem fôlego, pergunta se aquele é todo o desafio que ela tem a oferecer. Ignorando a provocação, 
+                            Riley pergunta se Ellie pensa em seu futuro. Ellie assume que ela está sendo jocosa e pergunta se fala do futuro visto na ficção científica. Riley repete a pergunta e quer saber o que Ellie pretende fazer da vida. 
+                            Ellie não vê muito futuro para si mesma, e Riley diz que essa mentalidade é exatamente o que as figuras de autoridade da zona de quarentena querem que as pessoas tenham.
+                        </p> <br />
+                        <p>Confusa, Ellie devolve a pergunta. Riley explica que fará dezesseis anos em três meses e pretende usar esse tempo para descobrir o que quer da vida. Ellie insiste em saber o que mais o mundo pode reservar para elas, 
+                            mas Riley ignora. Ela pergunta se Ellie já andou a cavalo, e Ellie responde que não. Riley a conduz pela janela de um shopping abandonado. Ellie faz uma pausa para zombar de sua própria postura antes de se juntar a Riley.
+                        </p> <br />
+                        <p>Momentos depois, Ellie avista um fliperama a poucos metros. Pede que Riley espere e entra, onde encontra um jogo antigo chamado Triple Phoenix. Ela começa a descrever com entusiasmo o programa de televisão em que o 
+                            jogo foi inspirado.
+                        </p> <br />
+                        <p>Riley descarta o entusiasmo de Ellie, dizendo que o jogo é para crianças. Em seguida, descreve The Turning, um violento jogo de luta com uma personagem feminina chamada Angel Knives. Ellie comenta que as crianças que nasceram 
+                            antes da infecção tiveram sorte, sem perceber a expressão sombria de Riley. Riley decide que está perdendo tempo e sai do fliperama.
+                        </p> <br />
+                        <p>Enquanto Ellie a segue, para por um instante e imagina como o fliperama era antes da infecção, antes de seguir em frente. Logo depois, Riley a leva até um acampamento, onde Ellie conhece seu amigo Winston, morador do shopping.
+                            Winston repreende Riley por trazer outra pessoa ali, sabendo que isso pode lhe causar problemas. Riley garante que Ellie é legal e os apresenta formalmente. Em troca de trazer uísque para ele, pede que ensine Ellie a 
+                            andar a cavalo.
+                        </p> <br />
+                        <p>Ellie segue Riley até os estábulos. A garota explica como se comportar perto dos cavalos e pede que Ellie garanta que Winston a leve para passear em Princess. Enquanto Riley prepara o cavalo, Ellie pergunta se ela está tentando 
+                            ser expulsa da zona de quarentena por causar problemas.
+                        </p> <br />
+                        <p>Riley responde que não quer ser colocada na população em geral, onde as pessoas recebem empregos terríveis e poucas rações para sobreviver. Assim que o cavalo está pronto, Winston ajuda Ellie a subir na sela e avisa Riley para 
+                            se comportar enquanto elas saem. Ellie pergunta a Winston sobre sua vida antes da infecção e ouve o homem mais velho relembrar a infância vagando pelo shopping e faltando à escola, encantado com as memórias.
+                        </p> <br />
+                        <p>Elas voltam ao acampamento de Winston e encontram Riley lendo uma revista. Descendo do cavalo, Ellie agradece por tê-la levado ao shopping. Momentos depois, uma explosão do lado de fora interrompe tudo, e Winston parte para encontrar 
+                            sua unidade. Ele ordena que Riley e Ellie voltem para a escola antes de ir embora. Abalada com o que acabou de acontecer, Ellie concorda, mas é ignorada por Riley. Ao se virar, Ellie vê a amiga mexendo em um walkie-talkie. 
+                            Percebe que foi usada para distrair Winston e começa a gritar com Riley, quando as duas ouvem que pode haver vaga-lumes na área. Riley se anima com a possibilidade de conhecê-los, mas Ellie acredita que ela enlouqueceu. Em vez de 
+                            discutir, Riley vai embora sozinha. Chocada, Ellie permanece parada por um momento antes de decidir segui-la.
+                        </p> <br />
+                    </div>
+
+                    <div id={lstSummaryItems[1]?.nested?.[1].id} data-link="anchor">
+                        <ChapterHeading secondaryHeading="Encontrando Marlene" />
+
+                        <p>Seguindo Riley, a dupla chega a um local com vista para uma batalha entre os militares e os Vaga-lumes. Ao perceber que eles estão perdendo, Riley decide dar aos rebeldes uma chance de escapar. Ellie fica chocada ao descobrir que 
+                            Riley conseguiu roubar algumas bombas de fumaça enquanto Winston estava distraído. As duas lançam as bombas contra os militares, permitindo que os Vaga-lumes recuem com segurança. As meninas comemoram, mas logo são avistadas pelos 
+                            militares, que abrem fogo contra elas.</p> <br />
+                        <p>Ellie e Riley fogem rapidamente para um beco fora do shopping. Ellie está irritada, apesar das garantias de Riley de que elas estarão seguras. No entanto, um corredor aparece e ataca Ellie primeiro. </p> <br />
+                        <p>Riley reage acertando-o com uma pedra antes que ele possa fazer qualquer coisa, mas o corredor, ao perceber sua presença, passa a atacá-la e a imobiliza no chão. Ele parece mordê-la antes que Ellie o mate com um tijolo. Ellie 
+                            inspeciona a área e descobre que apenas a jaqueta de Riley foi rasgada. Riley mostra um breve momento de bravata desafiadora, mas logo admite que estava com medo e vontade de se virar para chorar nos braços de Ellie.
+                        </p> <br />
+                        <p>Os Vaga-lumes que recuaram da luta logo avistam as garotas. Riley tenta explicar que foram elas que jogaram as bombas de fumaça, mas é nocauteada por um dos membros. Ellie fica furiosa, mas logo é vendada e capturada, enquanto 
+                            um deles se mostra chocado com o envolvimento de Ellie.
+                        </p> <br />
+                        <p>Ellie acorda com os Vaga-lumes discutindo se devem ou não desobedecer às ordens. Ela consegue sacudir o saco da cabeça e vê três homens discutindo. Em seguida, desliza para fora da corda que prende suas mãos atrás das costas e 
+                            pega um caco de vidro, pouco antes de Marlene entrar.
+                        </p> <br />
+                        <p>Um dos Vaga-lumes pergunta a ela como está outro de seus membros, chamado Kerry. Marlene informa que o médico acredita que ela tem chances de sobreviver. Marlene remove as amarras das pernas de Ellie com uma faca, e Ellie exige 
+                            que Riley seja desamarrada. Os Vaga-lumes obedecem, e Marlene entrega a Ellie um envelope com instruções para abri-lo quando ela voltar para a escola. Ellie vê Riley e Marlene discutirem antes de três homens armados aparecerem 
+                            e exigirem que elas paguem o pedágio por estarem no túnel do contrabandista. Os homens se tornam hostis e atacam de repente, com Ellie puxando Riley, congelada, para longe do tiroteio.
+                        </p> <br />
+                        <p>Ellie percebe uma saída, mas Riley se recusa a sair e corre para pegar uma arma perto de um dos homens. Antes que Ellie possa agarrá-lo, ele a puxa de volta pelo capuz. No entanto, antes que ele possa machucá-la, Ellie o acerta 
+                            com um tijolo. Ele volta sua atenção para Ellie e, enquanto o faz, Riley pega a arma e atira nele, derrubando-o no chão.
+                        </p> <br />
+                        <p>Marlene diz a Ellie que sua mãe se chamava Anna e que contaria mais sobre ela quando chegasse a hora certa. Marlene aponta para uma escada e diz a Ellie e Riley que ela leva para trás da escola. Antes de partirem, Marlene dá a 
+                            Ellie um canivete e diz que era de sua mãe e as duas garotas vão embora.
+                        </p> <br />
+                        <p>Pouco tempo depois, Ellie lê a carta de Marlene, pega o canivete de sua falecida mãe a abraça-o contra o peito.
                         </p>
                     </div>
 
-                    <div>
-                        <ChapterHeading secondaryHeading="Sobrevivendo" />
+                    <div id={lstSummaryItems[2]?.nested?.[0].id} data-link="anchor">
+                        <ChapterHeading mainHeading="Eventos de Left Behind" secondaryHeading="Explorando o shopping" />
 
-                        <p>Pouco depois da morte de Sarah, Joel se viu em uma clínica de triagem após chegar à rodovia. Ele testemunhou como as famílias foram dilaceradas e quanto caos irrompeu no mundo.</p> <br />
-                        <p>Com o passar dos anos, Joel e Tommy precisaram adotar um em um estilo de vida sombrio, para sobreviverem à loucura que o mundo se tornou. Joel torturou, enganou e matou inúmeras pessoas inocentes, 
-                            tornando-se um caçador. 
+                        <p>Tempos depois de voltarem à escola, Ellie e Riley acabam discutindo e se separando. Riley desaparece da escola, e Ellie presume que sua amiga foi morta. Enquanto isso, Ellie é convocada para o exército e mantém contato superficial 
+                            com os amigos de Riley. No verão de 2033, Ellie é surpreendida pelo retorno de Riley, que a acorda no meio da noite. Aliviada, mas chateada, Ellie pergunta onde a amiga esteve, já que não a via há seis semanas, e Riley revela que 
+                            se tornou Vaga-Lume. Compreendendo a tristeza da amiga, Riley promete contar o que aconteceu enquanto esteve fora, caso Ellie saia da escola com ela. Relutantemente, Ellie se veste e a segue.
                         </p> <br />
-                        <p>Após chegar em Boston, Tommy finalmente se cansou da filosofia de Joel sobre como sobreviver, abandonando-o para se juntar a um crescente grupo de milícia conhecido como Vagalumes, após ser persuadido 
-                            pela líder, Marlene. Os dois discutiram furiosamente sobre isso, Tommy terminando com "Eu nunca mais quero ver sua maldita cara!".
+                        <p>Do lado de fora da escola, elas escapam de uma patrulha que se aproxima, escondendo-se em um prédio abandonado. Enquanto exploram o local, Ellie pergunta como Riley encontrou os Vaga-Lumes. Riley conta que seguiu Trevor, um 
+                            Vaga-Lume conhecido. Quando pergunta se Ellie fez amizade com alguém na escola ou manteve contato com seus amigos, Ellie desconversa. Ao entrarem em uma sala, Ellie vê um símbolo dos Vaga-Lumes e pergunta, em tom de brincadeira, 
+                            se Riley &#8220;encontrou a luz&#8221;. Riley diz que, com os Vaga-Lumes, ela não é uma soldado como Ellie. Ao ouvir uma transmissão pelo alto-falante sobre a situação da zona de quarentena, Riley menciona que os militares 
+                            estão mentindo sobre o número de infectados que continuam aparecendo na zona. Ela quase revela que teve de matar alguém que havia sido infectado, mas desvia do assunto.
                         </p> <br />
-                        <p>Joel passou um período sozinho até conhecer uma mulher chamada Tess. A dupla se aproximou, unindo-se para atuar como contrabandistas na zona de quarentena. Neste ramo, eles conheceram várias pessoas, 
-                            como Robert, Bill e Donovan.
+                        <p>Atravessando os telhados, elas escapam de outra patrulha e descem pela janela para o shopping Liberty Gardens, seu ponto de encontro habitual. Ao ver um cartaz de uma pistola d'água, Ellie diz que tentou pegar as pistolas d'água 
+                            delas no escritório do &#8220;Cabo babaca&#8221;, mas foi pega na tentativa de fuga. Riley diz para ela desistir de recuperá-las, mas Ellie continua determinada a roubá-las de volta. Ao chegar ao acampamento de Winston, Ellie 
+                            diz que ouviu dizer que ele havia morrido de um ataque cardíaco, algo raro entre os sobreviventes. Explorando a tenda, Ellie descobre uma fotografia dele na juventude e comenta sobre sua aparência. Riley encontra uma garrafa de 
+                            bebida alcoólica e oferece um gole a Ellie. Depois que Riley bebe em memória de Winston, elas saem da tenda e avistam a sela que pertencia à sua égua, Princesa.
+                        </p> <br />
+                        <p>Em seguida, elas tentam encontrar o caminho para o outro lado do shopping. Riley usa uma viga de metal para levantar os escombros do teto que desabou. Ao puxar a viga, criando uma pequena passagem, o peso faz com que os entulhos 
+                            desabem, impossibilitando a travessia. Enquanto procuram outra saída, Ellie vê uma janela aberta sobre a porta de uma loja de artigos de Halloween e ajuda Riley a entrar. Ellie entra na loja instantes depois de Riley abrir a 
+                            porta e se assusta com a máscara que a amiga encontrou lá dentro. Riley dá a Ellie uma máscara de lobisomem, que ela coloca a contragosto. As duas exploram a loja, trocando máscaras e se maravilhando com as curiosidades, 
+                            incluindo uma caveira que adivinha a sorte.
+                        </p> <br />
+                        <p>Ao sair da loja, Riley sugere que joguem um jogo. Se uma delas quebrar todos os vidros de dois carros abandonados no meio do shopping, poderá fazer uma pergunta à outra. Ellie vence Riley e pergunta por que ela saiu da escola. Riley 
+                            admite vagamente estar &#8220;num momento estranho&#8221; e que não contou a ninguém que tinha ido embora. Ao irem para os fundos do shopping, Riley explica que os militares mentiram sobre a energia na cidade e que ainda 
+                            havia eletricidade no local. Ao entrar em uma sala, Riley abre uma caixa de junção e faz um gesto para Ellie acionar o interruptor. Duvidando que funcione, Ellie religa a energia do shopping, e as duas seguem em direção à saída. 
+                            Lá, Ellie hesita e admite estar ciente das tentativas de Riley de reconquistá-la. Riley se desculpa pelas coisas que disse antes de ir embora, ao que Ellie desconversa, chamando a amiga de &#8220;boba&#8221;. Elas saem pelos 
+                            fundos do shopping e seguem em direção ao carrossel iluminado.
+                        </p> <br />
+                        <p>Ellie sobe no carrossel e dá uma voltinha rápida antes de convidar Riley para acompanhá-la. Riley mal consegue aproveitar o passeio antes de o carrossel parar de funcionar. Percebendo a decepção da amiga, Ellie diz que gostou do passeio. 
+                            Um instante depois, Riley revela que comprou outro livro de piadas para Ellie. As duas saem do carrossel enquanto Ellie escolhe piadas para contar, até encontrarem uma cabine de fotos. Ao entrarem, mexem nas configurações da máquina 
+                            e ficam confusas com a mensagem que as direciona para o Facebook. Elas tentam imprimir as fotos, mas uma mensagem de erro as impede.
+                        </p> <br />
+                        <p>Elas vão até o último andar e entram no fliperama Raja. Ellie fica decepcionada ao descobrir que a máquina de &#8220;Turning&#8221; está quebrada, mas Riley a ajuda a visualizar como jogar, descrevendo as ações e os comandos para a 
+                            personagem Angel Knives lutar contra sua oponente, Blackfang. A ajuda de Riley leva Ellie à vitória, mas ela decide que é hora de voltar para a escola, apesar da insistência de Riley para que continuem pelo shopping. Ellie diz a Riley 
+                            que não tem mais advertências por ter ido escondida ao shopping, e Riley admite que será transferida para outro esconderijo dos Vaga-Lumes.
+                        </p> <br />
+                        <p>Ellie finge não se importar, mas, quando Riley insiste no assunto, Ellie exige saber por que a levou ao shopping. Quando a resposta de Riley, de que só queria vê-la, não é satisfatória, ela fica sem palavras. Frustrada, Ellie manda Riley 
+                            ir embora, e Riley decide investigar a música, apesar dos protestos de Ellie. Ellie vai atrás dela e encontra Riley dentro de uma loja de departamentos, admirando a vista. Furiosa, Ellie pergunta se Riley se sente culpada pela briga que 
+                            tiveram antes de ela desaparecer. Riley nega qualquer sentimento de culpa como motivação para atravessar território hostil para vê-la novamente, mas admite que estava tentando fazer as coisas darem certo entre elas. Riley revela que 
+                            recuperou suas pistolas de água, tirando-as da mochila, dizendo que quase foi atingida por um tiro ao tentar pegá-las. As meninas brincam com as pistolas de água. Depois, Ellie lembra Riley de que ela precisa voltar para a escola, 
+                            e a amiga se oferece para acompanhá-la até em casa. Enquanto se preparam para partir, Ellie encoraja Riley a ir embora e diz que elas se verão novamente um dia.
+                        </p> <br />
+                        <p>Um instante depois, Riley pergunta se Ellie ainda tem seu Walkman. Quando Ellie responde que sim, Riley pega o aparelho e o conecta a um dos sistemas de som da loja. As duas sobem em cima de um balcão e começam a dançar ao som de 
+                            &#8220;I got you babe&#8221; da cantora Etta James. Após alguns instantes, porém, Ellie para, subitamente triste, e pede sinceramente a Riley que não a deixe. Riley tira seu pingente e o deixa cair no chão como resposta. Ellie então 
+                            beija Riley. Ela se desculpa quase imediatamente em seguida, mas Riley diz que não há nada pelo que se desculpar.
+                        </p> <br />
+                        <p>Enquanto as garotas tentam decidir o que fazer em relação umas às outras e aos Vaga-Lumes, são pegas de surpresa pela chegada repentina de corredores atraídos pela música. Elas escapam e barricam a porta, mas os infectados invadem o 
+                            shopping. Riley guia Ellie para os andares superiores, escapando por pouco deles.
                         </p>
                     </div>
 
-                    <div>
-                        <ChapterHeading secondaryHeading="Confrontando Robert" />
+                    <div id={lstSummaryItems[2]?.nested?.[1].id} data-link="anchor">
+                        <ChapterHeading secondaryHeading="Sendo infectada" />
    
-                        <p>Vários anos se passam, e agora a infecção do Cordyceps já se alastrou por todo o mundo, dizimando grande parte da população mundial e desestabilizando completamente a sociedade. O governo criou zonas de quarentena 
-                            onde impõem seus regimes rígidos e autoritários, causando grande descontentamento da população. Joel, agora com quase 50 anos, mora na zona de quarentena de Boston com Tess, realizando missões de contrabando
-                            para fora da zona.</p> <br />
-                        <p>Em um dia, Joel acorda com Tess batendo na porta, que havia saído para uma entrega. Ela diz que foi atacada por dois homens que haviam sido mandados por Robert, um outro contrabandista que devia um carregamento de 
-                            arma aos dois, porém não havia entregue e mandou matarem Tess para se livrar da dívida. Joel concorda em ir atrás de Robert para acertar as contas. 
+                        <p>Riley as guia para fora de uma janela, em direção a um andaime. Quando Ellie alcança Riley, a prateleira que usava para subir tomba, e ela cai no chão. Ellie se defende dos infectados até que Riley chega para ajudá-la; no entanto, a 
+                            amiga é emboscada por outro infectado. Recuperando-se, Ellie pula nas costas do agressor e corta sua garganta. Ela presume que o pior já passou, mas Riley chama sua atenção para o ferimento em seu braço. Ellie percebe que foi mordida, 
+                            e Riley também revela uma mordida em sua mão.</p> <br />
+                        <p>Ellie fica furiosa e destrói vários vasos com um cano. Riley tenta consolá-la, dizendo-lhe que as duas opções que têm para lidar com a situação são recorrer ao suicídio ou esperar a infecção passar juntas e lutar para sobreviver com o 
+                            tempo que lhes resta. Riley prefere a segunda opção. Quando Ellie pergunta se há uma terceira opção, Riley simplesmente responde: &#8220;Desculpe&#8221;. 
                         </p> <br />
-                        <p>Eles saem da área monitorada por túneis subterrâneos para chegar à favela, onde fica o mercado negro da zona. Lá eles conseguem informações de Robert, que está no cais da cidade, porém no caminho são atacados por 
-                            vários de seus capangas. Quando a dupla passa por eles e confronta Robert, já são recebidos a tiros pelo mesmo, que começa a fugir. 
-                        </p> <br />
-                        <p>Joel e Tess encurralam Robert e o forçam a falar onde estão as armas, e ele diz que vendeu aos Vagalumes, pois tinha dívidas com o grupo. Ele diz que eles podem invadir a base dos Vagalumes e roubar as armas, e que 
-                            seria fácil, pois eles estão enfraquecidos. Tess zomba da ideia e mata Robert com dois tiros na cabeça.
-                        </p><br />
-                        <p>Nesse momento aparece Marlene, a líder dos Vagalumes, que estava ferida e fugindo dos militares. Ela diz a dupla que devolveria o dobro de armas, contanto que fizessem uma entrega para ela. A dupla aceita e eles seguem 
-                            a Marlene até seu esconderijo, e descobrem que a entrega era uma garota chamada Ellie. 
-                        </p> <br />
-                        <p>Marlene explica para eles entregarem a menina no congresso da cidade, que fica fora da zona de quarentena e lá teriam outros Vagalumes que a receberiam, Joel recusa de primeira instância, mas Marlene o convence. Ellie 
-                            pergunta como ela conhece o Joel e ela diz que era amiga de Tommy, seu irmão, e que o mesmo garantiu que poderia confiar em Joel caso tivesse problemas.
+                        <p>Embora as duas se resignem ao fim e escolham esperar juntas até morrer, Riley é a única que sucumbe à infecção fúngica. Apesar de Ellie não é infectada e descobre ser imune. Mais tarde, é acolhida por Marlene, que planeja levá-la a 
+                            Salt Lake City, em um hospital dos Vaga-lumes, para que eles estudem como o fungo não infectou Ellie e tentem fazer engenharia reversa para desenvolverem uma cura para a humanidade.
                         </p>
                     </div>
 
-                    <div>
-                        <ChapterHeading secondaryHeading="Contrabandeando Ellie" />
-     
-                        <p>Joel e Tess levam Ellie para um esconderijo, para seguirem seu destino durante a noite para minimizar a chance de serem capturados pelos soldados da FEDRA. Ao anoitecer, eles partem para os túneis e saem da área da zona, 
-                            porém pouco depois são enquadrados por militares que patrulhavam a área.
+                    <div id={lstSummaryItems[3]?.nested?.[0].id} data-link="anchor">
+                        <ChapterHeading mainHeading="Eventos de The Last of Us" secondaryHeading="Escapando de Boston" />
+
+                        <p>Três semanas depois, por volta da época em que Marlene e Ellie planejavam deixar Boston rumo a Salt Lake City, Marlene se fere durante a busca pelo contrabandista Robert, um homem que havia contratado inicialmente para escoltar Ellie para 
+                            fora da cidade. Desesperada para tirá-la de Boston, Marlene contrata dois contrabandistas conhecidos, temidos e experientes - Joel Miller e Tess Servopoulos - para escoltarem Ellie antes que os militares aniquilem os Vaga-Lumes. 
+                            Ela organiza para que uma pequena equipe do grupo encontre os três no Capitólio.
                         </p> <br />
-                        <p>Uma soldado comunica a outra patrulha no rádio para virem buscar 3 criminosos, enquanto outro soldado examina algum sinal de infecção no trio. Quando ele vai examinar Ellie, ela fura a perna do soldado com uma faca e Joel o 
-                            domina, enquanto Tess mata o outro soldado e em seguida pega o teste de infecção e mostra a Joel, percebendo que Ellie estava infectada. 
+                        <p>Enquanto Tess acompanha Marlene para verificar as armas que ela prometeu às duas, Ellie é levada por Joel a um apartamento perto da muralha externa. No caminho, Joel pergunta onde estão os pais dela e por que Marlene está tão obcecada por 
+                            ela. Ellie evita responder por que está sendo contrabandeada, mas informa a Joel que seus pais morreram e que ela tem 14 anos. Ao anoitecer, ela chega, e o trio decide partir para fora da zona.
                         </p> <br />
-                        <p>Eles pensam que Marlene deve ter armado para eles e mandam Ellie se explicar. Ela arregaça a manga do braço e mostra uma marca de mordida, dizendo que foi há três semanas. Tess diz para Ellie parar de mentir, pois uma 
-                            transformação acontece no máximo em 2 dias. Ellie jura que foi há três semanas, porém ainda assim Joel não acredita, e percebe que a patrulha que havia sido solicitada estava chegando, e eles precisavam correr.
+                        <p>O trio logo deixa a zona, e Ellie fica incrédula por estar fora dos muros que cercam a zona de quarentena. Sua alegria é interrompida quando ela e os outros são capturados por uma patrulha militar. Os soldados os revistam em busca de 
+                            vestígios de infecção, fazendo com que Ellie entre em pânico e esfaqueie um dos homens. Ele a derruba, preparando-se para atirar, mas Joel o imobiliza e o mata, salvando a vida de Ellie. Com os soldados sob controle, Joel e Tess descobrem 
+                            que Ellie está infectada, mas são forçados a levá-la consigo quando outra patrulha se aproxima.
                         </p> <br />
-                        <p>No caminho para o congresso, eles precisam passar por um museu abandonado, com vários infectados em seu interior. Após entrar em conflito com os infectados, o trio consegue sair museu e logo depois conseguem chegar ao seu 
-                            destino, mas se deparam com todos os vagalumes mortos. Tess fica desesperada procurando uma forma de continuar, mas Joel a confronta, perguntando o porquê de estar agindo assim. Tess diz que aquela era sua última parada, 
-                            e revela que havia sido mordida. 
-                        </p><br />
-                        <p>Tess pergunta a Ellie onde era o laboratório dos vagalumes, porém ela diz que Marlene nunca revelou, só disse que era em algum lugar no oeste do país. Ela diz a Joel para levar a menina para o Tommy, pois ele provavelmente 
-                            sabia onde os vagalumes estariam. Joel recusa imediatamente, porém Tess o convence a tratar esse pedido como uma dívida.
+                        <p>Evitando os soldados que os procuram, o trio consegue escapar e faz uma breve pausa. Lá, Ellie revela que os Vaga-Lumes têm um laboratório de pesquisa no Oeste, fazendo Joel rir ao imaginar tal coisa. Ellie fica irritada com ele, mas Joel 
+                            a ignora enquanto pergunta a Tess o que devem fazer a seguir. No entanto, Tess acredita no que Ellie afirma e deseja entregá-la conforme solicitado. 
                         </p> <br />
-                        <p>Logo em seguida, eles são surpreendidos por uma patrulha e Tess decide se sacrificar para dar mais tempo de Joel e Ellie fugirem. A dupla consegue sair em direção ao metrô próximo do congresso. Após encontrarem um pouco mais de 
-                            tranquilidade, Joel diz a Ellie que ele tem um amigo em uma cidade próxima que pode conseguir um carro para eles chegarem ao Tommy, e partem para lá.
+                        <p>Após uma noite enfrentando infectados, os três estão quase em seu destino. Depois de atravessar uma prancha para alcançar outro prédio, Ellie fica surpresa com a vista, e sua admiração infantil faz com que Joel se lembre de Sarah. Eles 
+                            chegam ao ponto de encontro no Capitólio, mas encontram apenas corpos de Vaga-Lumes, com os militares se aproximando. Tess entra em desespero em busca de pistas para onde outros Vaga-lumes possam ter ido e Joel a confronta falando para 
+                            desistirem da entrega. Tess então revela que foi infectada durante sua última batalha e insiste que Ellie e Joel continuem sozinho enquanto ela ganha tempo matando os militares que se aproximam do local. Ellie e Joel correm, ainda incrédulos 
+                            com a revelação de Tess e ouvem ela sendo baleada pelos militares. Ellie se sente culpada por isso, mas Joel ignora seus comentários sobre o assunto.
+                        </p>
+                        
+                    </div>
+                        
+                    <div id={lstSummaryItems[3]?.nested?.[1].id} data-link="anchor">
+                        <ChapterHeading secondaryHeading="À procura de um carro" />
+
+                        <p>Os dois chegam mais tarde a uma cidade onde Joel acredita que podem encontrar Bill, um mecânico que lhe deve um favor e pode lhes fornecer um carro. Ellie revela, durante a viagem até Lincoln, que nunca tinha visto um bosque até aquele 
+                            dia, nem visto vagalumes de verdade. Ao avançarem na cidade, Joel fica preso em uma das armadilhas de Bill e Ellie tenta libertá-lo, evitando os infectados que se aproximam e fornecendo munição para Joel para que ele a proteja.
+                        </p> <br />
+                        <p>Assim que Joel se liberta, Bill aparece e salva os dois dos infectados que se aproximavam e os leva até um esconderijo. Ao chegarem, Bill se irrita com a presença deles porque desativaram muitas de suas armadilhas e alertaram muitos infectados 
+                            sobre sua presença, Bill os subjuga, temendo que tenham sido mordidos. Enquanto ele examina Joel, Ellie consegue se libertar das algemas e o ataca com um cano, mas Joel se levanta rapidamente e impede que ela cause mais danos. Após uma breve 
+                            discussão, Joel pede um carro a Bill. Cético e relutante, ele concorda em providenciá-lo, mas avisa que, uma vez pronto, não lhe deverá mais favores. Joel concorda com os termos, usando as chaves para libertar Ellie das algemas.
+                        </p> <br />
+                        <p>Eles se dirigem a uma igreja que Bill converteu em arsenal. Enquanto Bill e Joel conversam carregando espingardas, Ellie examina uma pilha de gibis e revistas em uma prateleira. Ela pega secretamente dois deles: uma revista pornográfica e uma 
+                            edição de Savage Starlight. Ao guardá-los, é flagrada por Bill, que começa a gritar com ela. Ellie tenta se defender, mentindo que estava &#8220;apenas arrumando a pilha idiota dele&#8221;.
+                        </p> <br />
+                        <p>Quando os dois se preparam para ir embora, Bill a ameaça, mas ela, astutamente, diz que &#8220;não precisa de nenhuma das merdas dele&#8221;. Ellie e Joel descobrem que precisam chegar à escola secundária local, pois há um caminhão militar 
+                            lá há algum tempo, mas com uma bateria ainda funcionando. Eles saem da igreja, e Ellie nota uma pilha de cadáveres queimados. Joel tenta dissuadi-la de continuar olhando, mas ela afirma que já viu coisas piores. Enquanto atravessam um 
+                            quarteirão cheio de infectados, Ellie se mostra útil ao conseguir passar por pequenas frestas em portas e por cima de grades. Quando finalmente chegam à escola, descobrem que a bateria do caminhão sumiu. Sem outras opções, eles lutam para sair 
+                            pelos fundos da escola, matando corredores, estaladores e um baiacu.
+                        </p> <br />
+                        <p>Os três chegam a uma casa. Enquanto Joel e Bill discutem, eles encontram o cadáver de Frank, velho parceiro de Bill enforcado na sala. Enquanto isso, Ellie explora a casa e encontra uma caminhonete aparentemente funcional na garagem. Ela é 
+                            rudemente expulsa por Bill, que verifica o veículo e descobre que a bateria está descarregada, mas possui as células ativas. Bill recarrega a bateria e o trio sai da casa: Joel e Bill empurrando a caminhonete para ligar no tranco e Ellie 
+                            dirigindo. Quando chegam à rua, Bill e Joel matam vários infectados e conseguem chegar ao topo de uma colina, onde Ellie finalmente consegue liga a caminhonete. Em seguida, os dois pulam na carroceria da caminhonete e sinalizam para Ellie 
+                            continuar dirigindo, pois mais infectados estão a caminho. Eles retornam em segurança para a igreja de Bill.
+                        </p> <br />
+                        <p>Bill manda Ellie parar o caminhão e vai embora, enquanto Joel sai para se despedir. Ambos comentam brevemente que Ellie se saiu bem contra os infectados, mas Bill ainda acredita que Joel morrerá em breve. Antes de partir, ele dá a Joel uma 
+                            mangueira de sifão para que possa obter gasolina de carros abandonados. A dupla segue viagem em direção a Pittsburgh.
                         </p>
                     </div>
 
-                    <div>
-                        <ChapterHeading secondaryHeading="Encontrando Bill" />
+                    <div id={lstSummaryItems[3]?.nested?.[2].id} data-link="anchor">
+                        <ChapterHeading secondaryHeading="Pittsburgh" />
 
-                        <p>Ao chegarem à cidade, eles encontram Bill e seguem para um arsenal que o mesmo matinha no porão de uma igreja. No caminho, Bill pergunta a Joel o que estava fazendo ali, e ele responde que era apenas uma entrega. Quando Joel diz que 
-                            iria entregar a garota, Bill não consegue conter as risadas. Ele também pergunta onde está Tess, mas Joel evita falar o que houve e diz que ela está apenas ocupada.
+                        <p>Durante o início da viagem, Ellie passa o tempo no banco de trás lendo o artigo do Savage Starlight que roubou de Bill. Apesar de dizer que não está cansada, acaba adormecendo durante o trajeto. Quando acorda, descobre que Joel dirigiu até a 
+                            entrada bloqueada de Pittsburgh. Joel faz um desvio pela cidade, mas é emboscado por um grupo de caçadores, fazendo com que ele bata com o carro em uma loja de conveniência e enfrente os inimigos.  
                         </p> <br />
-                        <p>Bill diz que frequentemente caravanas militares passam pela cidade à procura de suprimentos. Certa vez uma caravana foi atacada por infectados e os militares abandonaram um caminhão perto de uma escola, porém era uma parte da cidade 
-                            repleta de infectados. O plano de Bill era pegar a bateria que estava no caminhão e usá-la para consertar um carro.
+                        <p>Enquanto atravessam a cidade, Joel avista um caminhão com uma metralhadora montada, usado pelos sobreviventes hostis para matar &#8220;turistas&#8221;, termo empregado pelos caçadores para se referirem a sobreviventes desconhecidos. Os dois 
+                            criam um laço enquanto Joel responde às perguntas de Ellie sobre a vida antes do Cordyceps destruir o mundo. Uma pergunta em particular, sobre um pôster de Dawn of the Wolf, leva Joel a revelar que assistiu ao filme pouco antes do surto. 
+                            Curiosa sobre o motivo, Ellie insiste, mas ele desconversa, alegando não se lembrar, evitando contar que já teve uma filha. Em seguida, a dupla chega a um hotel abandonado e se deparam com mais inimigos. Para escaparem, sobem para os andares
+                            mais altos e conseguem atravessar por um elevador abandonado.
                         </p> <br />
-                        <p>Eles passam por vários infectados no caminho até chegar no caminhão, mas Bill, ao abrir o capô, vê que não havia nada. Eles então abortam o plano e tentam sair da escola que também estava infestada.</p> <br />
-                        <p>Eles conseguem encontrar abrigo em uma casa. Enquanto Bill e Joel discutem, eles se deparam com um homem que se enforcou. Bill o reconhece e diz que era Frank, seu parceiro. Bill o tira da corda e percebe que ele havia mordidas. 
-                            Enquanto isso, Ellie encontra um carro na garagem que parecia funcionar. Bill abre o capô e vê que a bateria do caminhão estava ali, e descobre que Frank havia roubado pra sair da cidade. 
-                        </p><br />
-                        <p>Eles então tentam dar partida no carro enquanto Ellie dirige, porém o barulho acaba atraindo infectados. O carro dá partida e eles fogem. Depois de um tempo Bill desce do carro e entrega uma mangueira para Joel, uma forma de conseguir 
-                            gasolina. Joel consola Bill por seu amigo, e Bill o pergunta se agora eles estão quites. Ele então se despede de Bill e segue para encontrar Tommy.
+                        <p>Entretanto, acabam se separando, pois ao subirem no poço do elevador, ele cede, fazendo Joel despencar até o fundo. Ellie, em segurança na borda, tenta descer até ele, mas Joel a impede, pois a descida era muito perigosa. Preocupada e impaciente, 
+                            Ellie caminha pelo hotel, descendo novamente para tentar encontrá-lo. Ela o encontra em meio a uma luta com um caçador, que estava o afogando; Ellie atira e mata o agressor. No entanto, Joel a repreende por desobedecê-lo, fazendo com que Ellie 
+                            grite com ele, frustrada por ele não lhe agradecer ao menos. Joel ignora friamente a reclamação. Enquanto caminham, Ellie tenta explicar por que ignorou sua ordem, mas fica ainda mais frustrada com a resposta de Joel.
+                        </p> <br />
+                        <p>Logo que chegam a um andaime abandonado, Joel pega um rifle de caça que está ao lado e diz a Ellie para ficar atrás de uma cobertura. Eles veem um grupo de caçadores, alheios à presença deles. Ellie quer ajudar, mas acredita que Joel não permitirá. 
+                            Para sua surpresa, ele permite, entregando-a o rifle. Apesar de admitir que só havia atirado com um rifle em ratos, Joel confia a ela a tarefa de protegê-lo. Ele também a agradece por tê-lo salvado, demonstrando afeição por ela. Ellie retribui o 
+                            carinho, satisfeita por perceber que Joel começa a criar laços com ela. Depois de matarem os caçadores, Joel finalmente considera que ela conquistou o direito de portar uma pistola, embora deixe claro que é apenas para emergências. Ellie garante que 
+                            será cuidadosa.
+                        </p> <br />
+                        <p>Logo depois, a dupla se depara com um Humvee - veículo militar com metralhadora - enquanto atravessa as ruas, conseguindo escapar, apesar de seu pesado poder de fogo. Os dois decidem entrar em um prédio pela sacada para saírem das ruas. Enquanto 
+                            fazem isso, Joel é agarrado por trás por um homem que ele presume ser outro caçador. Ellie observa enquanto Joel o domina, informando-o rapidamente de que um garoto está com uma arma apontada para ele. Joel então cessa o ataque. Eles se apresentam
+                            como Henry e Sam, dois irmãos que fazem parte de um grupo de sobreviventes atacados pelos caçadores e buscam chegar à ponte de Pittsburgh para saírem da cidade.
+                        </p> <br />
+                        <p>À noite, Ellie acorda Joel, e os dois se juntam a Henry e Sam a caminho da ponte. Após eliminarem caçadores pelo caminho, eles chegam ao local, e precisam subir em um contêiner alto para atravessarem, mas, enquanto Ellie é puxada por Henry para cima, 
+                            o Humvee retorna. Ela tenta fazer com que Henry puxe Joel, mas o homem entra em pânico e foge com Sam. Embora pudesse ir com os irmãos, Ellie pula de volta para ajudar Joel. Depois de escaparem das balas do Humvee, eles param ao perceber que a parte 
+                            superior da ponte desabou. Com o Humvee batendo contra os veículos que bloqueiam seu caminho e Joel sem conseguir encontrar uma rota de fuga segura, Ellie decide agir por conta própria. Sabendo que não sabe nadar, ela pula imprudentemente da ponte, 
+                            fazendo com que Joel faça o mesmo. Mal conseguindo flutuar na água, Ellie pede ajuda a Joel, que consegue agarrá-la, mas acaba desmaiando ao bater a cabeça contra uma pedra.
+                        </p> <br />
+                        <p>Milagrosamente, Ellie sobrevive, e Henry retorna a tempo de salvá-los. Ele os carrega até a margem, a certa distância da ponte, reunindo-os com Sam. Joel acorda irritado ao ver Henry e Ellie diz que ele os salvou, o que acalma os ânimos. Em seguida, 
+                            o grupo segue em direção aos esgotos até uma torre de rádio, onde Henry encontraria outros sobreviventes de seu grupo. Eles escapam da área dos caçadores pelos esgotos e subúrbios. A dupla lentamente criava laços com os irmãos, mas isso logo em seguida 
+                            Sam foi infectado e atacou Ellie. Para salvá-la, Henry atira contra o próprio irmão e em seguida comete suicídio, incapaz de suportar a dor de ter matado o próprio irmão caçula. Ellie e Joel ficam chocados com a cena e resolvem partir em busca 
+                            de Tommy no Wyoming.
                         </p>
                     </div>
 
-                    <div>
-                        <ChapterHeading secondaryHeading="Enfrentando caçadores em Pittsburgh" />
+                    <div id={lstSummaryItems[3]?.nested?.[3].id} data-link="anchor">
+                        <ChapterHeading secondaryHeading="Chegando em Jackson" />
 
-                        <p>Enquanto na estrada, eles se aproximam de Pittsburgh, que estava dominada por caçadores que emboscavam e matavam quem passava pela cidade. Enquanto atravessavam, um homem que aparentava estar machucado aparece no meio da estrada pedindo ajuda. 
-                            Ellie pergunta se deveriam ajudá-lo, mas Joel sabia que se tratava de uma armadilha e acelera o carro, atropelando o homem. Eles conseguem se livrar da armadilha, porém Joel perde o controle do carro e o mesmo é destruído, fazendo Joel e Ellie 
-                            ficarem a pé novamente e tendo que lidar com uma nova ameaça em uma cidade grande e perigosa.
+                        <p>Ao chegarem em Jackson, a dupla encontra Tommy em um assentamento criado com outros sobreviventes. Joel acreditava que seu irmão, ex-membro dos Vaga-lumes, poderia mostrar-lhes a localização do grupo. Durante a estadia, Ellie descobre por Maria a verdade 
+                            sobre Sarah, a filha de Joel que morreu tragicamente no início do surto. Ela também pressente que Joel planejava deixá-la com Tommy, o que a leva a fugir para uma casa de fazenda abandonada. Quando Joel a alcança, os dois têm uma discussão acalorada, 
+                            na qual se torna evidente o quanto se aproximaram e passaram a se importar um com o outro durante a jornada Joel acaba mudando de ideia e decide acompanhar Ellie.
                         </p> <br />
-                        <p>Joel e Ellie conseguem derrotar os agressores e começam a seguir para a ponte que atravessa o rio de Pittsburgh para saírem da cidade. No caminho eles descobrem que o grupo de caçadores era grande e mantinham várias partes da cidade como base. 
-                            Além disso, por terem derrotado os militares da zona de quarentena, tinham equipamentos militares de qualidade e em grande quantidade, incluindo um caminhão com uma torreta de alto calibre. Para causar medo em suas vítimas, os caçadores amarraram 
-                            um cadáver na frente do veículo com uma placa com as escritas "Run".
+                        <p>Com a orientação de Tommy, Joel e Ellie chegam a Universidade do Leste do Colorado, onde se acredita que os Vaga-Lumes residam. No entanto, eles não encontram nenhum Vaga-Lume; em vez disso, deparam-se com um grande grupo de infectados e saqueadores. 
+                            Durante uma luta brutal, Joel é jogado do segundo andar do prédio de ciências e cai com o abdômen sobre um vergalhão presente no térreo e fica incapacitado, forçando Ellie a protegê-lo até a saída deles.
                         </p>
                     </div>
 
-                    <div>
-                        <ChapterHeading secondaryHeading="Conhecendo Henry e Sam" />
+                    <div id={lstSummaryItems[3]?.nested?.[4].id} data-link="anchor">
+                        <ChapterHeading secondaryHeading="Protegendo Joel" />
 
-                        <p>Mais tarde, ao passar pelas perigosas ruas de Pittsburgh, a dupla dá de cara com o temido veículo e fogem para um prédio nos arredores, mas logo quando Joel entra, é surpreendido por um homem que o segura pelas costas. Ellie usa sua faca para golpeá-lo, 
-                            dando uma abertura para Joel se desvencilhar e golpear o homem. Enquanto o fazia, um garoto mira sua arma para Joel, que levanta as mãos e se afasta. O homem se revela Henry e o garoto Sam. Henry diz que inicialmente achou que Joel era um caçador, 
-                            porém viu que estava errado ao ver Ellie, pois os caçadores não abrigam crianças.
+                        <p>Ellie consegue esconder Joel em um shopping abandonado, onde cuida de seu ferimento usando uma camisa velha e um pedaço de fita adesiva encontrado enquanto vasculhava as gavetas do local. Ela decide que isso lhes dará algum tempo e sai em busca de algo 
+                            para costurar o ferimento de Joel, enquanto Callus, seu cavalo, fica de vigia.
                         </p> <br />
-                        <p>Henry diz que faz parte de um outro grupo de sobreviventes da cidade de HartFord e que foi enviado para a cidade para buscar suprimentos, porém os caçadores os emboscaram e os dispersaram. O grupo se encontraria numa torre de rádio na saída da cidade, 
-                            e as duplas se unem com o objetivo de sair de Pittsburgh. 
+                        <p>Após subir uma escada rolante quebrada, Ellie encontra uma loja abandonada no shopping: a Farmácia Weston. Esperando encontrar remédios, ela se decepciona ao perceber que o local está completamente vazio, sem nenhum suprimento útil. Ao se aproximar do caixa, 
+                            encontra um kit de primeiros socorros atrás de uma porta trancada. Em um bilhete encontrado no chão, Ellie descobre que o farmacêutico &#8220;enlouqueceu&#8221; e que um dos funcionários, sem saber do surto de Cordyceps, o trancou em uma loja da American Princess ao 
+                            lado, juntamente com as chaves do kit de primeiros socorros.
                         </p> <br />
-                        <p>Em um lugar seguro, Henry também explica seu plano de se alistar com os vagalumes, e Joel diz que também os procurava, tendo mais objetivos em comum. Ele mostra a Joel um portão que leva à ponte, e ressalta que durante a noite fica desprotegido. O plano 
-                            era esperar anoitecer, passar pelo portão sem resistência, atravessar a ponte e sair da cidade.
+                        <p>Ao sair da loja, Ellie se depara com um estalador solitário e o mata rapidamente com seu canivete. Ela destranca a porta e abre o kit de primeiros socorros, mas fica decepcionada ao perceber que o kit está vazio, com os suprimentos já roubados por outros 
+                            sobreviventes. Frustrada, Ellie chuta o kit, mas sua decepção logo se transforma em empolgação ao avistar um helicóptero médico acidentado, convencida de que poderá encontrar algo útil para suturar o ferimento de Joel. Sem saber como chegar até ele, ela 
+                            encontra um portão, mas percebe que está trancado, e o botão para destrancá-lo não funciona.
                         </p> <br />
-                        <p>A noite chega e eles colocam o plano em prática. Apesar de alguns poucos caçadores, Henry e Joel conseguem matá-los para abrir o portão. Porém, são surpreendidos novamente pelo veículo com a torreta. Ao subir em uma carreta e levantar Sam e Ellie, Henry 
-                            vê que o caminhão está perto de derrubar o portão e decide deixá-los e fugir. Ellie fica indignada e desce para acompanhar Joel, que conseguem se salvar por um triz ao entrarem nos fundos de um Pub.
-                        </p><br />
-                        <p>Eles conseguem chegar na ponte e se deparam com ela quebrada. Ao ver o caminhão se aproximar atirando contra eles, Ellie pula no rio, forçando Joel a pular também. Joel bate a cabeça em uma pedra e perde a consciência. Ele acorda na margem horas depois e 
-                            vê Henry e Sam novamente. Joel parte enfurecido pra cima de Henry, derrubando-o no chão e apontando uma arma para ele por tê-los deixado pra trás. Henry diz que fez isso para não arriscar a vida de Sam, e sabia que Joel e Ellie conseguiriam sobreviver. 
-                            Joel abaixa a arma e Henry levanta, que diz logo depois que salvou eles da correnteza, e Ellie afirma logo depois que se não fosse Henry, eles teriam se afogado.
+                        <p>Ela encontra cabos e se lembra do conselho de Joel para segui-los. Ao tentar ligar o gerador, descobre que ele está sem gasolina. Em uma garagem alagada, Ellie encontra um galão vazio e, após matar alguns perseguidores, o enche com gasolina retirada de um caminhão. 
+                            Ela reabastece o gerador e consegue restaurar a eletricidade. Pouco depois, mais dois perseguidores surgem correndo com a água até os joelhos, mas um cabo de energia cai na água, eletrocutando-os. Ellie então precisa encontrar um caminho para o outro lado da garagem 
+                            sem tocar na água. Após encontrar e matar mais infectados, Ellie retorna ao portão. Ela pula no helicóptero e fica aliviada ao encontrar remédios, abraçando o kit médico e afirmando que não vai deixar Joel na mão. No caminho de volta, ela é emboscada diversas vezes 
+                            por canibais e infectados, tendo de distrair rapidamente alguns deles quando se aproximam do local onde escondeu Joel e Callus.
                         </p> <br />
-                        <p>Os quatro partem rumo aos esgotos na tentativa de saírem da cidade. Mais adiante, encontram mais resistência de caçadores e entram em confronto também com infectados.</p> <br />
-                        <p>Eles chegam na torre de rádio ao anoitecer e tem um momento calmo e descontraído, mas Henry perde as esperanças que alguém de seu grupo apareça. No outro dia, Ellie acorda e vai procurar por Sam, porém ele havia sido mordido no dia anterior e havia escondido 
-                            de seu grupo. Ellie o encontra já transformado e sofre um ataque. Joel rapidamente alcança sua mochila para pegar sua arma, mas Henry atira perto de Joel e o ameaça, mas Joel ignora. Logo depois, o próprio Henry atira e mata Sam, entrando em completo estado 
-                            de culpa. Joel tenta consolá-lo, mas Henry aponta a arma pra Joel alegando ser sua culpa, e comete suicídio logo depois.
+                        <p>Depois de matar os inimigos, Ellie retorna até Joel, que ainda está vivo. Após dizer que é uma &#8220;quase especialista&#8221; em costurar feridas, ela consegue suturar seu ferimento. Em seguida, amarra Joel a um cobertor sobre um trenó, prende o trenó a Callus 
+                            e começa a montá-lo. Ela finalmente consegue levá-los ao Lakeside Resort. Lá, Ellie esconde Joel em uma casa para cuidar dele, enquanto sai para caçar comida. Durante sua permanência no local, Ellie carrega consigo vários artefatos, muitos dos quais adquiriu durante 
+                            sua vida em Boston. Entre eles estão a carta de sua mãe, Anna, o pingente de Riley, seu canivete, o Sony Walkman que usava no orfanato, os livros de piadas que lia em Pittsburgh e uma foto de Joel e Sarah que roubou de Tommy em Jackson.
                         </p>
                     </div>
 
-                    <div>
-                        <ChapterHeading secondaryHeading="Encontrando Tommy" />
+                    <div id={lstSummaryItems[3]?.nested?.[5].id} data-link="anchor">
+                        <ChapterHeading secondaryHeading="Embate com David" />
 
-                        <p>Meses se passam e agora Joel e Ellie estão no Wyoming, perto de encontrar Tommy. Eles caminham pela floresta até encontrarem uma placa escrito "Jackson County", onde Joel sabia que Tommy estaria. Eles alcançam uma usina hidrelétrica e Joel decide passar por dentro 
-                            dela e tenta abrir o portão, até que uma mulher e outros guardas apontam suas armas para ele e mandam largar suas armas. Porém, um dos guardas reconhece Joel e manda os outros abaixarem suas armas. Esse guarda era Tommy, que abre o portão e dá um abraço em Joel.
+                        <p>Durante os meses de inverno, Ellie enfrenta escassez de comida. Ela sai da casa onde cuida de Joel e parte em busca de alimento em uma floresta próxima. Montada em Callus, encontra um cervo. Usando um arco, Ellie o mata, mas é confrontada por dois homens, David e James. 
+                            David oferece trocar suprimentos por uma parte da carne do cervo que ela rastreou e abateu. Ellie exige antibióticos em troca, ameaçando-os com o arco caso tentem algo. James parte para buscar os antibióticos no assentamento do grupo, deixando David sozinho com Ellie. 
                         </p> <br />
-                        <p>Ele explica que aquela mulher era Maria, sua esposa, e que também comandava o lugar. Eles entram na usina e Tommy explica a Joel que eles montaram uma comunidade ali perto, e que eles estavam na usina para tentar restabelecer a energia. Tommy em um momento diz a Joel 
-                            que voltou em sua casa no Texas e encontrou a foto dele com Sarah, no qual ele oferece a Joel, porém ele recusa e diz que tem algo importante para conversar com Tommy. 
+                        <p>Os dois se abrigam do frio em um abrigo e logo os infectados os atacam. David ajuda Ellie a se defender e elogia sua habilidade com o rifle. Enquanto avançavam pelos prédios próximos, eles lutam com uma onda de infectados. Depois de limparem completamente os prédios, 
+                            os dois retornaram ao refúgio original. David então discutiu a filosofia de que tudo acontece por uma razão, com a qual Ellie discordou veementemente. Ele decidiu provar sua teoria revelando que, na verdade, foram seus homens que atacaram Joel e Ellie na universidade. 
+                            James, que retornou nesse momento, ouviu a conversa e apontou uma arma para Ellie, mas David exigiu que ela tomasse o remédio e fosse libertada, e James obedeceu relutantemente.
                         </p> <br />
-                        <p>Ele diz que a garota com quem eles estava era imune. Tommy não acredita, mas Joel diz que pode provar. Tommy então se convence e o pergunta porquê trouxe ela. Joel diz que deveria entregá-la aos Vagalumes, e fala para Tommy entregá-la por conhecê-los melhor e que poderia 
-                            ficar com o pagamento &#40;as armas&#41;. Tommy diz que não vê um Vagalume a muito tempo, mas Joel supõe que ele sabe onde eles estão e diz que não está pedindo muito, apenas equipamentos para poder partir de novo. 
+                        <p>Ellie retorna à cidade próxima onde havia se refugiado. Lá, ela dá o remédio a Joel e depois vai dormir. Tendo deixado Ellie partir, David ordena que seus homens a rastreiem. Eles mencionam que receberam ordens estritas para mantê-la viva, mas essas instruções são ignoradas 
+                            quando descobrem, por meio de James, que Joel havia massacrado metade dos homens do grupo na universidade. Montada em Callus, Ellie tenta escapar do grupo de David, que passa a persegui-la, resultando na morte do cavalo a tiros. Ao tentar fugir a pé, Ellie atravessa uma 
+                            hospedaria, mas David a encontra no refeitório e a deixa inconsciente.
                         </p> <br />
-                        <p>Quando Tommy explica a situação para Maria, que ficou enfurecida por Joel supostamente estar arriscando novamente a vida do irmão, Ellie acredita que Joel está tentando se livrar dela e foge à cavalo para uma fazenda próxima. Joel e Tommy vão atrás de Ellie, que se entendem 
-                            e partem para a Universidade do Leste do Colorado, onde Tommy afirma que há um posto Vaga-lume ativo.
+                        <p>Quando Ellie recupera a consciência em sua cela, ela presencia James esquartejando um cadáver em uma bancada e descobre que David e seu grupo são canibais. Visivelmente enojada, Ellie se mostra hostil com David. Os dois discutem, e ela, relutantemente, come a comida que ele 
+                            lhe oferece, alegando que se trata apenas de carne de veado. David implora a Ellie, dizendo que está pensando no melhor para ela, e oferece-lhe um lugar em seu grupo. Em seguida, ele toca afetuosamente a mão de Ellie &#40;subentende-se uma intenção de cunho sexual&#41;. 
+                            Ao perceber suas intenções, Ellie quebra seu dedo e tenta recuperar as chaves, ao que David responde jogando-a contra as grades da cela e ameaçando sua vida.
+                        </p> <br />
+                        <p>No dia seguinte, David e James chegam e imobilizam Ellie sobre uma mesa, com a intenção de abatê-la para se alimentar. Pouco antes de David atacá-la, Ellie exclama que está infectada e afirma que David também está, pois a mordeu antes de jogá-la sobre a mesa. David 
+                            inicialmente se mostra cético, mas Ellie insiste para que ele levante a manga direita e veja a ferida da mordida. Ao ouvir de Ellie que ela está infectada, James fica assustado e enojado; David, no entanto, afirma que isso não pode ser verdade, pois Ellie já 
+                            teria se transformado.
+                        </p> <br />
+                        <p>James afrouxa o aperto em sua mão esquerda, e David passa a observar a mordida. Ellie aproveita a oportunidade para pegar uma faca de açougueiro com a mão esquerda e golpeia a garganta de James, matando-o. A morte de James enfurece David, que revida atirando em Ellie, 
+                            errando todos os disparos. Ellie escapa da sala, levando David e os canibais a persegui-la pela cidade.
+                        </p> <br />
+                        <p>David finalmente encontra Ellie em um restaurante abandonado. Ele luta com ela enquanto ela tenta escapar de seus homens pela porta dos fundos, comentando que ela é fácil de rastrear. Após jogá-la no chão, David a mantém sob a mira de sua arma e pergunta como ela 
+                            conseguiu escapar com vida. Ele se distrai momentaneamente quando o prédio começa a pegar fogo, causado por uma lanterna derrubada durante a luta. Enquanto o restaurante é lentamente consumido pelas chamas, David tranca a saída e provoca Ellie, dizendo que ela não 
+                            tem para onde ir e que precisaria pegar suas chaves se quisesse sair.
+                        </p> <br />
+                        <p>David então passa a persegui-la pelo restaurante, assediando-a de forma perturbadora e expressando sua decepção por ela não ter aceitado sua oferta para se juntar ao grupo. Ellie, por sua vez, demonstra ainda mais repulsa por David e por sua evidente insanidade, escondendo-se 
+                            atrás das mesas enquanto tenta tomar suas chaves ao acertá-lo com ataques furtivos.
+                        </p> <br />
+                        <p>Depois que Ellie esfaqueia David pelas costas com seu canivete, ele a empurra e tenta atirar nela com o revólver, errando os disparos enquanto ela se protege. Em seguida, saca um facão e continua a persegui-la, tentando matá-la a tiros ou com a lâmina. David passa a usar os 
+                            pratos quebrados espalhados pelo chão para localizá-la sempre que ela pisa neles. Ellie consegue escapar e o esfaqueia mais duas vezes, fazendo com que ele entre em pânico. Ainda assim, David reage, arremessando-a contra uma mesa antes de agarrá-la pelos cabelos e jogá-la 
+                            no chão. Apesar de ter sido atingido várias vezes na parte superior do tronco, David ainda consegue se levantar e ameaçar Ellie. Exaustos e gravemente feridos, os dois acabam desmaiando lado a lado.
+                        </p> <br />
+                        <p>Quando recuperam a consciência, David é o primeiro a despertar. Ele provoca Ellie, agora visivelmente mais fraca, enquanto ela rasteja em direção ao facão escondido sob um armário, dizendo que não há problema em desistir. Nesse momento, ele não percebe que a arma que deixou 
+                            cair está ao alcance dela. David ataca novamente e a imobiliza, segurando-a pelo pescoço e quase a estrangulando até a morte. Ellie, porém, consegue alcançar o facão debaixo do armário e corta o braço dele. Aproveitando a abertura, ela passa a golpeá-lo violentamente na cabeça, 
+                            repetidas vezes, em um acesso de fúria incontrolável. Joel chega de repente e a afasta do corpo sem vida de David, abraçando-a e tentando consolá-la enquanto Ellie desaba em lágrimas.
                         </p>
                     </div>
 
-                    <div>
-                        <ChapterHeading secondaryHeading="A universidade" />
+                    <div id={lstSummaryItems[3]?.nested?.[6].id} data-link="anchor">
+                        <ChapterHeading secondaryHeading="Encontrando os Vaga-lumes" />
 
-                        <p>Ao chegarem no prédio de ciências da universidade, se deparam com ele vazio e cheio de equipamentos médicos abandonados. Eles entram em uma sala, encontram vários macacos e descobrem que os Vagalumes estavam realizando testes médicos neles. Joel encontra um outro gravador de um médico, 
-                            que dizia que os vagalumes foram embora da universidade e que toda aquela pesquisa feita ali foi uma perda de tempo. Ele também conta que os vagalumes se mudaram pro hospital St.Mary em Salt Lake City, Utah. Agora que já sabem o novo destino, Joel chama Ellie para saírem da universidade, 
-                            porém no mesmo momento são atacados por um grupo desconhecido. 
+                        <p>A primavera cai quando Joel e Ellie chegam a Salt Lake City, o destino final planejado, em 27 de abril de 2034. Ellie agora tem quinze anos. Ainda abalada pelos acontecimentos do inverno, ela passa a primeira metade da viagem quieta e distante, visivelmente afetada. Após um momento 
+                            de intimidade emocional entre os dois, Joel diz a Ellie que eles podem desistir e voltar para a casa de Tommy. Ellie agradece, mas recusa. Ela explica que, depois de tudo o que enfrentaram e perderam, aquilo precisa significar algo.
                         </p> <br />
-                        <p>Eles conseguem se defender e matam vários do grupo, porém um caçador ataca Joel de surpresa e o joga de cima de uma varanda, e Joel cai em um vergalhão enferrujado, perfurando seu abdômen. Joel fica gravemente ferido e começa a perder muito sangue, e Ellie o carrega pra fora do prédio enquanto 
-                            se defende dos agressores. Eles montam no cavalo e saem da universidade, porém Joel está muito fraco e perde a consciência, deixando Ellie por conta própria. 
-                        </p>
+                        <p>Após eliminar vários infectados em um túnel abandonado, eles chegam a uma parte inundada com uma forte correnteza e precisam passa por cima de um ônibus atravessado para avançarem. Ellie avança primeiro e percebe a instabilidade da estrutura. Quando Joel pula e tenta passar por cima 
+                            do ônibus, a porta de vidro cede e ele fica preso dentro de um ônibus submerso. Ellie tenta ajudá-lo, mas não consegue e quase se afoga. Joel sair do ônibus e consegue retirá-la da água, já desacordada. Joel realiza massagem cardíaca para tentar salvá-la, no momento em que os 
+                            Vaga-Lumes chegam. Após exigirem sua rendição, eles o deixam inconsciente. Eles são levados para o hospital e Ellie, reanimada, é levada imediatamente para ser examinada pela equipe médica.
+                        </p> <br />
+                        <p>Quando Joel acorda no hospital dos Vaga-Lumes, Marlene explica que a imunidade de Ellie pode ser explorada para criar uma vacina contra o fungo letal. No entanto, para isso, o Cordyceps mutante precisa ser extraído de seu cérebro por meio de uma cirurgia que a mataria. Joel se opõe 
+                            imediatamente e exige que Marlene encontre outra pessoa. Marlene se recusa, afirmando que não há mais ninguém e que não existe outra alternativa, pois isso precisa ser feito para salvar a humanidade.
+                        </p> <br />
+                        <p>Marlene instrui o guarda dos Vaga-Lumes, Ethan, a escoltar Joel para fora do hospital; caso ele resistisse, Ethan teria permissão para matá-lo. Na saída, Joel domina e mata Ethan, seguindo então pelo prédio, Joel mata os soldados e chega até a sala de cirurgia, onde o procedimento em 
+                            Ellie está prestes a começar. Joel a resgata, matando o Dr. Jerry Anderson no processo, quando este tenta impedi-lo.
+                        </p> <br />
+                        <p>Após fugir dos Vaga-Lumes restantes ao pegar um elevador até a garagem, Joel é confrontado por Marlene, que implora para que ele reconsidere. Ela descreve vários cenários terríveis que poderiam acontecer com Ellie caso ele a levasse de volta ao mundo exterior, desde ser despedaçada 
+                            por um bando de estaladores até sofrer agressão sexual ou ser assassinada por bandidos. Marlene então tenta convencê-lo ao afirmar: &#8220;É o que ela gostaria, e você sabe disso&#8221;. Ainda relutante em entregá-la, Joel atira e mata Marlene. Mais tarde, Ellie acorda no 
+                            carro de Joel, a caminho de Jackson, questionando o que aconteceu enquanto esteve inconsciente.
+                        </p> <br />
                     </div>
 
-                    <div>
-                        <ChapterHeading secondaryHeading="O inverno" />
+                    <div id={lstSummaryItems[3]?.nested?.[7].id} data-link="anchor">
+                        <ChapterHeading secondaryHeading="Voltando para Jackson" />
 
-                        <p>Ellie conseguiu arrastar o frágil Joel para um shopping abandonado. Ellie cobriu o ferimento com sua camisa de verão, usando fita adesiva para mantê-lo no lugar. Ellie voltou com um kit de primeiros socorros, depois de lutar contra canibais e ser infectada para voltar. Ela costurou o ferimento de Joel 
-                            e amarrou-o a um trenó para puxá-lo pela neve. Eles partiram, chegando finalmente a Silver Lake. Ellie prendeu Joel em uma casa abandonada perto de um lago. Com o passar das semanas, Ellie procurou comida enquanto Joel estava cada vez mais doente. 
+                        <p>Joel e Ellie finalmente chegam ao assentamento de Tommy, onde Joel comenta que agora poderiam levar uma vida um pouco mais normal. Antes disso, porém, ele mente para Ellie sobre o que, de fato, teria acontecido com os Vaga-Lumes enquanto ela esteve inconsciente. Ele afirma que havia 
+                            dezenas de outras pessoas imunes sendo estudadas pelos Vaga-Lumes e que, mesmo assim, nada disso levou a uma cura. Ellie demonstra tristeza e frustração.
                         </p> <br />
-                        <p>Semanas depois, Joel continuava com febre por causa da infecção. Um dia, Ellie voltou depois de caçar com um frasco de penicilina que obteve de dois sobreviventes chamados David e James. Na manhã seguinte, o grupo de David rastreou a localização de Ellie e Joel para capturá-los. Para proteger Joel, 
-                            Ellie fugiu da área de Callus, mas eles a alcançaram, mataram Callus a tiros e David a capturou. Joel não foi encontrado pelo grupo.
-                        </p> <br />
-                        <p>Mais tarde, Joel acordou assustado, agora curado da doença, embora debilitado. Ele saiu de casa para procurar Ellie, mas encontrou retardatários do grupo de David. Ele perseguiu e matou todos, exceto dois. Ele os torturou e interrogou para obter informações sobre a localização de Ellie.</p> <br />
-                        <p>Joel consegue chegar ao assentamento de David e descobriu que eles eram canibais. Ele finalmente chegou a um restaurante em chamas e encontrou Ellie atacando David brutalmente com seu próprio facão. Ele a puxou para longe do cadáver para acalmá-la e abraçá-la, a primeira vez que fez isso com ela. Ele também 
-                            a chamava de “garotinha”, o mesmo termo carinhoso que usava para Sarah. Ellie agora está segura, a dupla fugiu da cidade.
-                        </p>
+                        <p>Ao chegarem ao assentamento, Ellie revela a Joel que, no dia em que foi mordida, estava com uma amiga, Riley, que também foi infectada. Ela conta que as duas prometeram esperar juntas até o fim e confessa que ainda está esperando para se transformar e se juntar à amiga. Em seguida, 
+                            pede a Joel: &#8220;Jura para mim que tudo que você falou sobre os Vaga-Lumes é verdade&#8221;. Joel responde simplesmente: &#8220;Eu juro&#8221;, mentindo novamente para Ellie. Embora ela aceite a resposta, permanece ambíguo se ela realmente acredita nele.
+                        </p>                       
                     </div>
 
-                    <div>
-                        <ChapterHeading secondaryHeading="Chegando em St. Mary" />
-
-                        <p>Na primavera, Joel e Ellie chegaram a Salt Lake City, o destino final pretendido. Joel tentou preencher o silêncio para animar Ellie, distante e traumatizada, que se aqueceu ao ver uma manada de girafas. Sabendo o que Ellie havia experimentado, ele sugeriu que eles saíssem e voltassem para o assentamento de Tommy, 
-                            mas ela recusou a oferta, comentando que queria continuar com isso depois de tudo que eles passaram.
-                        </p> <br />
-                        <p>À medida que avançam, eles precisam passar por um túnel inundado e encontrara uma horda de infectados. Após eliminá-los, precisam passar por cima de veículos e andaimes de construção, e chegaram a uma grande lacuna. Ellie estava com medo de não conseguir, mas Joel garantiu que a pegaria. Ela pulou, mas conseguiu sem 
-                            a ajuda dele, algo pelo qual Joel a parabenizou.
-                        </p> <br />
-                        <p>Ao passar por cima do último ônibus para conseguirem sair do túnel, ele cedeu a Joel, fazendo-o cair para a frente enquanto a água o enchia. Ellie pulou no ônibus e chutou a porta para abri-la. No entanto, o ônibus afunda na água. Joel forçou sua saída para alcançar Ellie inconsciente e submersa. Ele a carregou para a superfície, 
-                            mas descobriu que ela não estava respirando. Logo em seguida, dois Vaga-lumes os encontraram, e o nocautearam.
-                        </p>
-                    </div>
-
-                    <div>
-                        <ChapterHeading secondaryHeading="Salvando Ellie" />
-
-                        <p>Quando Joel acordou, ele estava com Marlene e o que restava dos Vaga-lumes de Boston no Hospital St. Mary. Ellie foi reanimada com sucesso, mas foi imediatamente levada para uma cirurgia por ordem de Marlene para criar uma vacina para a infecção. Marlene também disse a Joel que, para fazer a engenharia reversa completa do fungo para uma 
-                            vacina, os médicos estavam prestes a remover o fungo do cérebro de Ellie, o que resultaria em morte certa. 
-                        </p> <br />
-                        <p>Ao ouvir isso, Joel começou a protestar por ela. Marlene o desconsiderou, dizendo que a escolha não foi dele e que sua decisão de sacrificar Ellie salvaria milhões vidas. Joel tentou partir para cima de Marlene, mas foi contido pelos guardas. Marlene disse os autorizou a usar força e matar Joel, caso ele tentasse alguma coisa. Ela ordena 
-                            que seu guarda, Ethan, o escolte Joel para fora do hospital. Joel, determinado a não perder sua nova "filha" como perdeu Sarah, torturou Ethan para saber a localização da sala de cirurgia. Ele então abriu caminho pelas instalações, matou o cirurgião-chefe e salvou Ellie.
-                        </p> <br />
-                        <p>Joel pega Ellie no colo e foge dos Vaga-lumes pelo elevador do hospital. Ao chegar no estacionamento, Marlene encurrala Joel, ameaçando-o com uma pistola. Ela tentou convencê-lo de que fugir era inútil; Ellie acabaria tendo uma morte trágica, seja por destroçada por infectados ou por sobreviventes selvagens. Joel ficou cansado ao considerar 
-                            a possibilidade enquanto Marlene se aproximava dele para alcançar Ellie. Apesar desta oferta, Joel atirou no abdômen de Marlene, decidindo firmemente que preferia salvar Ellie do que salvar a humanidade. 
-                        </p> <br />
-                        <p>Ele colocou Ellie em um carro e depois voltou para Marlene, que se rastejada ferida. Ela implorou por sua vida, mas Joel recusou friamente, temendo que ela os perseguisse se sobrevivesse. Ele então atirou na cabeça dela à queima-roupa antes de fugir com Ellie de volta para Jackson.</p> <br />
-                        <p>No caminho, para poupar Ellie de sentir a culpa por ter sobrevivido, ele mentiu para ela que sua imunidade não significava nada porque os Vagalumes desistiram de encontrar uma cura, o que deprimiu Ellie. Quando os dois chegaram próximo à comunidade de Tommy, não conseguiram atravessar a estrada principal, porque o carro em que estavam quebrou. 
-                            Desviando pela floresta, ele disse a Ellie que costumava caminhar com Sarah, acreditando que as duas teriam sido "boas amigas" e comentou que eles poderiam viver uma vida normal agora. No final, Ellie confrontou Joel para saber se o que ele disse a ela sobre o ocorrido no hospital dos Vaga-lumes era verdade. Joel respondeu: 
-                            "Eu juro", deixando Ellie em dúvida com sua própria crença.
-                        </p>
-                    </div>
-
-                    <div>
+                    <div id={lstSummaryItems[4].id} data-link="anchor">
                         <ChapterHeading mainHeading="Habilidades" />
 
-                        <p>Em seu tempo como caçador, Joel aperfeiçoou suas técnicas de tortura, emboscada e de combate. O homem pode superar quase qualquer adversário com os próprios punhos e consegue ser ainda mais letal com qualquer arma na mão. Tanto tempo sobrevivendo com o que conseguisse encontrar também afiaram a sua engenhosidade, permitindo que construa rapidamente 
-                            bombas e curativos a partir de sucata.
+                        <p>Inicialmente, Ellie é bastante inexperiente em técnicas de sobrevivência. Ela não sabe nadar, o que se torna uma desvantagem significativa, considerando a quantidade áreas alagadas presentes nos locais por onde passa. Ela carrega um canivete, que permanece como sua única arma por 
+                            um longo período, até que Joel finalmente lhe confie uma arma de fogo. Sua pouca idade e falta de experiência fazem com que Joel duvide de sua competência no início, recusando-se a armá-la até que Ellie prove seu valor ao salvar sua vida ao atirar em um caçador. Somente 
+                            após esse evento Joel passa a confiar nela o suficiente para ensiná-la a usar um rifle de caça.
                         </p> <br />
-                        <p>Joel é um mestre da furtividade, habilidade que praticou ao extremo em seus longos anos de experiência como contrabandista. Sua audição é particularmente poderosa, conseguindo estimar a localização de seus inimigos ao ouvir atentamente cada mínimo barulho.</p>
+                        <p>Com o tempo, Ellie se torna cada vez mais proficiente em combate, demonstrando habilidade com diversas armas, incluindo pistola, rifle, arco e explosivos, além de seu característico canivete. Ela também demonstra saber montar a cavalo, evidenciando sua crescente autonomia e 
+                            capacidade de sobrevivência.
+                        </p> <br />
+                        <p>Ellie é ocasionalmente uma personagem jogável, funcionando de maneira semelhante a Joel ao longo do jogo. Inicialmente, ela está armada com um arco, demonstrando boa precisão e eficiência com essa arma. Suas habilidades furtivas são comparáveis às de Joel, incluindo uma versão 
+                            menos refinada do modo de escuta que ele utiliza. No entanto, em comparação a Joel, Ellie apresenta limitações significativas em combate corpo a corpo. Ela tem dificuldade para enfrentar homens adultos diretamente, sendo frequentemente obrigada a atordoá-los com tijolos ou 
+                            garrafas para obter vantagem. Além disso, não possui força suficiente para agarrar inimigos humanos ou infectados.
+                        </p> <br />
+                        <p>Sua relativa inexperiência torna-a mais vulnerável quando está sozinha, sendo frequentemente surpreendida e atacada de surpresa. David chega a comentar que ela é &#8220;fácil de rastrear&#8221;, conseguindo inclusive estrangulá-la até a inconsciência, apesar de Ellie estar armada 
+                            com seu canivete. Durante o confronto final entre os dois, Ellie demonstra grande dificuldade em derrotá-lo, quase sendo estrangulada até a morte, conseguindo vencê-lo apenas ao usar o próprio facão de David contra ele.
+                        </p>
                     </div>
 
-                    <div>
-                        <ChapterHeading mainHeading="Hobbies" />
+                    <div id={lstSummaryItems[5].id} data-link="anchor">
+                        <ChapterHeading mainHeading="Behind the scenes" />
 
-                        <p>Por incrível que pareça, Joel tem uma série de hobbies, mas acabou abandonando a maioria quando o mundo virou ao avesso. Para começar, Joel adorava música e seu sonho de infância era ser cantor.</p> <br />
-                        <p>Em Jackson, Joel voltou a tomar bastante café. Ele era viciado antes do apocalipse e gostava de visitar diferentes cafeterias. Ele também voltou a praticar carpintaria, construindo violões e ajudando a erguer casas de madeira. Ele era carpinteiro no tempo livre, antes de todo o caos, e sonhava em transformar isso em um negócio próprio.</p>
+                        <ul className="behind-scenes-list">
+                            <li>Em 2012, a Naughty Dog teve que lutar para conseguir que Ellie fosse a protagonista da capa do jogo, já que o estúdio foi pressionado a colocá-la em segundo plano. Ashley Johnson, atriz que realizou a captura de movimentos e dublagem de Ellie, comentou: &#8220;Sinto que eles não 
+                                colocam mulheres nas capas porque têm medo de que o jogo não venda. É tudo o que os jogadores realmente, mas tenho a impressão, em geral, de que eles acham que os jogos não vendem tão bem com uma mulher na capa, em comparação com algum cara durão na frente&#8221;;
+                            </li>
+                            <li>Assim como Joel, Ellie não tinha sobrenome conhecido quando o primeiro jogo foi lançado, embora "Williams" tenha sido usado em documentos antigos e tenha aparecido no manual japonês do PlayStation 3, que listava seu nome completo como Ellie Williams &#40;エリー・ウィリアムズ&#41;. 
+                                Em 2021, o diretor criativo Neil Druckmann mencionou que seu sobrenome era uma homenagem aos desenvolvedores de jogos Ken e Roberta Williams;</li>
+                            <li>A chave para o papel de Ellie reside no curso cíclico que o jogo segue, notadamente nas ações de Joel para salvá-la no final, apesar de inicialmente não querer ter nada a ver com ela no ato de abertura. O final é, portanto, o começo invertido, com temas-chave refletidos na semelhança 
+                                de Ellie com a filha de Joel, Sarah. No prólogo, Joel e Sarah começam em casa e, em seguida, usam o carro para escapar dos infectados, que acaba batendo, forçando Joel a carregar Sarah, que é baleada por um soldado da FEDRA. Sarah então morre nos braços de Joel. Perto do final do jogo, 
+                                uma Ellie inconsciente (lembrando Sarah morrendo) é carregada por Joel para fora do hospital, longe dos humanos, e para dentro de um carro. A dupla então dirige &#8220;para casa &#8221;, representada pelo assentamento de Tommy;
+                            </li>
+                            <li>Ellie tem um easter egg como um robô no jogo Astro Bot de Playstation 5, intitulada &#8220;Sobrevivente Imune&#8220;. Sua descrição diz: &#8220;Aspira a ser astronauta&#8221;.</li>
+                        </ul>
+
                     </div>
 
-                    <div>
+                    <div id={lstSummaryItems[6].id} data-link="anchor">
                         <ChapterHeading mainHeading="Galeria" />
                         <CharactersGallery lstImages={lstImagesGallery} />                        
                     </div>

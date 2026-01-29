@@ -1,4 +1,5 @@
 export type SummaryCharacter = {
     main: string;
-    nested?: Array<string>; 
+    nested?: Array<any>;
+    id: string;
 }

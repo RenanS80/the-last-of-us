@@ -1,6 +1,6 @@
 import { chapterCard } from 'data/chapterCard';
 
-import Navbar from 'components/Navbar';
+import Header from 'components/Header';
 import Title from 'components/Title';
 
 import './styles.css';
@@ -10,7 +10,7 @@ import ChapterCard from 'components/ChapterCard';
 function Chapters() {
     return(
         <>
-            <Navbar />
+            <Header />
 
             <section className="chapters__hero"></section>
 
