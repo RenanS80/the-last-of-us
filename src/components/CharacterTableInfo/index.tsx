@@ -12,7 +12,9 @@ function CharacterTableInfo({ infoBio, infoBehindScenes, photo, name } : Props) 
 
     return(
         <section className="character__bio-information">
-            <img src={strPhoto} alt={name} />
+            <div className="image__wrapper">
+                <img src={strPhoto} alt={name} />
+            </div>
             <div className="bio-information__title">
                 <p>Informações Biográficas</p>
             </div>

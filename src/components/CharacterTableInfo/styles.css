@@ -1,5 +1,9 @@
+.character__bio-information .image__wrapper {
+    width: 350px;
+}
+
 .character__bio-information img {
-    width: -webkit-fill-available;
+    width: 100%;
 }
 
 .character__bio-information .category,

@@ -76,7 +76,7 @@ function Joel() {
             "Profissão": "Carpinteiro (antes do surto), Contrabandista"
         },
         {
-            "Familiares": "Sarah (filha), Tess (parceira)"
+            "Familiares": "Sarah (filha), Tommy (irmão)"
         },
         {
             "Residência": "Texas (antes do surto), Jackson"
