@@ -100,15 +100,15 @@ function Ellie() {
 
     const lstTableInfoBehindScenes = [
         {
+            "Captura de movimentos": "Ashley Johnson"
+        },
+        {
             "Dublador (US)": "Ashley Johnson"
         },
         {
             "Dublador (BR)": "Luiza Caspary"
-        },
-        {
-            "Captura de movimentos": "Ashley Johnson"
         }
-    ]
+    ];
 
     const lstImagesGallery = [Img1, Img2, Img3, Img4, Img5];
 

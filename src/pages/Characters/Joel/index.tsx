@@ -19,6 +19,7 @@ import Img5 from '../../../assets/images/characters/joel/img5.png';
 import './styles.css';
 
 function Joel() {
+
     const lstSummaryItems = [
         {
             main: 'Biografia',
@@ -91,13 +92,13 @@ function Joel() {
 
     const lstTableInfoBehindScenes = [
         {
+            "Captura de movimentos": "Troy Baker"
+        },
+        {
             "Dublador (US)": "Troy Baker"
         },
         {
             "Dublador (BR)": "Luiz Carlos Persy"
-        },
-        {
-            "Captura de movimentos": "Troy Baker"
         }
     ];
 

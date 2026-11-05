@@ -18,6 +18,7 @@ import Img5 from '../../../assets/images/characters/sarah/img5.png';
 
 
 function Sarah() {
+
     const lstSummaryItems = [
         {
             main: 'Biografia',
@@ -69,9 +70,15 @@ function Sarah() {
     ];
 
     const lstTableInfoBehindScenes = [
-        { "Dublador (US)": "Hana Hayes" },
-        { "Dublador (BR)": "Vic Brow" },
-        { "Captura de movimentos": "Hana Hayes" }
+        {
+            "Captura de movimentos": "Hana Hayes"
+        },
+        {
+            "Dublador (US)": "Hana Hayes"
+        },
+        {
+            "Dublador (BR)": "Vic Brow"
+        }
     ];
 
     const lstImagesGallery = [Img1, Img2, Img3, Img4, Img5];
